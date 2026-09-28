@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookStack - Alta de libro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/alta.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo-navbar">
+        <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+        </div>
+
+        <nav>
+
+            <a href="#">
+                <i class="fa-solid fa-book"></i>
+                Catálogos
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-column"></i>
+                Reportes
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-cube"></i>
+                Stock
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-heart"></i>
+                Donaciones
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-rotate-left"></i>
+                Devoluciones
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                Préstamos
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Multas
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                Administración
+            </a>
+
+        </nav>
+
+        <button class="btn-salir" id="btnSalir">
+            Salir
+        </button>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-contenido">
+
+            <h1>BookStack</h1>
+
+            <p>SkillForge</p>
+
+        </div>
+
+    </section>
+
+    <main>
+
+        <section class="formulario">
+
+            <h2>Alta de libro</h2>
+
+            <p class="descripcion">
+                Completa los datos del libro y adjunta una imagen para registrar
+                el nuevo ejemplar en el catálogo.
+            </p>
+
+
+            <div class="form-contenido">
+
+                <div class="campos">
+
+                    <div class="campo">
+
+                        <label for="isbn">ISBN</label>
+
+                        <input
+                            type="text"
+                            id="isbn"
+                            placeholder="978-3-16-148410-0"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="titulo">Título</label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            placeholder="El nombre del libro"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="categoria">Categoría</label>
+
+                        <select id="categoria">
+
+                            <option value="">
+                                Seleccionar categoría
+                            </option>
+
+                            <option>Novela</option>
+                            <option>Historia</option>
+                            <option>Ciencia</option>
+                            <option>Infantil</option>
+                            <option>Educación</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="fecha">Fecha de ingreso</label>
+
+                        <input
+                            type="text"
+                            id="fecha"
+                            placeholder="DD / MM / AAAA"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="autor">Autor</label>
+
+                        <input
+                            type="text"
+                            id="autor"
+                            placeholder="Nombre del autor"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="editorial">Editorial</label>
+
+                        <input
+                            type="text"
+                            id="editorial"
+                            placeholder="Nombre de la editorial"
+                        >
+
+                    </div>
+
+                    <div class="fila">
+
+                        <div class="campo">
+
+                            <label for="ejemplares">
+                                Número de ejemplares
+                            </label>
+
+                            <input
+                                type="number"
+                                id="ejemplares"
+                                value="1"
+                                min="1"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="disponibilidad">
+                                Disponibilidad
+                            </label>
+
+                            <select id="disponibilidad">
+
+                                <option>Disponible</option>
+                                <option>No disponible</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="imagen">
+
+                    <label>Imagen</label>
+
+                    <div class="zona-imagen" id="zonaImagen">
+
+                        <input
+                            type="file"
+                            id="archivoImagen"
+                            accept=".jpg,.jpeg,.png,.pdf"
+                            hidden
+                        >
+
+                        <div id="contenidoImagen">
+
+                            <div class="icono-imagen">
+                                <i class="fa-regular fa-image"></i>
+                            </div>
+
+                            <p>
+                                Arrastra una imagen o selecciona un
+                                archivo
+                            </p>
+
+                            <span>
+                                JPG, PNG o PDF (máx. 5 MB)
+                            </span>
+
+                        </div>
+
+                        <img
+                            id="preview"
+                            class="preview"
+                            alt="Vista previa"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="acciones">
+
+                <button
+                    type="button"
+                    class="btn-cancelar"
+                    id="btnCancelar"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-guardar"
+                    id="btnGuardar"
+                >
+                    Guardar libro
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-redes">
+
+            <div class="redes">
+
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h4>Use cases</h4>
+
+            <p>UI design</p>
+            <p>UX design</p>
+            <p>Wireframing</p>
+            <p>Diagramming</p>
+            <p>Brainstorming</p>
+            <p>Online whiteboard</p>
+            <p>Team collaboration</p>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h4>Explore</h4>
+
+            <p>Design</p>
+            <p>Prototyping</p>
+            <p>Development features</p>
+            <p>Design systems</p>
+            <p>Collaboration features</p>
+            <p>Design process</p>
+            <p>FigJam</p>
+
+        </div>
+
+
+        <div class="footer-columna">
+
+            <h4>Resources</h4>
+
+            <p>Blog</p>
+            <p>Best practices</p>
+            <p>Colors</p>
+            <p>Color wheel</p>
+            <p>Support</p>
+            <p>Developers</p>
+            <p>Resource library</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/alta.js"></script>
+
+</body>
+</html>
