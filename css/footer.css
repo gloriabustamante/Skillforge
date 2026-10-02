@@ -1,0 +1,92 @@
+/* ================= FOOTER ================= */
+
+footer {
+    min-height: 390px;
+
+    background: white;
+    border-top: 1px solid #ddd;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+
+.footer-alta {
+    padding: 25px;
+}
+
+.footer-index {
+    padding: 30px 25px;
+}
+
+
+.redes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.redes a {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+
+    transition: 0.2s;
+}
+
+.redes a:hover {
+    transform: translateY(-3px);
+    opacity: 0.6;
+}
+
+
+.redes-index {
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.redes-index a {
+    font-size: 20px;
+}
+
+.redes-index a:hover {
+    transform: none;
+    opacity: 1;
+}
+
+
+.footer-columna h4 {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.footer-columna p {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
