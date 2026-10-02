@@ -104,7 +104,6 @@ main h2 {
     font-size: 25px;
 }
 
-
 /* ================= CARDS ================= */
 
 .cards {
@@ -246,29 +245,11 @@ main h2 {
 }
 
 
-/* ================= FORMULARIO LOGIN ================= */
-
-.login-formulario {
-    width: 320px;
-
-    background: white;
-
-    border: 1px solid #d5d5d5;
-
-    border-radius: 6px;
-
-    padding: 25px 23px;
-
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-}
-
-
 /* ================= CAMPOS ================= */
 
 .campo-login {
     margin-bottom: 24px;
 }
-
 
 .campo-login label {
     display: block;
@@ -299,16 +280,13 @@ main h2 {
     background: white;
 }
 
-
 .campo-login input::placeholder {
     color: #b8b8b8;
 }
 
-
 .campo-login input:focus {
     border-color: #999;
 }
-
 
 /* ================= MOSTRAR CONTRASEÑA ================= */
 
@@ -331,7 +309,6 @@ main h2 {
     font-size: 16px;
 }
 
-
 .mostrar-password input {
     width: 16px;
     height: 16px;
@@ -340,7 +317,6 @@ main h2 {
 
     cursor: pointer;
 }
-
 
 .mostrar-password p {
     margin-left: 27px;
@@ -351,33 +327,6 @@ main h2 {
 
     color: #888;
 }
-
-
-/* ================= BOTÓN ================= */
-
-.btn-ingresar {
-    width: 100%;
-
-    height: 40px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: #30175c;
-
-    color: white;
-
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-
-.btn-ingresar:hover {
-    background: #251247;
-}
-
 
 /* ================= LOGIN ================= */
 
