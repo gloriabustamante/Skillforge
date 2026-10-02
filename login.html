@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - BookStack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body class="body-login">
+    <main class="login-main">
+        <div class="login-header">
+            <h1>BookStack</h1>
+            <p>SkillForge</p>
+            <div class="login-logo">
+                <img src="img/logo_vectorizado.svg" alt="Logo SkillForge">
+            </div>
+        </div>
+        <div class="login-formulario">
+            <form id="loginForm">
+                <div class="campo-login">
+                    <label for="email">
+                        Email
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Value" required >
+                </div>
+                <div class="campo-login">
+                    <label for="password">
+                        Contraseña
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Value" required>
+                </div>
+                <div class="mostrar-password">
+                    <label>
+                        <input type="checkbox" id="mostrarPassword">
+                        <span>Mostrar contraseña</span>
+                    </label>
+                    <p>Descripción</p>
+                </div>
+                <button type="submit" class="btn-ingresar">
+                    Ingresar
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

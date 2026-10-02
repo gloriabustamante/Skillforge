@@ -4,83 +4,20 @@
     box-sizing: border-box;
 }
 
-body {
+.body-index {
     font-family: Arial, Helvetica, sans-serif;
     background: #faf7ff;
     color: #202020;
 }
 
-/* ================= NAVBAR ================= */
+.body-alta {
+    font-family: Arial, Helvetica, sans-serif;
 
-.navbar {
-    height: 90px;
-    background: #dce5ee;
+    background: #faf8ff;
 
-    display: flex;
-    align-items: center;
-
-    padding: 0 30px;
-    gap: 60px;
+    color: #222;
 }
 
-.logo-navbar {
-    width: 66px;
-    height: 66px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-navbar img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.logo span {
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    font-family: Georgia, serif;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    flex: 1;
-}
-
-nav a {
-    text-decoration: none;
-    color: #292929;
-    font-size: 13px;
-    white-space: nowrap;
-}
-
-nav a span {
-    margin-right: 5px;
-    font-size: 15px;
-}
-
-.logout {
-    padding: 5px 12px;
-
-    border: 1px solid #888;
-    border-radius: 8px;
-
-    background: #eeeeee;
-    color: #333;
-
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.logout:hover {
-    background: #ddd;
-}
 /* ================= HERO ================= */
 
 .hero {
@@ -98,7 +35,7 @@ nav a span {
     text-align: center;
 }
 
-.hero-content {
+.hero-contenido {
     color: white;
     margin-top: 10px;
 }
@@ -106,7 +43,7 @@ nav a span {
 .hero h1 {
     font-size: 54px;
     margin-bottom: 10px;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .hero p {
@@ -166,7 +103,6 @@ main h2 {
     color: #555;
     font-size: 25px;
 }
-
 
 /* ================= CARDS ================= */
 
@@ -237,115 +173,186 @@ main h2 {
     margin-bottom: 0;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* ================= FOOTER ================= */
+/* ================= LOGIN ================= */
 
-footer {
-    min-height: 390px;
+.body-login {
+    background: #f7f7f7;
+}
+
+
+/* ================= MAIN LOGIN ================= */
+
+.login-main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 48px;
+}
+
+
+/* ================= ENCABEZADO ================= */
+
+.login-header {
+    text-align: center;
+}
+
+
+.login-header h1 {
+    font-size: 54px;
+
+    color: #0b2945;
+
+    margin-bottom: 15px;
+}
+
+
+.login-header p {
+    font-size: 30px;
+
+    color: #0b2945;
+
+    margin-bottom: 18px;
+}
+
+
+/* ================= LOGO ================= */
+
+.login-logo {
+    width: 120px;
+    height: 120px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ================= CAMPOS ================= */
+
+.campo-login {
+    margin-bottom: 24px;
+}
+
+.campo-login label {
+    display: block;
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+
+.campo-login input {
+    width: 100%;
+
+    height: 42px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    color: #333;
 
     background: white;
-
-    border-top: 1px solid #ddd;
-
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-
-    padding: 30px 25px;
-
-    gap: 30px;
 }
 
-.footer-logo > div:first-child {
-    font-size: 32px;
-    font-weight: bold;
+.campo-login input::placeholder {
+    color: #b8b8b8;
 }
 
-.socials {
+.campo-login input:focus {
+    border-color: #999;
+}
+
+/* ================= MOSTRAR CONTRASEÑA ================= */
+
+.mostrar-password {
+    margin-top: -7px;
+
+    margin-bottom: 25px;
+}
+
+
+.mostrar-password label {
     display: flex;
-    gap: 14px;
-    margin-top: 15px;
+
+    align-items: center;
+
+    gap: 11px;
+
+    cursor: pointer;
+
+    font-size: 16px;
 }
 
-.socials span {
-    font-weight: bold;
-    font-size: 20px;
+.mostrar-password input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #333;
+
+    cursor: pointer;
 }
 
-.footer-column h4 {
-    font-size: 13px;
-    margin-bottom: 20px;
+.mostrar-password p {
+    margin-left: 27px;
+
+    margin-top: 3px;
+
+    font-size: 15px;
+
+    color: #888;
 }
 
-.footer-column p {
-    font-size: 13px;
-    margin-bottom: 13px;
-    color: #333;
+/* ================= LOGIN ================= */
+
+    .login-main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .login-header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 54px;
+    color: #0b2945;
+    margin-bottom: 15px;    
 }
 
-@media (max-width: 1000px) {
-
-    nav {
-        gap: 10px;
+    .login-header p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
     }
 
-    nav a {
-        font-size: 11px;
+    .login-logo {
+        width: 105px;
+        height: 105px;
     }
 
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card,
-    .card.large {
-        grid-column: span 1;
-    }
-
-    footer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-
-    .navbar {
-        height: auto;
-        padding: 15px;
-        flex-wrap: wrap;
-    }
-
-    nav {
-        order: 3;
+    .login-formulario {
         width: 100%;
-        flex-wrap: wrap;
+        max-width: 320px;
     }
-
-    .hero {
-        height: 280px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    main {
-        padding: 35px 20px;
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .card,
-    .card.large {
-        grid-column: span 1;
-    }
-
-    footer {
-        grid-template-columns: 1fr;
-    }
-}

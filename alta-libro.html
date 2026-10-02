@@ -7,30 +7,32 @@
     <title>BookStack - Alta de libro</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="css/alta.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
 </head>
 
-<body>
+<body class="body-alta">
 
     <header class="navbar">
 
         <div class="logo-navbar">
-        <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
         </div>
 
         <nav>
-
-            <a href="#">
+            <a href="catalogo.html">
                 <i class="fa-solid fa-book"></i>
                 Catálogos
             </a>
 
-            <a href="#">
+            <a href="operaciones.html">
                 <i class="fa-solid fa-chart-column"></i>
                 Reportes
             </a>
 
-            <a href="#">
+            <a href="gestion-stock.html">
                 <i class="fa-solid fa-cube"></i>
                 Stock
             </a>
@@ -40,26 +42,25 @@
                 Donaciones
             </a>
 
-            <a href="#">
+            <a href="gestion-stock.html">
                 <i class="fa-solid fa-rotate-left"></i>
                 Devoluciones
             </a>
 
-            <a href="#">
+            <a href="gestion-libros.html">
                 <i class="fa-solid fa-hand-holding-heart"></i>
                 Préstamos
             </a>
 
-            <a href="#">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                Multas
+            <a href="resenas.html">
+                <i class="fa-solid fa-user-group"></i>
+                Reseñas
             </a>
-
-            <a href="#">
+            
+            <a href="index.html">
                 <i class="fa-solid fa-gear"></i>
                 Administración
             </a>
-
         </nav>
 
         <button class="btn-salir" id="btnSalir">
@@ -69,18 +70,13 @@
     </header>
 
     <section class="hero">
-
         <div class="hero-contenido">
-
             <h1>BookStack</h1>
-
             <p>SkillForge</p>
-
         </div>
-
     </section>
 
-    <main>
+    <main class="main-alta">
 
         <section class="formulario">
 
@@ -91,127 +87,85 @@
                 el nuevo ejemplar en el catálogo.
             </p>
 
-
             <div class="form-contenido">
 
                 <div class="campos">
 
                     <div class="campo">
-
                         <label for="isbn">ISBN</label>
-
                         <input
                             type="text"
                             id="isbn"
                             placeholder="978-3-16-148410-0"
                         >
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="titulo">Título</label>
-
                         <input
                             type="text"
                             id="titulo"
                             placeholder="El nombre del libro"
                         >
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="categoria">Categoría</label>
-
                         <select id="categoria">
-
-                            <option value="">
-                                Seleccionar categoría
-                            </option>
-
+                            <option value="">Seleccionar categoría</option>
                             <option>Novela</option>
                             <option>Historia</option>
                             <option>Ciencia</option>
                             <option>Infantil</option>
                             <option>Educación</option>
-
                         </select>
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="fecha">Fecha de ingreso</label>
-
                         <input
                             type="text"
                             id="fecha"
                             placeholder="DD / MM / AAAA"
                         >
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="autor">Autor</label>
-
                         <input
                             type="text"
                             id="autor"
                             placeholder="Nombre del autor"
                         >
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="editorial">Editorial</label>
-
                         <input
                             type="text"
                             id="editorial"
                             placeholder="Nombre de la editorial"
                         >
-
                     </div>
 
                     <div class="fila">
 
                         <div class="campo">
-
-                            <label for="ejemplares">
-                                Número de ejemplares
-                            </label>
-
+                            <label for="ejemplares">Número de ejemplares</label>
                             <input
                                 type="number"
                                 id="ejemplares"
                                 value="1"
                                 min="1"
                             >
-
                         </div>
 
-
                         <div class="campo">
-
-                            <label for="disponibilidad">
-                                Disponibilidad
-                            </label>
-
+                            <label for="disponibilidad">Disponibilidad</label>
                             <select id="disponibilidad">
-
                                 <option>Disponible</option>
                                 <option>No disponible</option>
-
                             </select>
-
                         </div>
 
                     </div>
@@ -237,14 +191,9 @@
                                 <i class="fa-regular fa-image"></i>
                             </div>
 
-                            <p>
-                                Arrastra una imagen o selecciona un
-                                archivo
-                            </p>
+                            <p>Arrastra una imagen o selecciona un archivo</p>
 
-                            <span>
-                                JPG, PNG o PDF (máx. 5 MB)
-                            </span>
+                            <span>JPG, PNG o PDF (máx. 5 MB)</span>
 
                         </div>
 
@@ -260,63 +209,41 @@
 
             </div>
 
-
             <div class="acciones">
-
-                <button
-                    type="button"
-                    class="btn-cancelar"
-                    id="btnCancelar"
-                >
+                <button type="button" class="btn-cancelar" id="btnCancelar">
                     Cancelar
                 </button>
 
-                <button
-                    type="button"
-                    class="btn-guardar"
-                    id="btnGuardar"
-                >
+                <button type="button" class="btn-guardar" id="btnGuardar">
                     Guardar libro
                 </button>
-
             </div>
 
         </section>
 
     </main>
 
-
-    <footer>
+    <footer class="footer-alta">
 
         <div class="footer-redes">
-
             <div class="redes">
-
                 <a href="#" aria-label="X">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
-
                 <a href="#" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-
                 <a href="#" aria-label="YouTube">
                     <i class="fa-brands fa-youtube"></i>
                 </a>
-
                 <a href="#" aria-label="LinkedIn">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-
             </div>
-
         </div>
 
-
         <div class="footer-columna">
-
             <h4>Use cases</h4>
-
             <p>UI design</p>
             <p>UX design</p>
             <p>Wireframing</p>
@@ -324,14 +251,10 @@
             <p>Brainstorming</p>
             <p>Online whiteboard</p>
             <p>Team collaboration</p>
-
         </div>
 
-
         <div class="footer-columna">
-
             <h4>Explore</h4>
-
             <p>Design</p>
             <p>Prototyping</p>
             <p>Development features</p>
@@ -339,14 +262,10 @@
             <p>Collaboration features</p>
             <p>Design process</p>
             <p>FigJam</p>
-
         </div>
 
-
         <div class="footer-columna">
-
             <h4>Resources</h4>
-
             <p>Blog</p>
             <p>Best practices</p>
             <p>Colors</p>
@@ -354,11 +273,9 @@
             <p>Support</p>
             <p>Developers</p>
             <p>Resource library</p>
-
         </div>
 
     </footer>
-
 
     <script src="js/alta.js"></script>
 

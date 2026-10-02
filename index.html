@@ -4,59 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookStack - SkillForge</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
-<body>
+<body class="body-index">
+
     <header class="navbar">
-    <div class="logo-navbar">
-        <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
-    </div>
-<nav>
-    <a href="#">
-        <i class="fa-solid fa-book"></i>
-        Catálogos
-    </a>
-    <a href="#">
-        <i class="fa-solid fa-chart-column"></i>
-        Reportes
-    </a>
-    <a href="#">
-        <i class="fa-solid fa-cube"></i>
-        Stock
-    </a>
-    <a href="#">
-        <i class="fa-regular fa-heart"></i>
-        Donaciones
-    </a>
-    <a href="#">
-        <i class="fa-solid fa-rotate-left"></i>
-        Devoluciones
-    </a>
-    <a href="#">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-        Préstamos
-    </a>
-    <a href="#">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        Multas
-    </a>
-    <a href="#">
-        <i class="fa-solid fa-gear"></i>
-        Administración
-    </a>
-</nav>
-        <button class="logout" id="logout">Salir</button>
+
+        <div class="logo-navbar">
+            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+        </div>
+
+        <nav>
+            <a href="catalogo.html">
+                <i class="fa-solid fa-book"></i>
+                Catálogos
+            </a>
+
+            <a href="operaciones.html">
+                <i class="fa-solid fa-chart-column"></i>
+                Reportes
+            </a>
+
+            <a href="gestion-stock.html">
+                <i class="fa-solid fa-cube"></i>
+                Stock
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-heart"></i>
+                Donaciones
+            </a>
+
+            <a href="gestion-stock.html">
+                <i class="fa-solid fa-rotate-left"></i>
+                Devoluciones
+            </a>
+
+            <a href="gestion-libros.html">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                Préstamos
+            </a>
+
+            <a href="resenas.html">
+                <i class="fa-solid fa-user-group"></i>
+                Reseñas
+            </a>
+            
+            <a href="index.html">
+                <i class="fa-solid fa-gear"></i>
+                Administración
+            </a>
+        </nav>
+
+
+        <button class="btn-salir" id="btnSalir">
+            Salir
+        </button>
+
     </header>
-    <section class="hero">
-        <div class="hero-content">
+
+    <section class="hero hero-index">
+        <div class="hero-contenido">
             <h1>BookStack</h1>
             <p>SkillForge</p>
         </div>
     </section>
-    <main>
+
+    <main class="main-index">
+
         <h2>Buenas tardes, $usuario</h2>
+
         <div class="search-box">
             <span class="menu-icon">☰</span>
             <input
@@ -66,49 +87,65 @@
             >
             <span class="search-icon">⌕</span>
         </div>
+
         <section class="cards" id="cards">
 
-            <div class="card">
-                <div class="card-image">🖼</div>
-                <h3>Alta de Libros</h3>
-            </div>
+            <a href="alta-libro.html" class="card-link">
+                <div class="card">
+                    <div class="card-image">🖼</div>
+                    <h3>Alta de Libros</h3>
+                </div>
+            </a>
+            <a href="gestion-usuarios.html" class="card-link">
+                <div class="card">
+                    <div class="card-image">🖼</div>
+                    <h3>Alta Clientes</h3>
+                </div>
+            </a>
+            <a href="#" class="card-link">
+                <div class="card">
+                    <div class="card-image">🖼</div>
+                    <h3>Administración de donaciones</h3>
+                </div>
+            </a>
 
-            <div class="card">
-                <div class="card-image">🖼</div>
-                <h3>Alta Clientes</h3>
-            </div>
-
-            <div class="card">
-                <div class="card-image">🖼</div>
-                <h3>Administracion de<br>donaciones</h3>
-            </div>
-
-            <div class="card large">
-                <div class="card-image">🖼</div>
-                <h3>Administraciones de<br>préstamos</h3>
-            </div>
-
-            <div class="card large">
-                <div class="card-image">🖼</div>
-                <h3>Administración de Stock</h3>
-            </div>
+            <a href="gestion-libros.html" class="card-link">
+                <div class="card">
+                    <div class="card-image">🖼</div>
+                    <h3>Administración de Préstamos</h3>
+                </div>
+            </a>
+            <a href="gestion-stock.html" class="card-link">
+                <div class="card">
+                    <div class="card-image">🖼</div>
+                    <h3>Administración de Stock</h3>
+                </div>
+            </a>
 
         </section>
 
     </main>
 
-    <footer>
+    <footer class="footer-index">
 
-        <div class="footer-logo">
-            <div class="socials">
-                <span>𝕏</span>
-                <span>◎</span>
-                <span>▶</span>
-                <span>in</span>
+        <div class="footer-redes">
+            <div class="redes redes-index">
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
             </div>
         </div>
 
-        <div class="footer-column">
+        <div class="footer-columna">
             <h4>Use cases</h4>
             <p>UI design</p>
             <p>UX design</p>
@@ -119,7 +156,7 @@
             <p>Team collaboration</p>
         </div>
 
-        <div class="footer-column">
+        <div class="footer-columna">
             <h4>Explore</h4>
             <p>Design</p>
             <p>Prototyping</p>
@@ -130,7 +167,7 @@
             <p>FigJam</p>
         </div>
 
-        <div class="footer-column">
+        <div class="footer-columna">
             <h4>Resources</h4>
             <p>Blog</p>
             <p>Best practices</p>
