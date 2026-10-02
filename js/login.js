@@ -17,7 +17,6 @@ mostrarPassword.addEventListener("change", function () {
 
 });
 
-
 // ================= LOGIN =================
 
 const loginForm = document.getElementById("loginForm");

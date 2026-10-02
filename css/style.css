@@ -379,12 +379,7 @@ main h2 {
 }
 
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 600px) {
-
-}
-
+/* ================= LOGIN ================= */
 
     .login-main {
         padding-left: 20px;
