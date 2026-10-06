@@ -1,13 +1,3 @@
-
-const btnSalir = document.getElementById("btnSalir");
-
-btnSalir.addEventListener("click", function () {
-
-    alert("Sesión cerrada");
-
-});
-
-
 const zonaImagen = document.getElementById("zonaImagen");
 
 const archivoImagen = document.getElementById("archivoImagen");
@@ -22,7 +12,6 @@ zonaImagen.addEventListener("click", function () {
     archivoImagen.click();
 
 });
-
 
 archivoImagen.addEventListener("change", function () {
 
@@ -137,4 +126,11 @@ btnCancelar.addEventListener("click", function () {
 
     }
 
+});
+
+//Función de cierre de sesión
+const btnSalir = document.getElementById("btnSalir");
+
+btnSalir.addEventListener("click", function () {
+    window.location.href = "login.html";
 });

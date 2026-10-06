@@ -1,3 +1,10 @@
+// BOTÓN SALIR
+const btnSalir = document.getElementById("btnSalir");
+
+btnSalir.addEventListener("click", function () {
+    window.location.href = "login.html";
+});
+
 // BUSCADOR
 const search = document.getElementById("search");
 const cards = document.querySelectorAll(".card");
@@ -20,16 +27,8 @@ search.addEventListener("input", function () {
 
 });
 
-
-// BOTÓN SALIR
-const logout = document.getElementById("logout");
-
-logout.addEventListener("click", function () {
-    alert("Sesión cerrada");
-});
-
-
 // TARJETAS CLICKEABLES
+
 cards.forEach(function (card) {
 
     card.addEventListener("click", function () {

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStack - Alta de libro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body class="body-prestamo">
+
+    <header class="navbar">
+        <div class="logo-navbar">
+            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+        </div>
+
+        <nav>
+            <a href="catalogo.html"><i class="fa-solid fa-book"></i> Catálogos</a>
+            <a href="operaciones.html"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+            <a href="gestion-stock.html"><i class="fa-solid fa-cube"></i> Stock</a>
+            <a href="gestion-stock.html"><i class="fa-regular fa-heart"></i> Donaciones</a>
+            <a href="gestion-stock.html"><i class="fa-solid fa-rotate-left"></i> Devoluciones</a>
+            <a href="registro-prestamo.html"><i class="fa-solid fa-hand-holding-heart"></i> Préstamos</a>
+            <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
+            <a href="index.html"><i class="fa-solid fa-gear"></i> Administración</a>
+        </nav>
+
+        <button class="btn-salir" id="btnSalir">Salir</button>
+    </header>
+
+    <section class="hero hero-index">
+        <div class="hero-contenido">
+            <h1>BookStack</h1>
+            <p>SkillForge</p>
+        </div>
+    </section>
+
+    <main class="main-prestamo">
+
+        <section class="formulario">
+
+            <h2>Registro de préstamo</h2>
+            <p class="descripcion">
+                Completa el documento del cliente y vincula el préstamo de un libro mediante su ISBN.
+            </p>
+
+            <hr class="separador">
+
+            <div class="form-contenido">
+
+                <div class="campos">
+
+                    <div class="bloque">
+                        <h3>Datos del cliente</h3>
+                        <p class="ayuda">Ingresa el documento del cliente.</p>
+
+                        <div class="campo">
+                            <label for="documento">Documento de identidad</label>
+                            <input type="text" id="documento" placeholder="Número de documento"
+                                    inputmode="numeric" maxlength="12">
+                            <small id="clienteInfo"></small>
+                        </div>
+                    </div>
+
+                    <hr class="separador">
+
+                    <div class="bloque">
+                        <h3>Retiro / préstamo</h3>
+                        <p class="ayuda">Este retiro quedará vinculado al cliente del formulario.</p>
+
+                        <div class="campo">
+                            <label for="isbn">ISBN del libro</label>
+                            <input type="text" id="isbn" placeholder="978-3-16-148410-0" maxlength="17">
+                            <small>Identificador del libro que se asociará a este préstamo.</small>
+                        </div>
+
+                        <div class="campo">
+                            <label for="titulo">Título asociado al ISBN</label>
+                            <input type="text" id="titulo" placeholder="Escribe el título correspondiente">
+                            <small>Completa el título para identificar el libro indicado.</small>
+                        </div>
+
+                        <div class="fila">
+                            <div class="campo">
+                                <label>Fecha de retiro</label>
+                                <div class="fecha-grupo" id="grupoRetiro">
+                                    <input type="text" id="retiroDia"  placeholder="DD"   maxlength="2" inputmode="numeric">
+                                    <input type="text" id="retiroMes"  placeholder="MM"   maxlength="2" inputmode="numeric">
+                                    <input type="text" id="retiroAnio" placeholder="AAAA" maxlength="4" inputmode="numeric">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <label>Fecha prevista de devolución</label>
+                                <div class="fecha-grupo" id="grupoDevolucion">
+                                    <input type="text" id="devDia"  placeholder="DD"   maxlength="2" inputmode="numeric">
+                                    <input type="text" id="devMes"  placeholder="MM"   maxlength="2" inputmode="numeric">
+                                    <input type="text" id="devAnio" placeholder="AAAA" maxlength="4" inputmode="numeric">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="panel-pasos">
+
+                    <div class="paso">
+                        <div class="paso-icono"><i class="fa-regular fa-user"></i></div>
+                        <div>
+                            <h4>Cliente</h4>
+                            <p>Se autocompletará; de lo contrario, se abrirá la ventana para completar los datos de registro</p>
+                        </div>
+                    </div>
+
+                    <div class="paso">
+                        <div class="paso-icono"><i class="fa-solid fa-book-open"></i></div>
+                        <div>
+                            <h4>Libro identificado por ISBN</h4>
+                            <p>ISBN y título asociado</p>
+                        </div>
+                    </div>
+
+                    <div class="paso">
+                        <div class="paso-icono"><i class="fa-regular fa-calendar"></i></div>
+                        <div>
+                            <h4>Retiro / préstamo</h4>
+                            <p>Fecha de retiro y devolución prevista</p>
+                        </div>
+                    </div>
+
+                    <p class="nota">
+                        Verifica que el ISBN y el título correspondan al mismo libro antes de registrar el retiro.
+                    </p>
+
+                </aside>
+            </div>
+
+            <p class="mensaje-form" id="mensajeForm" role="status"></p>
+
+            <div class="acciones acciones-linea">
+                <button type="button" class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                <button type="button" class="btn-guardar" id="btnGuardar">Registrar préstamo</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <dialog id="modalCliente" class="modal">
+        <form method="dialog" id="formCliente">
+            <h3>Cliente no encontrado</h3>
+            <p class="ayuda">Completa los datos para registrarlo.</p>
+
+            <div class="campo">
+                <label for="cliDocumento">Documento</label>
+                <input type="text" id="cliDocumento" readonly>
+            </div>
+            <div class="campo">
+                <label for="cliNombre">Nombre completo</label>
+                <input type="text" id="cliNombre" placeholder="Nombre y apellido">
+            </div>
+            <div class="campo">
+                <label for="cliTelefono">Teléfono</label>
+                <input type="text" id="cliTelefono" placeholder="09X XXX XXX" inputmode="tel">
+            </div>
+
+            <p class="error-texto" id="errorCliente"></p>
+
+            <div class="acciones">
+                <button type="button" class="btn-cancelar" id="btnCancelarCliente">Cancelar</button>
+                <button type="button" class="btn-guardar" id="btnGuardarCliente">Guardar cliente</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="footer-index">
+
+        <section class="footer-redes">
+            <div class="redes redes-index">
+                <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </section>
+
+        <section class="footer-columna">
+            <h4>Use cases</h4>
+            <p>UI design</p>
+            <p>UX design</p>
+            <p>Wireframing</p>
+            <p>Diagramming</p>
+            <p>Brainstorming</p>
+            <p>Online whiteboard</p>
+            <p>Team collaboration</p>
+        </section>
+
+        <section class="footer-columna">
+            <h4>Explore</h4>
+            <p>Design</p>
+            <p>Prototyping</p>
+            <p>Development features</p>
+            <p>Design systems</p>
+            <p>Collaboration features</p>
+            <p>Design process</p>
+            <p>FigJam</p>
+        </section>
+
+        <section class="footer-columna">
+            <h4>Resources</h4>
+            <p>Blog</p>
+            <p>Best practices</p>
+            <p>Colors</p>
+            <p>Color wheel</p>
+            <p>Support</p>
+            <p>Developers</p>
+            <p>Resource library</p>
+        </section>
+
+    </footer>
+
+    <script src="js/prestamos.js"></script>
+</body>
+</html>
