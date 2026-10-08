@@ -19,7 +19,7 @@ const reviews = [
 ];
 
 
-/* ============ ELEMENTOS ============ */
+// ELEMENTOS 
 
 const $ = (id) => document.getElementById(id);
 
@@ -29,7 +29,7 @@ const mensaje     = $("mensaje");
 const inputs      = [$("dia"), $("mes"), $("anio")];
 
 
-/* ============ RENDER DEL LIBRO ============ */
+// RENDER DEL LIBRO
 
 function mostrarLibro() {
     $("titulo").textContent       = libro.titulo;
@@ -46,7 +46,7 @@ function mostrarLibro() {
     btnPrestamo.disabled = !libro.disponible;
 }
 
-/* ============ RENDER DE RESEÑAS ============ */
+// RENDER DE RESEÑAs
 
 function mostrarReviews() {
     $("reviewsGrid").innerHTML = reviews.map((r) => {
@@ -76,13 +76,13 @@ btnFavorito.addEventListener("click", () => {
     btnFavorito.classList.toggle("activo");
 });
 
-/* ============ ACORDEÓN ============ */
+// ACORDEÓN 
 
 $("acordeonBtn").addEventListener("click", () => {
     $("acordeon").classList.toggle("abierto");
 });
 
-/* ============ FECHA DE DEVOLUCIÓN ============ */
+// FECHA DE DEVOLUCIÓN 
 
 inputs.forEach((input, i) => {
     input.addEventListener("input", () => {

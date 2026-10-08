@@ -846,3 +846,167 @@ main.detalle {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================= CATÁLOGO ================= */
+
+.body-catalogo {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf7ff;
+    color: #202020;
+}
+
+.catalogo {
+    min-height: auto;
+    padding: 48px 50px 80px;
+}
+
+.catalogo h2 {
+    font-size: 20px;
+    margin: 0 0 40px 8px;
+}
+
+
+/*========== CATALOGO ============= */
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 48px;
+    padding: 0 18px;
+    margin-bottom: 34px;
+    background: #ece8f2;
+    border-radius: 25px;
+    color: #555;
+}
+
+.buscador input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    color: #333;
+}
+
+.catalogo-layout {
+    display: grid;
+    grid-template-columns: 196px 1fr;
+    gap: 34px;
+    align-items: start;
+}
+
+.categorias {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.categorias h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.categorias ul {
+    list-style: none;
+}
+
+.categorias li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.categorias li span {
+    color: #777;
+}
+
+.categorias li:hover {
+    background: #f3f0f7;
+}
+
+.categorias li.activa {
+    background: #e3e3e3;
+    border-color: #999;
+}
+
+.lista-libros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+}
+
+.libro-card {
+    display: block;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.libro-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.libro-imagen {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 18px;
+    background: #e3e3e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cfcfcf;
+    font-size: 48px;
+    overflow: hidden;
+}
+
+.libro-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.libro-card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.libro-card p {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #777;
+}
+
+.sin-resultados {
+    grid-column: 1 / -1;
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+    .catalogo-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .catalogo {
+        padding: 30px 15px 60px;
+    }
+
+    .lista-libros {
+        grid-template-columns: 1fr;
+    }
+}

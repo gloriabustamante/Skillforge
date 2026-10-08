@@ -78,7 +78,7 @@ function escribirFecha([d, m, a], fecha) {
     escribirFecha(devolucion, dev);
 })();
 
-/* ---------- Documento y cliente ---------- */
+//  Documento y cliente
 
 documento.addEventListener("input", () => {
     documento.value = soloDigitos(documento.value);
@@ -128,7 +128,7 @@ $("btnGuardarCliente").addEventListener("click", () => {
     modal.close();
 });
 
-/* ---------- ISBN ---------- */
+// Validación de ISBN
 
 isbn.addEventListener("input", () => {
     isbn.value = isbn.value.replace(/[^0-9Xx-]/g, "");
@@ -142,7 +142,7 @@ function isbnValido(valor) {
 
 titulo.addEventListener("input", () => marcarError(titulo, false));
 
-/* ---------- Validación y guardado ---------- */
+// Validación y guardado 
 
 function validar() {
     let ok = true;
@@ -200,14 +200,14 @@ $("btnGuardar").addEventListener("click", () => {
         devolucion: fechas.fDev.toISOString().slice(0, 10)
     };
 
-    /* Acá prestamo al backend (fetch / POST) */
+// Acá prestamo al backend (fetch / POST)
     console.log("Préstamo registrado:", prestamo);
 
     mostrarMensaje("Préstamo registrado correctamente.", "exito");
     limpiarFormulario(false);
 });
 
-/* ---------- Cancelar / limpiar ---------- */
+// Cancelar y limpiar el formulario
 
 function limpiarFormulario(limpiarMensaje = true) {
     [documento, isbn, titulo].forEach((i) => {

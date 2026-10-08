@@ -1,10 +1,3 @@
-// BOTÓN SALIR
-const btnSalir = document.getElementById("btnSalir");
-
-btnSalir.addEventListener("click", function () {
-    window.location.href = "login.html";
-});
-
 // BUSCADOR
 const search = document.getElementById("search");
 const cards = document.querySelectorAll(".card");
@@ -39,4 +32,11 @@ cards.forEach(function (card) {
 
     });
 
+});
+
+// BOTÓN SALIR
+const btnSalir = document.getElementById("btnSalir");
+
+btnSalir.addEventListener("click", function () {
+    window.location.href = "login.html";
 });
