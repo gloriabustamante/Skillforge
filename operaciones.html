@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Acá configuro el documento y enlazo los estilos compartidos del proyecto. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStack - Operaciones</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body class="body-operaciones">
+
+    <!-- En esta parte dejo la navegación principal para moverme entre los módulos. -->
+    <header class="navbar">
+        <div class="logo-navbar">
+            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+        </div>
+
+        <nav aria-label="Navegación principal">
+            <a href="catalogo.html">
+                <i class="fa-solid fa-book" aria-hidden="true"></i>
+                Catálogos
+            </a>
+
+            <a href="operaciones.html" aria-current="page">
+                <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+                Reportes
+            </a>
+
+            <a href="gestion-stock.html">
+                <i class="fa-solid fa-cube" aria-hidden="true"></i>
+                Stock
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                Donaciones
+            </a>
+
+            <a href="gestion-stock.html">
+                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                Devoluciones
+            </a>
+
+            <a href="gestion-libros.html">
+                <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                Préstamos
+            </a>
+
+            <a href="resenas.html">
+                <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                Reseñas
+            </a>
+
+            <a href="index.html">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                Administración
+            </a>
+        </nav>
+
+        <button class="btn-salir" id="btnSalir" type="button">
+            Salir
+        </button>
+    </header>
+
+    <!-- Acá muestro la identidad de BookStack, igual que en las demás páginas. -->
+    <section class="hero">
+        <div class="hero-contenido">
+            <h1>BookStack</h1>
+            <p>SkillForge</p>
+        </div>
+    </section>
+
+    <main class="operaciones-main">
+        <section class="panel-operaciones" aria-labelledby="titulo-operaciones">
+            <header class="operaciones-encabezado">
+                <h2 id="titulo-operaciones">Operaciones</h2>
+                <p class="operaciones-descripcion">
+                    Resumen del estado actual de los préstamos y quién los tiene asignados.
+                </p>
+            </header>
+
+            <div class="resumen-operaciones" aria-label="Resumen de préstamos">
+                <article class="tarjeta-resumen tarjeta-prestados">
+                    <p>Total de libros prestados</p>
+                    <strong>3</strong>
+                    <span>Ejemplo demostrativo</span>
+                </article>
+                <article class="tarjeta-resumen tarjeta-pendientes">
+                    <p>Pendientes de devolución</p>
+                    <strong>2</strong>
+                    <span>Ejemplo demostrativo</span>
+                </article>
+                <article class="tarjeta-resumen tarjeta-devueltos">
+                    <p>Devueltos hoy</p>
+                    <strong>1</strong>
+                    <span>Ejemplo demostrativo</span>
+                </article>
+            </div>
+
+            <section class="ultimas-operaciones" aria-labelledby="titulo-ultimas-operaciones">
+                <h3 id="titulo-ultimas-operaciones">Últimas operaciones</h3>
+                <p class="operaciones-descripcion">
+                    Ejemplos de préstamos activos con su estado y responsable.
+                </p>
+
+                <div class="tabla-contenedor">
+                    <table class="tabla-operaciones">
+                        <caption class="visually-hidden">Ejemplos de las últimas operaciones</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">ISBN</th>
+                                <th scope="col">Libro</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Quién lo tiene</th>
+                                <th scope="col"><span class="visually-hidden">Acciones</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>978-3-16-148410-0</td>
+                                <td>El aleph</td>
+                                <td><span class="estado-operacion estado-pendiente">Pendiente</span></td>
+                                <td>María G. (DNI 12.345.678)</td>
+                                <td>
+                                    <button class="btn-editar-operacion" type="button" aria-label="Editar operación de El aleph">
+                                        <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>978-84-663-1234-5</td>
+                                <td>Rayuela</td>
+                                <td><span class="estado-operacion estado-devuelto">Devuelto</span></td>
+                                <td>Biblioteca Central (DEVUELTO)</td>
+                                <td>
+                                    <button class="btn-editar-operacion" type="button" aria-label="Editar operación de Rayuela">
+                                        <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>978-950-07-1234-1</td>
+                                <td>Ficciones</td>
+                                <td><span class="estado-operacion estado-pendiente">Pendiente</span></td>
+                                <td>Juan P. (DNI 34.567.890)</td>
+                                <td>
+                                    <button class="btn-editar-operacion" type="button" aria-label="Editar operación de Ficciones">
+                                        <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Cierro la página con las redes y las columnas informativas del proyecto. -->
+    <footer class="footer-operaciones">
+        <div class="footer-redes">
+            <div class="redes">
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-columna">
+            <h4>Use cases</h4>
+            <p>UI design</p>
+            <p>UX design</p>
+            <p>Wireframing</p>
+            <p>Diagramming</p>
+            <p>Brainstorming</p>
+            <p>Online whiteboard</p>
+            <p>Team collaboration</p>
+        </div>
+
+        <div class="footer-columna">
+            <h4>Explore</h4>
+            <p>Design</p>
+            <p>Prototyping</p>
+            <p>Development features</p>
+            <p>Design systems</p>
+            <p>Collaboration features</p>
+            <p>Design process</p>
+            <p>FigJam</p>
+        </div>
+
+        <div class="footer-columna">
+            <h4>Resources</h4>
+            <p>Blog</p>
+            <p>Best practices</p>
+            <p>Colors</p>
+            <p>Color wheel</p>
+            <p>Support</p>
+            <p>Developers</p>
+            <p>Resource library</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

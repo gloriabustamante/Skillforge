@@ -356,3 +356,302 @@ main h2 {
         width: 100%;
         max-width: 320px;
     }
+
+/* ================= OPERACIONES ================= */
+
+.body-operaciones {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf8fc;
+    color: #222;
+}
+
+.body-operaciones .navbar {
+    height: 78px;
+    gap: 8px;
+    padding: 0 15px;
+    border-bottom: 3px solid #138bd0;
+}
+
+.body-operaciones .logo-navbar {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+}
+
+.body-operaciones .navbar nav {
+    height: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    gap: 2px;
+    overflow-x: auto;
+}
+
+.body-operaciones .navbar nav a {
+    flex: 0 0 auto;
+    gap: 4px;
+    padding: 6px 2px;
+    font-size: 9px;
+}
+
+.body-operaciones .navbar nav a i {
+    font-size: 9px;
+}
+
+.body-operaciones .btn-salir {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #eee;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
+}
+
+.body-operaciones .hero {
+    height: 235px;
+}
+
+.body-operaciones .hero-contenido {
+    margin-top: 0;
+}
+
+.body-operaciones .hero h1 {
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+
+.body-operaciones .hero p {
+    font-size: 16px;
+}
+
+.operaciones-main {
+    width: min(100%, 1440px);
+    min-height: 466px;
+    margin: 0 auto;
+    padding: 34px 32px 100px;
+}
+
+.operaciones-encabezado {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e6e3e8;
+}
+
+.operaciones-encabezado h2 {
+    margin-bottom: 4px;
+    color: #202020;
+    font-size: 13px;
+}
+
+.operaciones-descripcion {
+    color: #888;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.panel-operaciones {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e2e6;
+    border-radius: 6px;
+    padding-bottom: 9px;
+}
+
+.panel-operaciones > .operaciones-encabezado,
+.resumen-operaciones,
+.ultimas-operaciones {
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.panel-operaciones > .operaciones-encabezado {
+    margin-top: 12px;
+}
+
+.resumen-operaciones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.tarjeta-resumen {
+    min-height: 65px;
+    padding: 9px 8px 7px;
+    border: 1px solid;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+.tarjeta-resumen p,
+.tarjeta-resumen span {
+    display: block;
+    color: #888;
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+.tarjeta-resumen strong {
+    display: block;
+    margin: 2px 0 3px;
+    color: #222;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.tarjeta-prestados {
+    border-color: #58d88d;
+}
+
+.tarjeta-pendientes {
+    border-color: #eb6868;
+}
+
+.tarjeta-devueltos {
+    border-color: #f49a48;
+}
+
+.ultimas-operaciones {
+    margin-top: 12px;
+}
+
+.ultimas-operaciones h3 {
+    margin-bottom: 5px;
+    color: #222;
+    font-size: 10px;
+}
+
+.ultimas-operaciones > .operaciones-descripcion {
+    margin-bottom: 5px;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+}
+
+.tabla-operaciones {
+    width: 100%;
+    border-collapse: collapse;
+    color: #444;
+    font-size: 9px;
+    text-align: left;
+}
+
+.tabla-operaciones th {
+    padding: 5px 8px;
+    background: #f6f6f6;
+    color: #555;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tabla-operaciones td {
+    padding: 9px 8px;
+    border-top: 1px solid #e8e8e8;
+    vertical-align: middle;
+}
+
+.tabla-operaciones th:nth-child(1),
+.tabla-operaciones td:nth-child(1) {
+    width: 26%;
+    white-space: nowrap;
+}
+
+.tabla-operaciones th:nth-child(2),
+.tabla-operaciones td:nth-child(2) {
+    width: 26%;
+}
+
+.tabla-operaciones th:nth-child(3),
+.tabla-operaciones td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.tabla-operaciones th:nth-child(5),
+.tabla-operaciones td:nth-child(5) {
+    width: 28px;
+    padding-right: 6px;
+    padding-left: 4px;
+}
+
+.estado-operacion {
+    display: inline-block;
+    width: 72px;
+    padding: 4px 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    color: #888;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.estado-pendiente {
+    border-color: #f49a48;
+}
+
+.estado-devuelto {
+    border-color: #58d88d;
+}
+
+.btn-editar-operacion {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #222;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.footer-operaciones {
+    padding: 30px 25px;
+}
+
+@media (max-width: 560px) {
+    .body-operaciones .navbar {
+        padding: 0 10px;
+    }
+
+    .body-operaciones .navbar nav a {
+        font-size: 8px;
+    }
+
+    .operaciones-main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .panel-operaciones > .operaciones-encabezado,
+    .resumen-operaciones,
+    .ultimas-operaciones {
+        margin-right: 9px;
+        margin-left: 9px;
+    }
+
+    .tabla-operaciones {
+        min-width: 520px;
+    }
+}
+
+@media (max-width: 380px) {
+    .resumen-operaciones {
+        grid-template-columns: 1fr;
+    }
+}
