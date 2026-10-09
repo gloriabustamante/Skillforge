@@ -1,28 +1,13 @@
-
-const btnSalir = document.getElementById("btnSalir");
-
-btnSalir.addEventListener("click", function () {
-
-    alert("Sesión cerrada");
-
-});
-
-
 const zonaImagen = document.getElementById("zonaImagen");
-
 const archivoImagen = document.getElementById("archivoImagen");
-
 const preview = document.getElementById("preview");
-
 const contenidoImagen = document.getElementById("contenidoImagen");
-
 
 zonaImagen.addEventListener("click", function () {
 
     archivoImagen.click();
 
 });
-
 
 archivoImagen.addEventListener("change", function () {
 
@@ -137,4 +122,17 @@ btnCancelar.addEventListener("click", function () {
 
     }
 
+});
+
+// Validación de ISBN
+function isbnValido(valor) {
+    const limpio = valor.replace(/-/g, "");
+    return /^\d{13}$/.test(limpio) || /^\d{9}[\dXx]$/.test(limpio);
+}
+
+//Función de cierre de sesión
+const btnSalir = document.getElementById("btnSalir");
+
+btnSalir.addEventListener("click", function () {
+    window.location.href = "login.html";
 });
