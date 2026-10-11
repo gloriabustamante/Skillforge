@@ -452,3 +452,116 @@
     outline: 2px solid #999;
     border-radius: 4px;
 }
+
+/* ================= BIBLIOTECA PERSONAL ================= */
+
+.tabla-resumen {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 12px 0;
+    margin: 20px -12px 28px;
+    width: calc(100% + 24px);
+}
+
+.resumen {
+    width: 50%;
+    padding: 12px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    vertical-align: top;
+}
+
+.resumen span,
+.resumen small {
+    display: block;
+    font-size: 12px;
+    color: #777;
+}
+
+.resumen strong {
+    display: block;
+    margin: 8px 0;
+    font-size: 18px;
+    color: #202020;
+}
+
+.resumen-verde { border-color: #2bb673; }
+.resumen-rojo  { border-color: #e5484d; }
+
+.titulo-tabla {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.main-prestamo .ayuda {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.tabla-operaciones {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.tabla-operaciones th {
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    font-size: 12px;
+    font-weight: normal;
+    color: #777;
+    text-align: left;
+}
+
+.tabla-operaciones th:first-child { border-radius: 6px 0 0 6px; }
+.tabla-operaciones th:last-child  { border-radius: 0 6px 6px 0; }
+
+.tabla-operaciones td {
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 13px;
+    color: #202020;
+    vertical-align: middle;
+}
+
+.tabla-operaciones td:first-child {
+    border-left: 1px solid #e3e3e3;
+    border-radius: 6px 0 0 6px;
+}
+
+.tabla-operaciones td:last-child {
+    border-right: 1px solid #e3e3e3;
+    border-radius: 0 6px 6px 0;
+}
+
+.tabla-operaciones th:nth-child(1),
+.tabla-operaciones td:nth-child(1) { width: 36%; }
+
+.tabla-operaciones th:nth-child(2),
+.tabla-operaciones td:nth-child(2) { width: 38%; }
+
+.estado {
+    display: inline-block;
+    min-width: 92px;
+    padding: 5px 12px;
+    border: 1px solid;
+    border-radius: 6px;
+    background: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.estado-pendiente {
+    border-color: #e08a1e;
+    color: #8a8a8a;
+}
+
+.estado-devuelto {
+    border-color: #2bb673;
+    color: #8a8a8a;
+}
