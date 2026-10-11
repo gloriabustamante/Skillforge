@@ -355,3 +355,100 @@
     margin-top: 18px;
     padding-top: 16px;
 }
+
+/* ================= FORMULARIO RESEÑAS ================= */
+
+.tabla-form {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-form td {
+    padding: 0 0 12px;
+    vertical-align: top;
+}
+
+.tabla-form label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.tabla-form input[type="text"],
+.tabla-form input[type="email"] {
+    width: 100%;
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+    background: white;
+}
+
+.tabla-form input:focus,
+.tabla-form textarea:focus {
+    border-color: #999;
+}
+
+.tabla-form small {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #888;
+}
+
+.acciones-celda {
+    text-align: right;
+}
+
+.acciones-celda button {
+    margin-left: 16px;
+}
+
+.tabla-form textarea {
+    width: 100%;
+    min-height: 96px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+    resize: vertical;
+    background: white;
+}
+
+.estrellas-input {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.estrellas-input input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.estrellas-input label {
+    display: inline;
+    margin: 0;
+    font-size: 18px;
+    color: #f5b301;
+    cursor: pointer;
+}
+
+.estrellas-input input:checked ~ label i,
+.estrellas-input label:hover i,
+.estrellas-input label:hover ~ label i {
+    font-weight: 900;
+}
+
+.estrellas-input input:focus-visible + label {
+    outline: 2px solid #999;
+    border-radius: 4px;
+}

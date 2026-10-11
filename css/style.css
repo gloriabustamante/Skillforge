@@ -295,6 +295,23 @@ main h2 {
     border-color: #999;
 }
 
+.campo textarea {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #555;
+    outline: none;
+    resize: vertical;
+}
+
+.campo textarea:focus {
+    border-color: #999;
+}
+
 /* ================= MOSTRAR CONTRASEÑA ================= */
 
 .mostrar-password {

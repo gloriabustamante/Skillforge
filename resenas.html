@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStack - Reseñas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body class="body-prestamo">
+
+    <header class="navbar">
+        <div class="logo-navbar">
+            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+        </div>
+        <nav>
+            <a href="catalogo.html"><i class="fa-solid fa-book"></i> Catálogos</a>
+            <a href="operaciones.html"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+            <a href="gestion-stock.html"><i class="fa-solid fa-cube"></i> Stock</a>
+            <a href="gestion-stock.html"><i class="fa-regular fa-heart"></i> Donaciones</a>
+            <a href="gestion-stock.html"><i class="fa-solid fa-rotate-left"></i> Devoluciones</a>
+            <a href="registro-prestamo.html"><i class="fa-solid fa-hand-holding-heart"></i> Préstamos</a>
+            <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
+            <a href="index.html"><i class="fa-solid fa-gear"></i> Administración</a>
+        </nav>
+
+        <button class="btn-salir" id="btnSalir">Salir</button>
+    </header>
+
+    <section class="hero hero-index">
+        <div class="hero-contenido">
+            <h1>BookStack</h1>
+            <p>SkillForge</p>
+        </div>
+    </section>
+
+    <main class="main-prestamo">
+        <form class="formulario" method="post" action="resenas.php"> 
+            <h2>Dejanos tu opinión</h2>
+            <p class="descripcion">Tu opinión ayuda a crecer nuestra comunidad de lectores</p>
+            <table class="tabla-form">
+                <tr>
+                    <td><hr class="separador"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Calificación</h3>
+                        <span class="estrellas-input" role="radiogroup" aria-label="Calificación">
+                            <input type="radio" id="estrella5" name="calificacion" value="5" required>
+                            <label for="estrella5" title="5 estrellas"><i class="fa-regular fa-star"></i></label>
+                            <input type="radio" id="estrella4" name="calificacion" value="4">
+                            <label for="estrella4" title="4 estrellas"><i class="fa-regular fa-star"></i></label>
+                            <input type="radio" id="estrella3" name="calificacion" value="3">
+                            <label for="estrella3" title="3 estrellas"><i class="fa-regular fa-star"></i></label>
+                            <input type="radio" id="estrella2" name="calificacion" value="2">
+                            <label for="estrella2" title="2 estrellas"><i class="fa-regular fa-star"></i></label>
+                            <input type="radio" id="estrella1" name="calificacion" value="1">
+                            <label for="estrella1" title="1 estrella"><i class="fa-regular fa-star"></i></label>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><hr class="separador"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="nombre">Nombre completo (Opcional)</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Correo Electrónico (Opcional)</label>
+                        <input type="email" id="email" name="email" maxlength="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="titulo">Título del libro (Obligatorio)</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Escribe el título correspondiente" maxlength="200" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="autor">Autor (Obligatorio)</label>
+                        <input type="text" id="autor" name="autor" placeholder="Nombre del autor" maxlength="100" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fecha">Fecha de retiro (Obligatorio)</label>
+                        <input type="text" id="fecha" name="fecha" placeholder="DD / MM / AAAA" inputmode="numeric" pattern="\d{2}\s?/\s?\d{2}\s?/\s?\d{4}" maxlength="14" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="resena">Reseña</label>
+                        <textarea id="resena" name="resena" maxlength="1000" required></textarea>
+                        <small>Completa el campo para dejar tus comentarios</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p class="mensaje-form" id="mensajeForm" role="status"></p></td>
+                </tr>
+                <tr>
+                    <td><hr class="separador"></td>
+                </tr>
+                <tr>
+                    <td class="acciones-celda">
+                        <button type="reset" class="btn-cancelar">Cancelar</button>
+                        <button type="submit" class="btn-guardar">Enviar</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </main>
+    <footer class="footer-index">
+
+        <section class="footer-redes">
+            <div class="redes redes-index">
+                <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </section>
+
+        <section class="footer-columna">
+            <h4>Use cases</h4>
+            <p>UI design</p>
+            <p>UX design</p>
+            <p>Wireframing</p>
+            <p>Diagramming</p>
+            <p>Brainstorming</p>
+            <p>Online whiteboard</p>
+            <p>Team collaboration</p>
+        </section>
+
+        <section class="footer-columna">
+            <h4>Explore</h4>
+            <p>Design</p>
+            <p>Prototyping</p>
+            <p>Development features</p>
+            <p>Design systems</p>
+            <p>Collaboration features</p>
+            <p>Design process</p>
+            <p>FigJam</p>
+        </section>
+
+        <section class="footer-columna">
+            <h4>Resources</h4>
+            <p>Blog</p>
+            <p>Best practices</p>
+            <p>Colors</p>
+            <p>Color wheel</p>
+            <p>Support</p>
+            <p>Developers</p>
+            <p>Resource library</p>
+        </section>
+
+    </footer>
+
+</body>
+</html>

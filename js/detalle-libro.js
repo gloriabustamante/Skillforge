@@ -1,23 +1,15 @@
 /* ============ DATOS (acá iría nuestra API en caso de que la llegaramos a hacer) ============ */
 
-const libro = {
-    titulo: "Harry Potter y la piedra filosofal",
-    autor: "J.K. Rowling",
-    isbn: "978-84-9838-037-9",
-    editorial: "Salamandra",
-    categoria: "Fantasía",
-    fechaIngreso: "12/03/2024",
-    disponible: true,
-    portada: "img/harry-potter.jpg",
-    descripcion: "Harry descubre en su cumpleaños número once que es un mago y viaja a Hogwarts."
-};
+const isbnSeleccionado = new URLSearchParams(window.location.search).get("isbn");
+const libro = isbnSeleccionado ? buscarLibro(isbnSeleccionado) : null;
+
+// DEBERIA TRAER LOS DATOS DE LOS FORMULARIOS QUE SE CARGUEN
 
 const reviews = [
     { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 },
     { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 },
     { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 }
 ];
-
 
 // ELEMENTOS 
 
@@ -32,21 +24,35 @@ const inputs      = [$("dia"), $("mes"), $("anio")];
 // RENDER DEL LIBRO
 
 function mostrarLibro() {
+
+    // Si no existe, ocultar todo y mostrar el aviso
+    if (!libro) {
+        document.querySelector(".libro").hidden = true;
+        document.querySelector(".reviews").hidden = true;
+        $("noEncontrado").hidden = false;
+        return;
+    }
+
     $("titulo").textContent       = libro.titulo;
     $("autor").textContent        = libro.autor;
     $("isbn").textContent         = libro.isbn;
     $("editorial").textContent    = libro.editorial;
     $("categoria").textContent    = libro.categoria;
     $("fechaIngreso").textContent = libro.fechaIngreso;
-    $("descripcion").textContent  = libro.descripcion;
-    $("portada").src              = libro.portada;
+    $("descripcion").textContent  = libro.descripcion || "Este libro todavía no tiene descripción.";
+
+    if (libro.portada) {
+        $("portada").src = libro.portada;
+    } else {
+        $("portada").style.background = "#e3e3e3";
+    }
 
     $("estadoTexto").textContent = libro.disponible ? "Disponible" : "No disponible";
     $("estado").classList.toggle("no-disponible", !libro.disponible);
     btnPrestamo.disabled = !libro.disponible;
 }
 
-// RENDER DE RESEÑAs
+// Render de reseñas
 
 function mostrarReviews() {
     $("reviewsGrid").innerHTML = reviews.map((r) => {
@@ -82,7 +88,7 @@ $("acordeonBtn").addEventListener("click", () => {
     $("acordeon").classList.toggle("abierto");
 });
 
-// FECHA DE DEVOLUCIÓN 
+// Fecha de devolución 
 
 inputs.forEach((input, i) => {
     input.addEventListener("input", () => {
@@ -155,4 +161,4 @@ btnSalir.addEventListener("click", function () {
 });
 
 mostrarLibro();
-mostrarReviews();
+if (libro) mostrarReviews();

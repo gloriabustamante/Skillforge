@@ -1,21 +1,6 @@
-// Datos de nuestra API (al momento son datos ilustrativos)
+const libros = obtenerLibros();
 
-const libros = [
-    { isbn: "978-84-9838-037-9", titulo: "Harry Potter y la piedra filosofal", categoria: "Ficción",
-      descripcion: "Harry descubre que es un mago y viaja a Hogwarts.", imagen: "img/harry-potter.jpg" },
-    { isbn: "978-0-00-000001-1", titulo: "Libro de ficción 2", categoria: "Ficción",
-      descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000002-2", titulo: "Libro de no ficción 1", categoria: "No ficción",
-      descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000003-3", titulo: "Libro de no ficción 2", categoria: "No ficción",
-      descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000004-4", titulo: "Libro infantil", categoria: "Infantil",
-      descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000005-5", titulo: "Libro de ensayo", categoria: "Ensayo",
-      descripcion: "Descripción breve del libro.", imagen: "" }
-];
-
-const categorias = ["Todos", "Ficción", "No ficción", "Infantil", "Ensayo"];
+const categorias = ["Todos", ...new Set(libros.map((l) => l.categoria))];
 
 //Estado
 
@@ -59,7 +44,8 @@ function mostrarLibros() {
     const filtrados = libros.filter((l) => {
         const coincideCategoria = categoriaActiva === "Todos" || l.categoria === categoriaActiva;
         const coincideTexto = l.titulo.toLowerCase().includes(texto) ||
-                            l.descripcion.toLowerCase().includes(texto);
+                    l.autor.toLowerCase().includes(texto) ||
+                    (l.descripcion || "").toLowerCase().includes(texto);
         return coincideCategoria && coincideTexto;
     });
 
@@ -69,14 +55,14 @@ function mostrarLibros() {
     }
 
     listaLibros.innerHTML = filtrados.map((l) => `
-        <a class="libro-card" href="detalle-libro.html?isbn=${l.isbn}">
+        <a class="libro-card" href="detalle-libro.html?isbn=${encodeURIComponent(l.isbn)}">
             <div class="libro-imagen">
-                ${l.imagen
-                    ? `<img src="${l.imagen}" alt="${l.titulo}" onerror="this.remove()">`
+                ${l.portada
+                    ? `<img src="${l.portada}" alt="${l.titulo}" onerror="this.remove()">`
                     : `<i class="fa-regular fa-image"></i>`}
             </div>
             <h3>${l.titulo}</h3>
-            <p>${l.descripcion}</p>
+            <p>${l.descripcion || l.autor}</p>
         </a>
     `).join("");
 }
