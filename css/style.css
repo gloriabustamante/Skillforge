@@ -449,7 +449,7 @@ color: #c0392b;
 }
 
 .btn-prestamo {
-width: 100%;
+width: 50%;
 height: 40px;
 margin: 12px 0 24px;
 border: 1px solid #072440;
@@ -465,6 +465,28 @@ background: #123b60;
 }
 
 .btn-prestamo:disabled {
+background: #9aa7b4;
+border-color: #9aa7b4;
+cursor: not-allowed;
+}
+
+.btn-editarPrestamo {
+width: 50%;
+height: 40px;
+margin: 12px 0 24px;
+border: 1px solid #072440;
+border-radius: 6px;
+background: #072440;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.btn-editarPrestamo:hover {
+background: #123b60;
+}
+
+.btn-editarPrestamo:disabled {
 background: #9aa7b4;
 border-color: #9aa7b4;
 cursor: not-allowed;
