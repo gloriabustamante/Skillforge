@@ -1,15 +1,5 @@
-/* ============ DATOS (acá iría nuestra API en caso de que la llegaramos a hacer) ============ */
-
 const isbnSeleccionado = new URLSearchParams(window.location.search).get("isbn");
 const libro = isbnSeleccionado ? buscarLibro(isbnSeleccionado) : null;
-
-// DEBERIA TRAER LOS DATOS DE LOS FORMULARIOS QUE SE CARGUEN
-
-const reviews = [
-    { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 },
-    { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 },
-    { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 }
-];
 
 // ELEMENTOS 
 
@@ -17,15 +7,22 @@ const $ = (id) => document.getElementById(id);
 
 const btnFavorito = $("btnFavorito");
 const btnPrestamo = $("btnPrestamo");
+const btnEditarPrestamo = $("btnEditarPrestamo");
 const mensaje     = $("mensaje");
 const inputs      = [$("dia"), $("mes"), $("anio")];
 
+// TRAE LOS DATOS DE LOS FORMULARIOS QUE SE CARGUEN
+
+const reviews = JSON.parse(localStorage.getItem("reviews") || "[]")
+    .filter((r) => libro && r.isbn === libro.isbn)
+    .reverse()
+    .slice(0, 3);
 
 // RENDER DEL LIBRO
 
 function mostrarLibro() {
 
-    // Si no existe, ocultar todo y mostrar el aviso
+    // Si no existe, oculta todo y mostrar el aviso
     if (!libro) {
         document.querySelector(".libro").hidden = true;
         document.querySelector(".reviews").hidden = true;
@@ -63,7 +60,8 @@ function mostrarReviews() {
         return `
             <td class="review">
                 <div class="estrellas">${estrellas}</div>
-                <h3>${r.titulo}</h3>
+                <h3>${r.estrellas} de 5 estrellas</h3>
+                <p>${limpiar(r.texto)}</p>
                 <p>${r.texto}</p>
                 <div class="reviewer">
                     <img src="img/avatar.jpg" alt="" onerror="this.style.visibility='hidden'">
@@ -137,6 +135,8 @@ function validarFecha() {
     return { fecha };
 }
 
+//FUNCIÓN DEL BOTÓN DE REGISTRAR PRÉSTAMO
+
 btnPrestamo.addEventListener("click", () => {
     const resultado = validarFecha();
 
@@ -146,14 +146,22 @@ btnPrestamo.addEventListener("click", () => {
         return;
     }
 
-    mostrarMensaje(
-        "Préstamo solicitado. Devolución: " +
-        resultado.fecha.toLocaleDateString("es-UY"),
-        "ok"
-    );
+    const params = new URLSearchParams({
+        isbn: libro.isbn,
+        fecha: resultado.fecha.toISOString().slice(0, 10)
+    });
+
+    setTimeout(() => {
+        window.location.href = "alta-libro.html?" + params.toString();
+    }, 800);
 });
 
-//Función de cierre de sesión
+//FUNCIÓN DEL BOTÓN DE EDITAR PRÉSTAMO
+btnEditarPrestamo.addEventListener("click", () => {
+    window.location.href = "stock.html?isbn=" + encodeURIComponent(libro.isbn);
+});
+
+//FUNCIÓN DE CIERRE DE SESIÓN
 const btnSalir = document.getElementById("btnSalir");
 
 btnSalir.addEventListener("click", function () {

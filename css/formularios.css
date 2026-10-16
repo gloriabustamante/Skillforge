@@ -235,6 +235,16 @@
     margin: 16px 0;
 }
 
+.bloque {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bloque td {
+    padding: 0;
+}
+
 .bloque h3 {
     font-size: 14px;
     margin-bottom: 4px;
@@ -251,24 +261,57 @@
     margin-bottom: 12px;
 }
 
+.body-prestamo section.formulario .form-contenido {
+    table-layout: fixed;
+}
+
+table.campo {
+    display: table;
+    width: 100%;
+    margin-bottom: 12px;
+    border-collapse: collapse;
+}
+
+table.campo td {
+    padding: 0;
+}
+
 .fecha-grupo {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.3fr;
-    gap: 8px;
+    display: table;
+    table-layout: fixed;
+    width: calc(100% + 8px);
+    margin: 0 -4px;
+    border-collapse: separate;
+    border-spacing: 4px 0;
+}
+
+.fecha-grupo td {
+    padding: 0;
 }
 
 .panel-pasos {
     background: #f6f6f6;
     border-radius: 6px;
     padding: 18px;
-    align-self: start;
+    vertical-align: top;
 }
 
 .paso {
-    display: flex;
-    gap: 12px;
+    display: table;
     position: relative;
-    padding-bottom: 22px;
+    width: 100%;
+    margin-bottom: 22px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.paso td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.paso td + td {
+    padding-left: 12px;
 }
 
 .paso:not(:last-of-type)::after {
@@ -281,15 +324,13 @@
 }
 
 .paso-icono {
-    flex-shrink: 0;
     width: 32px;
     height: 32px;
     background: white;
     border: 1px solid #e3e3e3;
     border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
     font-size: 13px;
     color: #333;
 }
@@ -314,9 +355,56 @@
 }
 
 .acciones-linea {
-    border-top: 1px solid #e5e5e5;
+    width: 100%;
     margin-top: 18px;
-    padding-top: 16px;
+    border-top: 1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+
+.acciones-linea td {
+    padding: 16px 0 0;
+}
+
+.acciones-linea td:first-child {
+    width: 100%;
+    text-align: right;
+}
+
+.acciones-linea td:last-child {
+    width: 1%;
+    padding-left: 20px;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .body-prestamo section.formulario .form-contenido,
+    .body-prestamo section.formulario .form-contenido > tbody,
+    .body-prestamo section.formulario .form-contenido > tbody > tr,
+    .body-prestamo section.formulario .form-contenido > tbody > tr > td {
+        display: block;
+        width: 100%;
+    }
+
+    .body-prestamo section.formulario .form-contenido {
+        margin: 0;
+    }
+
+    .body-prestamo section.formulario .panel-pasos {
+        margin-top: 24px;
+    }
+
+    .body-prestamo .fila,
+    .body-prestamo .fila > tbody,
+    .body-prestamo .fila > tbody > tr,
+    .body-prestamo .fila > tbody > tr > td.campo {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .body-prestamo .fila > tbody > tr > td.campo + td.campo {
+        margin-top: 16px;
+    }
 }
 
 
@@ -385,6 +473,38 @@
     border-radius: 4px;
 }
 
+.tabla-form select {
+    width: 100%;
+    height: 38px;
+    padding: 0 34px 0 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    appearance: none;
+    -webkit-appearance: none;
+    background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.5'/></svg>") no-repeat right 12px center;
+}
+
+.tabla-form select:focus {
+    border-color: #999;
+}
+
+.tabla-form select option {
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #202020;
+    background: white;
+}
+
+.tabla-form input[readonly] {
+    background: #f6f6f6;
+    cursor: not-allowed;
+}
 
 /* ================= TABLAS RESUMEN ================= */
 
@@ -556,4 +676,40 @@
 
 .btn-icono:hover {
     color: #666;
+}
+
+.estado-prestamo { border-color: #e08a1e; }
+
+.modal-ancho {
+width: 760px;
+}
+
+.tabla-ejemplares-contenedor {
+max-height: 60vh;
+overflow: auto;
+}
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(1),
+.tabla-operaciones.tabla-ejemplares td:nth-child(1) { width: 12%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(2),
+.tabla-operaciones.tabla-ejemplares td:nth-child(2) { width: 22%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(3),
+.tabla-operaciones.tabla-ejemplares td:nth-child(3) { width: 22%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(4),
+.tabla-operaciones.tabla-ejemplares td:nth-child(4) { width: 32%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(5),
+.tabla-operaciones.tabla-ejemplares td:nth-child(5) {
+    width: 12%;
+    text-align: right;
+}
+
+.tabla-ejemplares .estado-pendiente { border-color: #c0392b; }
+
+.btn-icono:disabled {
+color: #bbb;
+cursor: not-allowed;
 }

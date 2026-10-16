@@ -1,17 +1,17 @@
 // Datos de nuestra API (al momento son datos ilustrativos)
 
 const libros = [
-    { isbn: "978-84-9838-037-9", titulo: "Harry Potter y la piedra filosofal", categoria: "Ficción",
+    { isbn: "978-84-9838-037-9", titulo: "Harry Potter y la piedra filosofal", autor: "J.K. Rowling", categoria: "Ficción",
       descripcion: "Harry descubre que es un mago y viaja a Hogwarts.", imagen: "img/harry-potter.jpg" },
-    { isbn: "978-0-00-000001-1", titulo: "Libro de ficción 2", categoria: "Ficción",
+    { isbn: "978-0-00-000001-1", titulo: "Libro de ficción 2", autor: "Autor Uno", categoria: "Ficción",
       descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000002-2", titulo: "Libro de no ficción 1", categoria: "No ficción",
+    { isbn: "978-0-00-000002-2", titulo: "Libro de no ficción 1", autor: "Autor Dos", categoria: "No ficción",
       descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000003-3", titulo: "Libro de no ficción 2", categoria: "No ficción",
+    { isbn: "978-0-00-000003-3", titulo: "Libro de no ficción 2", autor: "Autor Tres", categoria: "No ficción",
       descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000004-4", titulo: "Libro infantil", categoria: "Infantil",
+    { isbn: "978-0-00-000004-4", titulo: "Libro infantil", autor: "Autor Cuatro", categoria: "Infantil",
       descripcion: "Descripción breve del libro.", imagen: "" },
-    { isbn: "978-0-00-000005-5", titulo: "Libro de ensayo", categoria: "Ensayo",
+    { isbn: "978-0-00-000005-5", titulo: "Libro de ensayo", autor: "Autor Cinco", categoria: "Ensayo",
       descripcion: "Descripción breve del libro.", imagen: "" }
 ];
 
@@ -51,15 +51,30 @@ listaCategorias.addEventListener("click", (e) => {
     mostrarLibros();
 });
 
+// Minúsculas y sin tildes
+
+const normalizar = (t) => String(t ?? "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+// ISBN sin guiones ni espacios
+
+const sinGuiones = (t) => normalizar(t).replace(/[-\s]/g, "");
+
 // Funcion para mostrar los libros
 
 function mostrarLibros() {
-    const texto = textoBusqueda.toLowerCase();
+    const texto = normalizar(textoBusqueda).trim();
+    const textoIsbn = sinGuiones(textoBusqueda);
 
     const filtrados = libros.filter((l) => {
         const coincideCategoria = categoriaActiva === "Todos" || l.categoria === categoriaActiva;
-        const coincideTexto = l.titulo.toLowerCase().includes(texto) ||
-                            l.descripcion.toLowerCase().includes(texto);
+        const coincideTexto = !texto ||
+                            sinGuiones(l.isbn).includes(textoIsbn) ||
+                            normalizar(l.titulo).includes(texto) ||
+                            normalizar(l.autor).includes(texto) ||
+                            normalizar(l.categoria).includes(texto);
         return coincideCategoria && coincideTexto;
     });
 
@@ -81,7 +96,6 @@ function mostrarLibros() {
     `).join("");
 }
 
-
 // BÚSQUEDA
 
 buscador.addEventListener("input", () => {
@@ -89,13 +103,11 @@ buscador.addEventListener("input", () => {
     mostrarLibros();
 });
 
-
 //Función de cierre de sesión
 
 document.getElementById("btnSalir").addEventListener("click", () => {
     window.location.href = "login.html";
 });
-
 
 mostrarCategorias();
 mostrarLibros();

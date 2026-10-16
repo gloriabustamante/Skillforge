@@ -56,17 +56,16 @@
                 <input type="search" id="buscarUsuario" placeholder="Buscar usuarios...">
             </div>
 
-            <select id="filtroRol" aria-label="Filtrar por rol">
-                <option value="">Todos los roles</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Editor">Editor</option>
-                <option value="Editor">Editor</option>
-            </select>
+        <select id="filtroRol" aria-label="Filtrar por rol">
+            <option value="">Todos los roles</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Bibliotecario">Bibliotecario</option>
+            <option value="Cliente">Cliente</option>
+        </select>
 
             <select id="filtroEstado" aria-label="Filtrar por estado">
                 <option value="">Todos los estados</option>
                 <option value="Activo">Activo</option>
-                <option value="Pendiente">Pendiente</option>
                 <option value="Inactivo">Inactivo</option>
             </select>
 
@@ -110,14 +109,14 @@
                             </button>
                         </td>
                     </tr>
-                    <tr data-rol="Editor" data-estado="Pendiente">
+                    <tr data-rol="Bibliotecario" data-estado="Inactivo">
                         <td>
                             <strong>Carlos López</strong>
                             <span>carlos.lopez@bookstack.com</span>
                         </td>
-                        <td>Editor</td>
+                        <td>Bibliotecario</td>
                         <td>
-                            <span class="estado-usuario pendiente">Pendiente</span>
+                            <span class="estado-usuario inactivo">Inactivo</span>
                         </td>
                         <td>Ayer, 4:20 PM</td>
                         <td class="celda-acciones">
@@ -128,12 +127,13 @@
                                 <i class="fa-regular fa-trash-can"></i>
                             </button>
                         </td>
-                    <tr data-rol="Editor" data-estado="Activo">
+                    </tr>
+                    <tr data-rol="Bibliotecario" data-estado="Activo">
                         <td>
                             <strong>Ana Pérez</strong>
                             <span>ana.perez@bookstack.com</span>
                         </td>
-                        <td>Editor</td>
+                        <td>Bibliotecario</td>
                         <td>
                             <span class="estado-usuario activo">Activo</span>
                         </td>
@@ -146,6 +146,7 @@
                                 <i class="fa-regular fa-trash-can"></i>
                             </button>
                         </td>
+                    </tr>
                     <tr data-rol="Administrador" data-estado="Inactivo">
                         <td>
                             <strong>Juan Martínez</strong>
@@ -165,18 +166,130 @@
                             </button>
                         </td>
                     </tr>
+                    <tr data-rol="Cliente" data-estado="Activo">
+                        <td>
+                            <strong>Sofía Rodríguez</strong>
+                            <span>sofia.rodriguez@bookstack.com</span>
+                        </td>
+                        <td>Cliente</td>
+                        <td>
+                            <span class="estado-usuario activo">Activo</span>
+                        </td>
+                        <td>No corresponde</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar usuario">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar usuario">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr data-rol="Cliente" data-estado="Inactivo">
+                        <td>
+                            <strong>Mateo Díaz</strong>
+                            <span>mateo.diaz@bookstack.com</span>
+                        </td>
+                        <td>Cliente</td>
+                        <td>
+                            <span class="estado-usuario inactivo">Inactivo</span>
+                        </td>
+                        <td>No corresponde</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar usuario">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar usuario">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                                        <tr data-rol="Cliente" data-estado="Activo">
+                        <td>
+                            <strong>Lucía Gomez</strong>
+                            <span>lucia.gomez@bookstack.com</span>
+                        </td>
+                        <td>Cliente</td>
+                        <td>
+                            <span class="estado-usuario activo">Activo</span>
+                        </td>
+                        <td>No corresponde</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar usuario">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar usuario">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
 
         </div>
         <div class="paginacion-usuarios">
-            <p>Mostrando 1-4 de 24 usuarios</p>
+            <p id="resumenUsuarios">Mostrando 6 de 6 usuarios</p>
             <div>
                 <button type="button" disabled>Anterior</button>
                 <button type="button">Siguiente</button>
             </div>
         </div>
     </main>
+    
+<dialog id="modalUsuario" class="modal">
+    <form method="dialog" id="formUsuario">
+        <h3>Editar usuario</h3>
+        <p class="ayuda">Modificá los datos, el rol o el estado.</p>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="usuNombre">Nombre completo</label>
+                    <input type="text" id="usuNombre" maxlength="100">
+                </td>
+            </tr>
+        </table>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="usuCorreo">Correo electrónico</label>
+                    <input type="text" id="usuCorreo" maxlength="150" inputmode="email">
+                </td>
+            </tr>
+        </table>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="usuRol">Rol</label>
+                    <select id="usuRol">
+                        <option value="Administrador">Administrador</option>
+                        <option value="Bibliotecario">Bibliotecario</option>
+                        <option value="Cliente">Cliente</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="usuEstado">Estado</label>
+                    <select id="usuEstado">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <p class="error-texto" id="errorUsuario"></p>
+
+        <table class="acciones">
+            <tr>
+                <td><button type="button" class="btn-cancelar" id="btnCancelarUsuario">Cancelar</button></td>
+                <td><button type="button" class="btn-guardar" id="btnGuardarUsuario">Guardar cambios</button></td>
+            </tr>
+        </table>
+    </form>
+</dialog>
 
     <footer class="footer-alta">
         <table class="tabla-footer">
@@ -237,5 +350,6 @@
         </table>
 
     </footer>
+    <script src="js/usuarios.js"></script>
 </body>
 </html>

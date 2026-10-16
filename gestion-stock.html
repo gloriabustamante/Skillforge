@@ -89,7 +89,6 @@
                         <td>5</td>
                         <td class="celda-acciones">
                             <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -100,7 +99,6 @@
                         <td>15</td>
                         <td class="celda-acciones">
                             <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -111,7 +109,6 @@
                         <td>30</td>
                         <td class="celda-acciones">
                             <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -122,7 +119,6 @@
                         <td>0</td>
                         <td class="celda-acciones">
                             <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -131,6 +127,112 @@
         </section>
 
     </main>
+<dialog id="modalLibro" class="modal">
+    <form method="dialog" id="formLibro">
+        <h3>Editar libro</h3>
+        <p class="ayuda">Modificá los datos del libro.</p>
+
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="libIsbn">ISBN</label>
+                    <input type="text" id="libIsbn" maxlength="17">
+                </td>
+            </tr>
+        </table>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="libTitulo">Título</label>
+                    <input type="text" id="libTitulo" maxlength="250">
+                </td>
+            </tr>
+        </table>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="libUbicacion">Ubicación habitual</label>
+                    <input type="text" id="libUbicacion" maxlength="150">
+                </td>
+            </tr>
+        </table>
+
+        <p class="error-texto" id="errorLibro"></p>
+
+        <table class="acciones">
+            <tr>
+                <td><button type="button" class="btn-cancelar" id="btnCancelarLibro">Cancelar</button></td>
+                <td><button type="button" class="btn-guardar" id="btnGuardarLibro">Guardar cambios</button></td>
+            </tr>
+        </table>
+    </form>
+</dialog>
+
+<dialog id="modalEjemplares" class="modal modal-ancho">
+    <h3 id="tituloEjemplares">Ejemplares</h3>
+    <p class="ayuda">Estado y ubicación actual de cada ejemplar.</p>
+
+    <div class="tabla-ejemplares-contenedor">
+        <table class="tabla-operaciones tabla-ejemplares">
+            <thead>
+                <tr>
+                    <th>Ejemplar</th>
+                    <th>Libro</th>
+                    <th>Estado</th>
+                    <th>Ubicación Actual</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoEjemplares"></tbody>
+        </table>
+    </div>
+
+    <table class="acciones">
+        <tr>
+            <td><button type="button" class="btn-guardar" id="btnCerrarEjemplares">Cerrar</button></td>
+        </tr>
+    </table>
+</dialog>
+
+<dialog id="modalEditarEjemplar" class="modal">
+    <form method="dialog" id="formEjemplar">
+        <h3 id="tituloEditarEjemplar">Editar ejemplar</h3>
+        <p class="ayuda">Modificá el estado y dónde está el ejemplar.</p>
+
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="eeEstado">Estado</label>
+                    <select id="eeEstado">
+                        <option value="Disponible">Disponible</option>
+                        <option value="Préstamo">Préstamo</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table class="campo">
+            <tr>
+                <td>
+                    <label for="eeUbicacion">Ubicación actual / responsable</label>
+                    <input type="text" id="eeUbicacion" maxlength="150">
+                </td>
+            </tr>
+        </table>
+
+        <p class="error-texto" id="errorEjemplar"></p>
+
+        <table class="acciones">
+            <tr>
+                <td><button type="button" class="btn-cancelar" id="btnCancelarEjemplar">Cancelar</button></td>
+                <td><button type="button" class="btn-guardar" id="btnGuardarEjemplar">Guardar cambios</button></td>
+            </tr>
+        </table>
+    </form>
+</dialog>
+
+<script src="js/stock.js"></script>
 
     <footer class="footer-alta">
         <table class="tabla-footer">
@@ -191,6 +293,5 @@
         </table>
 
     </footer>
-
 </body>
 </html>

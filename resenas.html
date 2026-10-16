@@ -75,14 +75,16 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="titulo">Título del libro (Obligatorio)</label>
-                        <input type="text" id="titulo" name="titulo" placeholder="Escribe el título correspondiente" maxlength="200" required>
+                        <label for="libro">Título del Libro (Obligatorio)</label>
+                        <select id="libro" name="libro" required>
+                            <option value="">Seleccioná un libro</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="autor">Autor (Obligatorio)</label>
-                        <input type="text" id="autor" name="autor" placeholder="Nombre del autor" maxlength="100" required>
+                        <label for="autor">Autor</label>
+                        <input type="text" id="autor" name="autor" readonly placeholder="Se completa al elegir el libro">
                     </td>
                 </tr>
                 <tr>
@@ -158,6 +160,7 @@
             </tr>
         </table>
     </footer>
-
+        <script src="js/catalogo.js"></script>
+        <script src="js/resenas.js"></script>
 </body>
 </html>

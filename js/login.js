@@ -6,15 +6,10 @@ const password = document.getElementById("password");
 mostrarPassword.addEventListener("change", function () {
 
     if (this.checked) {
-
         password.type = "text";
-
     } else {
-
         password.type = "password";
-
     }
-
 });
 
 // LOGIN 
@@ -29,9 +24,7 @@ loginForm.addEventListener("submit", function (event) {
     const passwordValue = document.getElementById("password").value;
 
     if (email === "" || passwordValue === "") {
-
         alert("Completá todos los campos.");
-
         return;
     }
 

@@ -448,10 +448,27 @@ color: #333;
 color: #c0392b;
 }
 
-.btn-prestamo {
+.acciones-prestamo {
+display: table;
+table-layout: fixed;
+width: calc(100% + 12px);
+margin: 12px -6px 24px;
+border-collapse: separate;
+border-spacing: 6px 0;
+}
+
+.acciones-prestamo td {
 width: 50%;
+padding: 0;
+vertical-align: top;
+}
+
+.acciones-prestamo button {
+display: block;
+box-sizing: border-box;
+width: 100%;
 height: 40px;
-margin: 12px 0 24px;
+margin: 0 !important;
 border: 1px solid #072440;
 border-radius: 6px;
 background: #072440;
@@ -460,20 +477,22 @@ font-size: 16px;
 cursor: pointer;
 }
 
-.btn-prestamo:hover {
+.acciones-prestamo button:hover {
 background: #123b60;
 }
 
-.btn-prestamo:disabled {
+.acciones-prestamo button:disabled {
 background: #9aa7b4;
 border-color: #9aa7b4;
 cursor: not-allowed;
 }
 
+.btn-prestamo,
 .btn-editarPrestamo {
-width: 50%;
+display: block;
+width: 100%;
 height: 40px;
-margin: 12px 0 24px;
+margin: 0;
 border: 1px solid #072440;
 border-radius: 6px;
 background: #072440;
@@ -482,10 +501,12 @@ font-size: 16px;
 cursor: pointer;
 }
 
+.btn-prestamo:hover,
 .btn-editarPrestamo:hover {
 background: #123b60;
 }
 
+.btn-prestamo:disabled,
 .btn-editarPrestamo:disabled {
 background: #9aa7b4;
 border-color: #9aa7b4;
@@ -500,6 +521,19 @@ color: white;
 border: none;
 border-radius: 6px;
 cursor: pointer;
+}
+
+.retiro {
+display: table;
+margin-top: 28px;
+margin-bottom: 8px;
+border-collapse: collapse;
+}
+
+.retiro label {
+display: block;
+font-size: 16px;
+margin-bottom: 10px;
 }
 
 /* ================= LIBRO ================= */
@@ -1256,6 +1290,11 @@ margin-bottom: 4px;
 
 .modal input[readonly] {
 background: #f6f6f6;
+}
+
+.btn-icono:disabled {
+    color: #bbb;
+    cursor: not-allowed;
 }
 
 /* ================= RESPONSIVE ================= */
