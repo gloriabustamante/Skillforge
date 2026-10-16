@@ -14,26 +14,26 @@
 <body class="body-index">
 
     <header class="navbar">
-
-        <div class="logo-navbar">
-            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
-        </div>
-        <nav>
-            <a href="catalogo.html"><i class="fa-solid fa-book"></i> Catálogos</a>
-            <a href="operaciones.html"><i class="fa-solid fa-chart-column"></i> Reportes</a>
-            <a href="gestion-stock.html"><i class="fa-solid fa-cube"></i> Stock</a>
-            <a href="gestion-stock.html"><i class="fa-regular fa-heart"></i> Donaciones</a>
-            <a href="gestion-stock.html"><i class="fa-solid fa-rotate-left"></i> Devoluciones</a>
-            <a href="registro-prestamo.html"><i class="fa-solid fa-hand-holding-heart"></i> Préstamos</a>
-            <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
-            <a href="index.html"><i class="fa-solid fa-gear"></i> Administración</a>
-        </nav>
-
-        <button class="btn-salir" id="btnSalir">
-            Salir
-        </button>
-
+        <table class="tabla-navbar">
+            <tr>
+                <td class="logo-navbar"><img src="img/logo_vectorizado.svg" alt="Logo BookStack"></td>
+                <td>
+                    <nav>
+                        <a href="catalogo.html"><i class="fa-solid fa-book"></i> Catálogos</a>
+                        <a href="operaciones.html"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+                        <a href="gestion-stock.html"><i class="fa-solid fa-cube"></i> Stock</a>
+                        <a href="gestion-stock.html"><i class="fa-regular fa-heart"></i> Donaciones</a>
+                        <a href="gestion-stock.html"><i class="fa-solid fa-rotate-left"></i> Devoluciones</a>
+                        <a href="registro-prestamo.html"><i class="fa-solid fa-hand-holding-heart"></i> Préstamos</a>
+                        <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
+                        <a href="index.html"><i class="fa-solid fa-gear"></i> Administración</a>
+                    </nav>
+                </td>
+                <td><button class="btn-salir" id="btnSalir">Salir</button></td>
+            </tr>
+        </table>
     </header>
+
     <section class="hero hero-index">
         <div class="hero-contenido">
             <h1>BookStack</h1>
@@ -45,103 +45,107 @@
 
         <h2>Buenas tardes, $usuario</h2>
 
-        <div class="search-box">
-            <span class="menu-icon">☰</span>
-            <input
-                type="text"
-                id="search"
-                placeholder="Buscar...."
-            >
-            <span class="search-icon">⌕</span>
-        </div>
+        <table class="search-box">
+            <tr>
+                <td class="menu-icon">☰</td>
+                <td class="search-input"><input type="text" id="search" placeholder="Buscar...."></td>
+                <td class="search-icon">⌕</td>
+            </tr>
+        </table>
 
-        <section class="cards" id="cards">
+        <table class="cards" id="cards">
+            <tr>
+                <td>
+                    <a href="alta-libro.html" class="card-link">
+                        <div class="card">
+                            <div class="card-image">🖼</div>
+                            <h3>Alta de Libros</h3>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="gestion-usuarios.html" class="card-link">
+                        <div class="card">
+                            <div class="card-image">🖼</div>
+                            <h3>Gestión de Usuarios</h3>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="alta-libro.html" class="card-link">
+                        <div class="card">
+                            <div class="card-image">🖼</div>
+                            <h3>Administración de donaciones</h3>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="registro-prestamo.html" class="card-link">
+                        <div class="card">
+                            <div class="card-image">🖼</div>
+                            <h3>Administración de Préstamos</h3>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="gestion-stock.html" class="card-link">
+                        <div class="card">
+                            <div class="card-image">🖼</div>
+                            <h3>Administración de Stock</h3>
+                        </div>
+                    </a>
+                </td>
+                <td></td>
+            </tr>
+        </table>
 
-            <a href="alta-libro.html" class="card-link">
-                <div class="card">
-                    <div class="card-image">🖼</div>
-                    <h3>Alta de Libros</h3>
-                </div>
-            </a>
-            <a href="gestion-usuarios.html" class="card-link">
-                <div class="card">
-                    <div class="card-image">🖼</div>
-                    <h3>Gestión de Usuarios</h3>
-                </div>
-            </a>
-            <a href="alta-libro.html" class="card-link">
-                <div class="card">
-                    <div class="card-image">🖼</div>
-                    <h3>Administración de donaciones</h3>
-                </div>
-            </a>
-            <a href="registro-prestamo.html" class="card-link">
-                <div class="card">
-                    <div class="card-image">🖼</div>
-                    <h3>Administración de Préstamos</h3>
-                </div>
-            </a>
-            <a href="gestion-stock.html" class="card-link">
-                <div class="card">
-                    <div class="card-image">🖼</div>
-                    <h3>Administración de Stock</h3>
-                </div>
-            </a>
-        </section>
     </main>
 
     <footer class="footer-index">
-
-        <section class="footer-redes">
-            <div class="redes redes-index">
-                <a href="#" aria-label="X">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" aria-label="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
-        </section>
-
-        <section class="footer-columna">
-            <h4>Use cases</h4>
-            <p>UI design</p>
-            <p>UX design</p>
-            <p>Wireframing</p>
-            <p>Diagramming</p>
-            <p>Brainstorming</p>
-            <p>Online whiteboard</p>
-            <p>Team collaboration</p>
-        </section>
-
-        <section class="footer-columna">
-            <h4>Explore</h4>
-            <p>Design</p>
-            <p>Prototyping</p>
-            <p>Development features</p>
-            <p>Design systems</p>
-            <p>Collaboration features</p>
-            <p>Design process</p>
-            <p>FigJam</p>
-        </section>
-
-        <section class="footer-columna">
-            <h4>Resources</h4>
-            <p>Blog</p>
-            <p>Best practices</p>
-            <p>Colors</p>
-            <p>Color wheel</p>
-            <p>Support</p>
-            <p>Developers</p>
-            <p>Resource library</p>
-        </section>
-
+        <table class="tabla-footer">
+            <tr>
+                <td class="footer-redes">
+                    <div class="redes redes-index">
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </td>
+                <td class="footer-columna">
+                    <h4>Use cases</h4>
+                    <p>UI design</p>
+                    <p>UX design</p>
+                    <p>Wireframing</p>
+                    <p>Diagramming</p>
+                    <p>Brainstorming</p>
+                    <p>Online whiteboard</p>
+                    <p>Team collaboration</p>
+                </td>
+                <td class="footer-columna">
+                    <h4>Explore</h4>
+                    <p>Design</p>
+                    <p>Prototyping</p>
+                    <p>Development features</p>
+                    <p>Design systems</p>
+                    <p>Collaboration features</p>
+                    <p>Design process</p>
+                    <p>FigJam</p>
+                </td>
+                <td class="footer-columna">
+                    <h4>Resources</h4>
+                    <p>Blog</p>
+                    <p>Best practices</p>
+                    <p>Colors</p>
+                    <p>Color wheel</p>
+                    <p>Support</p>
+                    <p>Developers</p>
+                    <p>Resource library</p>
+                </td>
+            </tr>
+        </table>
     </footer>
 
     <script src="js/main.js"></script>

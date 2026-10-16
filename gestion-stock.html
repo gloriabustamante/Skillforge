@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStack - Stock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body class="body-prestamo">
+
+    <header class="navbar">
+        <table class="tabla-navbar">
+            <tr>
+                <td class="logo-navbar">
+                    <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
+                </td>
+                <td>
+                    <nav>
+                        <a href="catalogo.html"><i class="fa-solid fa-book"></i> Catálogos</a>
+                        <a href="operaciones.html"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+                        <a href="gestion-stock.html"><i class="fa-solid fa-cube"></i> Stock</a>
+                        <a href="gestion-stock.html"><i class="fa-regular fa-heart"></i> Donaciones</a>
+                        <a href="gestion-stock.html"><i class="fa-solid fa-rotate-left"></i> Devoluciones</a>
+                        <a href="registro-prestamo.html"><i class="fa-solid fa-hand-holding-heart"></i> Préstamos</a>
+                        <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
+                        <a href="index.html"><i class="fa-solid fa-gear"></i> Administración</a>
+                    </nav>
+                </td>
+
+                <td>
+                    <button class="btn-salir" id="btnSalir" type="button">
+                        Salir
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <main class="main-prestamo">
+        <section class="formulario">
+            <h2>Stock de libros</h2>
+            <p class="descripcion">Resumen del estado actual de todos los libros</p>
+            <hr class="separador">
+            <table class="tabla-resumen tabla-resumen-3">
+                <tr>
+                    <td class="resumen resumen-verde">
+                        <span>Total de libros disponibles</span>
+                        <strong>300</strong>
+                        <small>Ejemplo demostrativo</small>
+                    </td>
+                    <td class="resumen resumen-rojo">
+                        <span>Pendientes de devolución</span>
+                        <strong>2</strong>
+                        <small>Requiere multa</small>
+                    </td>
+                    <td class="resumen resumen-naranja">
+                        <span>En préstamo</span>
+                        <strong>50</strong>
+                        <small>Ejemplo demostrativo</small>
+                    </td>
+                </tr>
+            </table>
+
+            <h3 class="titulo-tabla">Total de ejemplares</h3>
+            <p class="ayuda">Ejemplos de préstamos activos con su estado y responsable.</p>
+
+            <table class="tabla-operaciones tabla-stock">
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Libro</th>
+                        <th>Estado</th>
+                        <th>Ubicación habitual</th>
+                        <th>Stock</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>978-84-663-1234-5</td>
+                        <td>Rayuela</td>
+                        <td><span class="estado estado-ultimo">Último Ejemplar</span></td>
+                        <td>Pasillo C - Estante 3</td>
+                        <td>5</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>978-3-16-148410-0</td>
+                        <td>El aleph</td>
+                        <td><span class="estado estado-disponible">Disponible</span></td>
+                        <td>Pasillo A - Estante 5</td>
+                        <td>15</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>978-950-07-1234-1</td>
+                        <td>Ficciones</td>
+                        <td><span class="estado estado-disponible">Disponible</span></td>
+                        <td>Pasillo B - Estante 2</td>
+                        <td>30</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>978-950-07-5556-1</td>
+                        <td>Novelas</td>
+                        <td><span class="estado estado-inactivo">Inactivo</span></td>
+                        <td>Pasillo D - Estante 4</td>
+                        <td>0</td>
+                        <td class="celda-acciones">
+                            <button type="button" class="btn-icono" aria-label="Editar"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn-icono" aria-label="Eliminar"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+    <footer class="footer-alta">
+        <table class="tabla-footer">
+            <tr>
+                <td class="footer-redes">
+                    <div class="redes">
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </td>
+
+                <td class="footer-columna">
+                    <h4>Use cases</h4>
+                    <p>UI design</p>
+                    <p>UX design</p>
+                    <p>Wireframing</p>
+                    <p>Diagramming</p>
+                    <p>Brainstorming</p>
+                    <p>Online whiteboard</p>
+                    <p>Team collaboration</p>
+                </td>
+
+                <td class="footer-columna">
+                    <h4>Explore</h4>
+                    <p>Design</p>
+                    <p>Prototyping</p>
+                    <p>Development features</p>
+                    <p>Design systems</p>
+                    <p>Collaboration features</p>
+                    <p>Design process</p>
+                    <p>FigJam</p>
+                </td>
+
+                <td class="footer-columna">
+                    <h4>Resources</h4>
+                    <p>Blog</p>
+                    <p>Best practices</p>
+                    <p>Colors</p>
+                    <p>Color wheel</p>
+                    <p>Support</p>
+                    <p>Developers</p>
+                    <p>Resource library</p>
+                </td>
+            </tr>
+        </table>
+
+    </footer>
+
+</body>
+</html>

@@ -61,7 +61,7 @@ function mostrarReviews() {
         ).join("");
 
         return `
-            <article class="review">
+            <td class="review">
                 <div class="estrellas">${estrellas}</div>
                 <h3>${r.titulo}</h3>
                 <p>${r.texto}</p>
@@ -72,7 +72,7 @@ function mostrarReviews() {
                         <small>${r.fecha}</small>
                     </div>
                 </div>
-            </article>`;
+            </td>`;
     }).join("");
 }
 
@@ -88,7 +88,7 @@ $("acordeonBtn").addEventListener("click", () => {
     $("acordeon").classList.toggle("abierto");
 });
 
-// Fecha de devolución 
+// Fecha de retiro 
 
 inputs.forEach((input, i) => {
     input.addEventListener("input", () => {
@@ -131,7 +131,7 @@ function validarFecha() {
     hoy.setHours(0, 0, 0, 0);
 
     if (fecha <= hoy) {
-        return { error: "La fecha de devolución debe ser posterior a hoy." };
+        return { error: "La fecha de retiro debe ser posterior a hoy." };
     }
 
     return { fecha };
