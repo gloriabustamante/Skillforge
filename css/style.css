@@ -1,935 +1,1408 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 .body-index {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #faf7ff;
-    color: #202020;
+font-family: Arial, Helvetica, sans-serif;
+background: #faf7ff;
+color: #202020;
 }
 
 .body-alta,
 .body-prestamo {
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: #faf8ff;
-
-    color: #222;
+font-family: Arial, Helvetica, sans-serif;
+background: #faf8ff;
+color: #222;
 }
 
 .body-detalle {
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: #faf8ff;
-
-    color: #222;
+font-family: Arial, Helvetica, sans-serif;
+background: #faf8ff;
+color: #222;
 }
 
 /* ================= HERO ================= */
 
 .hero {
-    height: 350px;
-
-    background-image: url("../img/fondo.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
+height: 350px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 }
 
 .hero-contenido {
-    color: white;
-    margin-top: 10px;
+color: #202020;
+margin-top: 10px;
+}
+
+.body-index .hero {
+background-image: url("../img/fondo.jpg");
+background-size: cover;
+background-position: center;
+}
+
+.body-index .hero-contenido {
+color: white;
 }
 
 .hero h1 {
-    font-size: 54px;
-    margin-bottom: 10px;
-    font-weight: bold;
+font-size: 54px;
+margin-bottom: 10px;
+font-weight: bold;
 }
 
 .hero p {
-    font-size: 25px;
+font-size: 25px;
 }
 
 /* ================= MAIN ================= */
 
 main {
-    min-height: 800px;
-    padding: 48px 50px 90px;
+min-height: 800px;
+padding: 48px 50px 90px;
 }
 
 main h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+main.detalle {
+min-height: auto;
+padding: 64px 64px 80px;
+background: white;
 }
 
 /* ================= SEARCH ================= */
 
 .search-box {
-    width: 1200px;
-    height: 50px;
-
-    background: #eeeaf3;
-    border-radius: 25px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 15px;
-
-    margin-bottom: 62px;
+display: table;
+width: 100%;
+max-width: 1200px;
+height: 50px;
+background: #eeeaf3;
+border-radius: 25px;
+border-collapse: separate;
+border-spacing: 0;
+margin-bottom: 62px;
 }
 
-.menu-icon {
-    color: #777;
-    font-size: 17px;
-    margin-right: 14px;
+.search-box td {
+vertical-align: middle;
+}
+
+.search-box .menu-icon {
+width: 1%;
+padding: 0 14px 0 15px;
+color: #777;
+font-size: 17px;
+}
+
+.search-box .search-input {
+width: auto;
 }
 
 .search-box input {
-    flex: 1;
+width: 100%;
+border: none;
+outline: none;
+background: transparent;
+font-size: 13px;
+color: #333;
+}
 
-    border: none;
-    outline: none;
+.search-box .search-icon {
+width: 1%;
+padding: 0 15px;
+color: #555;
+font-size: 25px;
+}
 
-    background: transparent;
+.menu-icon {
+color: #777;
+font-size: 17px;
+margin-right: 14px;
+}
 
-    font-size: 13px;
-    color: #333;
+.search-box input {
+flex: 1;
+border: none;
+outline: none;
+background: transparent;
+font-size: 13px;
+color: #333;
 }
 
 .search-icon {
-    color: #555;
-    font-size: 25px;
+color: #555;
+font-size: 25px;
 }
 
 /* ================= CARDS ================= */
 
 .cards {
-    display: grid;
+display: table;
+table-layout: fixed;
+width: calc(100% + 76px);
+margin: 0 -38px;
+border-collapse: separate;
+border-spacing: 38px;
+}
 
-    grid-template-columns:
-        repeat(6, 1fr);
-
-    gap: 38px;
+.cards > tbody > tr > td {
+width: 33.33%;
+vertical-align: top;
 }
 
 .card {
-    background: white;
-
-    border: 1px solid #ddd;
-    border-radius: 6px;
-
-    min-height: 200px;
-
-    padding: 18px;
-
-    grid-column: span 2;
-
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-
-    transition: 0.2s;
+background: white;
+border: 1px solid #ddd;
+border-radius: 6px;
+min-height: 200px;
+padding: 18px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+transition: 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .card-image {
-    width: 124px;
-    height: 124px;
-
-    background: #e8e8e8;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #ddd;
-
-    font-size: 55px;
-
-    margin-bottom: 18px;
+width: 124px;
+height: 124px;
+background: #e8e8e8;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #ddd;
+font-size: 55px;
+margin-bottom: 18px;
 }
 
 .card h3 {
-    font-size: 19px;
-    line-height: 1.15;
+font-size: 19px;
+line-height: 1.15;
 }
 
 .card.large {
-    grid-column: span 3;
-
-    min-height: 160px;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
+grid-column: span 3;
+min-height: 160px;
+display: flex;
+align-items: flex-start;
+gap: 18px;
 }
 
 .card.large .card-image {
-    margin-bottom: 0;
+margin-bottom: 0;
 }
 
 .card-link {
-    text-decoration: none;
-    color: inherit;
+display: block;
+text-decoration: none;
+color: inherit;
 }
 
 /* ================= LOGIN ================= */
 
 .body-login {
-    background: #f7f7f7;
+font-family: Arial, Helvetica, sans-serif;
+background: #f7f7f7;
+color: #202020;
 }
-
-
-/* ================= MAIN LOGIN ================= */
 
 .login-main {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 48px;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 48px;
 }
 
-
-/* ================= ENCABEZADO ================= */
-
 .login-header {
-    text-align: center;
+text-align: center;
 }
 
 
 .login-header h1 {
-    font-size: 54px;
-
-    color: #0b2945;
-
-    margin-bottom: 15px;
+font-size: 54px;
+color: #0b2945;
+margin-bottom: 15px;
 }
-
 
 .login-header p {
-    font-size: 30px;
-
-    color: #0b2945;
-
-    margin-bottom: 18px;
+font-size: 30px;
+color: #0b2945;
+margin-bottom: 18px;
 }
-
-
-/* ================= LOGO ================= */
 
 .login-logo {
-    width: 120px;
-    height: 120px;
-
-    margin: 0 auto 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+width: 120px;
+height: 120px;
+margin: 0 auto 15px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
-
 
 .login-logo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
+width: 100%;
+height: 100%;
+object-fit: contain;
 }
 
+.tabla-login {
+width: 100%;
+border-collapse: collapse;
+}
+
+.tabla-login td {
+padding-bottom: 20px;
+}
+
+.tabla-login tr:last-child td {
+padding-bottom: 0;
+}
+
+.campo-login input {
+border: 1px solid #dcdcdc;
+border-radius: 6px;
+font-size: 14px;
+color: #555;
+background: white;
+outline: none;
+}
+
+.tabla-login .mostrar-password {
+padding-top: 0;
+padding-bottom: 25px;
+}
+
+.login-main {
+padding-bottom: 48px;
+}
 
 /* ================= CAMPOS ================= */
 
 .campo-login {
-    margin-bottom: 24px;
+margin-bottom: 0;
 }
 
 .campo-login label {
-    display: block;
-
-    font-size: 16px;
-
-    margin-bottom: 8px;
+display: block;
+font-size: 16px;
+margin-bottom: 8px;
 }
 
-
 .campo-login input {
-    width: 100%;
-
-    height: 42px;
-
-    border: 1px solid #d7d7d7;
-
-    border-radius: 10px;
-
-    padding: 0 15px;
-
-    font-size: 16px;
-
-    outline: none;
-
-    color: #333;
-
-    background: white;
+display: block;
+width: 100%;
+height: 42px;
+padding: 0 12px;
+box-sizing: border-box;
 }
 
 .campo-login input::placeholder {
-    color: #b8b8b8;
+color: #b8b8b8;
 }
 
 .campo-login input:focus {
-    border-color: #999;
+border-color: #999;
+}
+
+.campo textarea {
+width: 100%;
+min-height: 80px;
+border: 1px solid #dcdcdc;
+border-radius: 6px;
+padding: 10px;
+font-size: 13px;
+font-family: inherit;
+color: #555;
+outline: none;
+resize: vertical;
+}
+
+.campo textarea:focus {
+border-color: #999;
 }
 
 /* ================= MOSTRAR CONTRASEÑA ================= */
 
 .mostrar-password {
-    margin-top: -7px;
-
-    margin-bottom: 25px;
+margin-top: -7px;
+margin-bottom: 25px;
 }
 
-
 .mostrar-password label {
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-    cursor: pointer;
-
-    font-size: 16px;
+display: flex;
+align-items: center;
+gap: 11px;
+cursor: pointer;
+font-size: 16px;
 }
 
 .mostrar-password input {
-    width: 16px;
-    height: 16px;
-
-    accent-color: #333;
-
-    cursor: pointer;
+width: 16px;
+height: 16px;
+accent-color: #333;
+cursor: pointer;
 }
 
 .mostrar-password p {
-    margin-left: 27px;
-
-    margin-top: 3px;
-
-    font-size: 15px;
-
-    color: #888;
+margin-left: 27px;
+margin-top: 3px;
+font-size: 15px;
+color: #888;
 }
 
 /* ================= LOGIN ================= */
 
-    .login-main {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .login-header h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 54px;
-    color: #0b2945;
-    margin-bottom: 15px;    
+.login-main {
+padding-left: 20px;
+padding-right: 20px;
 }
 
-    .login-header p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    }
-
-    .login-logo {
-        width: 105px;
-        height: 105px;
-    }
-
-    .login-formulario {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    /* ================= MAIN (override) ================= */
-
-main.detalle {
-    min-height: auto;
-    padding: 64px 64px 80px;
-    background: white;
+.login-header h1 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 54px;
+color: #0b2945;
+margin-bottom: 15px;    
 }
 
+.login-header p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+}
+
+.login-logo {
+width: 105px;
+height: 105px;
+}
+
+.login-formulario {
+width: 320px;
+max-width: 100%;
+padding: 25px 23px;
+background: white;
+border: 1px solid #dcdcdc;
+border-radius: 8px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/*================BOTONES====== */
+
+.btn-ingresar {
+display: block;
+width: 100%;
+height: 40px;
+border: none;
+border-radius: 8px;
+background: #30175c;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.btn-ingresar:hover {
+background: #251247;
+}
+
+.btn-favorito {
+position: absolute;
+top: 10px;
+left: 10px;
+width: 44px;
+height: 44px;
+border: none;
+border-radius: 50%;
+background: #072440;
+color: white;
+font-size: 18px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.2s;
+}
+
+.btn-favorito:hover {
+transform: scale(1.08);
+}
+
+.btn-favorito.habilitado i {
+font-weight: 900;
+color: #ff6b81;
+}
+
+.btn-editar {
+color: #333;
+}
+
+.btn-eliminar {
+color: #c0392b;
+}
+
+.acciones-prestamo {
+display: table;
+table-layout: fixed;
+width: calc(100% + 12px);
+margin: 12px -6px 24px;
+border-collapse: separate;
+border-spacing: 6px 0;
+}
+
+.acciones-prestamo td {
+width: 50%;
+padding: 0;
+vertical-align: top;
+}
+
+.acciones-prestamo button {
+display: block;
+box-sizing: border-box;
+width: 100%;
+height: 40px;
+margin: 0 !important;
+border: 1px solid #072440;
+border-radius: 6px;
+background: #072440;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.acciones-prestamo button:hover {
+background: #123b60;
+}
+
+.acciones-prestamo button:disabled {
+background: #9aa7b4;
+border-color: #9aa7b4;
+cursor: not-allowed;
+}
+
+.btn-prestamo,
+.btn-editarPrestamo {
+display: block;
+width: 100%;
+height: 40px;
+margin: 0;
+border: 1px solid #072440;
+border-radius: 6px;
+background: #072440;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.btn-prestamo:hover,
+.btn-editarPrestamo:hover {
+background: #123b60;
+}
+
+.btn-prestamo:disabled,
+.btn-editarPrestamo:disabled {
+background: #9aa7b4;
+border-color: #9aa7b4;
+cursor: not-allowed;
+}
+
+.btn-nuevo-usuario {
+height: 44px;
+padding: 0 16px;
+background: #292929;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.retiro {
+display: table;
+margin-top: 28px;
+margin-bottom: 8px;
+border-collapse: collapse;
+}
+
+.retiro label {
+display: block;
+font-size: 16px;
+margin-bottom: 10px;
+}
 
 /* ================= LIBRO ================= */
 
 .libro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: start;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 64px;
+align-items: start;
 }
 
-
-/* ----- Portada ----- */
-
 .portada {
-    position: relative;
-    max-width: 504px;
+position: relative;
+max-width: 504px;
 }
 
 .portada img {
-    width: 100%;
-    display: block;
-    aspect-ratio: 504 / 812;
-    object-fit: cover;
+width: 100%;
+display: block;
+aspect-ratio: 504 / 812;
+object-fit: cover;
 }
 
-.btn-favorito {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 44px;
-    height: 44px;
-    border: none;
-    border-radius: 50%;
-    background: #072440;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s;
-}
-
-.btn-favorito:hover {
-    transform: scale(1.08);
-}
-
-.btn-favorito.activo i {
-    font-weight: 900;          /* corazón relleno */
-    color: #ff6b81;
-}
-
-
-/* ----- Info ----- */
+/* ======== Info ============ */
 
 .info h1 {
-    font-size: 24px;
-    margin-bottom: 16px;
+font-size: 24px;
+margin-bottom: 16px;
 }
 
 .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 15px;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 10px;
+border-radius: 6px;
+font-size: 15px;
 }
 
 .chip-autor {
-    background: #e6e6e6;
-    color: #444;
+background: #e6e6e6;
+color: #444;
 }
 
 .chip-estado {
-    background: #c9f5d2;
-    color: #0b6b2a;
+background: #c9f5d2;
+color: #0b6b2a;
 }
 
 .chip-estado.no-disponible {
-    background: #fbd5d5;
-    color: #9b1c1c;
+background: #fbd5d5;
+color: #9b1c1c;
 }
 
 .datos {
-    list-style: none;
-    margin: 24px 0 32px;
-    font-size: 19px;
-    line-height: 1.3;
+list-style: none;
+margin: 24px 0 32px;
+font-size: 19px;
+line-height: 1.3;
 }
 
 
-/* ----- Fecha de devolución ----- */
+/* ========= Fecha de devolución ========= */
 
 .devolucion {
-    margin-top: 28px;
+margin-top: 28px;
 }
 
 .devolucion label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 10px;
+display: block;
+font-size: 16px;
+margin-bottom: 10px;
 }
 
 .fecha-inputs {
-    display: flex;
-    gap: 8px;
+display: flex;
+gap: 8px;
 }
 
 .fecha-inputs input {
-    width: 75px;
-    height: 40px;
-    padding: 0 14px;
-    border: 1px solid #d5d5d5;
-    border-radius: 6px;
-    font-size: 15px;
-    outline: none;
+width: 75px;
+height: 40px;
+padding: 0 14px;
+border: 1px solid #d5d5d5;
+border-radius: 6px;
+font-size: 15px;
+outline: none;
 }
 
 .fecha-inputs input:focus {
-    border-color: #072440;
+border-color: #072440;
 }
 
 .fecha-inputs input.error {
-    border-color: #d33;
+border-color: #d33;
 }
 
 .mensaje {
-    min-height: 20px;
-    margin-top: 8px;
-    font-size: 13px;
+min-height: 20px;
+margin-top: 8px;
+font-size: 13px;
 }
 
 .mensaje.error { color: #d33; }
 .mensaje.ok    { color: #0b6b2a; }
 
-
-/* ----- Botón préstamo ----- */
-
-.btn-prestamo {
-    width: 100%;
-    height: 40px;
-    margin: 12px 0 24px;
-    border: 1px solid #072440;
-    border-radius: 6px;
-    background: #072440;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-prestamo:hover {
-    background: #123b60;
-}
-
-.btn-prestamo:disabled {
-    background: #9aa7b4;
-    border-color: #9aa7b4;
-    cursor: not-allowed;
-}
-
-
-/* ----- Acordeón ----- */
+/* ========== Acordeón ========== */
 
 .acordeon {
-    border: 1px solid #d5d5d5;
-    border-radius: 8px;
-    padding: 16px;
+border: 1px solid #d5d5d5;
+border-radius: 8px;
+padding: 16px;
 }
 
 .acordeon-cabecera {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    background: transparent;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: none;
+background: transparent;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
 }
 
 .acordeon-cabecera i {
-    transition: transform 0.2s;
+transition: transform 0.2s;
 }
 
 .acordeon-cuerpo {
-    display: none;
-    margin-top: 8px;
-    font-size: 16px;
-    line-height: 1.4;
+display: none;
+margin-top: 8px;
+font-size: 16px;
+line-height: 1.4;
 }
 
 .acordeon.abierto .acordeon-cuerpo {
-    display: block;
+display: block;
 }
 
 .acordeon:not(.abierto) .acordeon-cabecera i {
-    transform: rotate(180deg);
+transform: rotate(180deg);
 }
 
 
 /* ================= REVIEWS ================= */
 
 .reviews {
-    margin-top: 120px;
+margin-top: 120px;
 }
 
 .reviews h2 {
-    font-size: 24px;
-    margin-bottom: 40px;
+font-size: 24px;
+margin-bottom: 40px;
 }
 
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 48px;
 }
 
 .review {
-    border: 1px solid #d5d5d5;
-    border-radius: 8px;
-    padding: 24px;
+border: 1px solid #d5d5d5;
+border-radius: 8px;
+padding: 24px;
 }
 
 .estrellas {
-    display: flex;
-    gap: 6px;
-    font-size: 18px;
-    margin-bottom: 20px;
+display: flex;
+gap: 6px;
+font-size: 18px;
+margin-bottom: 20px;
 }
 
 .review h3 {
-    font-size: 24px;
-    margin-bottom: 8px;
+font-size: 24px;
+margin-bottom: 8px;
 }
 
 .review > p {
-    font-size: 16px;
-    margin-bottom: 24px;
+font-size: 16px;
+margin-bottom: 24px;
 }
 
 .reviewer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+display: flex;
+align-items: center;
+gap: 12px;
 }
 
 .reviewer img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #e6e6e6;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+object-fit: cover;
+background: #e6e6e6;
 }
 
 .reviewer strong {
-    display: block;
-    font-size: 16px;
-    color: #555;
+display: block;
+font-size: 16px;
+color: #555;
 }
 
 .reviewer small {
-    font-size: 16px;
-    color: #aaa;
+font-size: 16px;
+color: #aaa;
 }
 
 
 /* ================= FOOTER (extra) ================= */
 
 .footer-logo {
-    font-size: 36px;
-    margin-bottom: 16px;
+font-size: 36px;
+margin-bottom: 16px;
+}
+
+/* ================= DETALLE DE LIBRO (versión con tablas) ================= */
+
+main.detalle {
+min-height: auto;
+padding: 64px 64px 80px;
+background: white;
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* ================= LIBRO: tabla portada | info ================= */
+
+.libro {
+display: table;
+table-layout: fixed;
+width: calc(100% + 128px);
+margin: 0 -64px;
+border-collapse: separate;
+border-spacing: 64px 0;
+}
+
+.libro > tbody > tr > td {
+    width: 50%;
+    vertical-align: top;
+}
+
+
+/* ======= Portada ======= */
+
+.portada {
+position: relative;
+}
+
+.portada img {
+display: block;
+width: 100%;
+max-width: 504px;
+aspect-ratio: 504 / 812;
+object-fit: cover;
+}
+
+.btn-favorito {
+position: absolute;
+top: 10px;
+left: 10px;
+width: 44px;
+height: 44px;
+border: none;
+border-radius: 50%;
+background: #072440;
+color: white;
+font-size: 18px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.2s;
+}
+
+.btn-favorito:hover {
+transform: scale(1.08);
+}
+
+.btn-favorito.habilitado i {
+font-weight: 900;
+color: #ff6b81;
+}
+
+
+/* ======= Info ======== */
+
+.info h1 {
+font-size: 24px;
+margin-bottom: 16px;
+}
+
+.chip {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 10px;
+border-radius: 6px;
+font-size: 15px;
+}
+
+.chip-autor {
+background: #e6e6e6;
+color: #444;
+}
+
+.chip-estado {
+background: #c9f5d2;
+color: #0b6b2a;
+}
+
+.chip-estado.no-disponible {
+background: #fbd5d5;
+color: #9b1c1c;
+}
+
+.datos {
+display: table;
+margin: 24px 0 32px;
+border-collapse: collapse;
+font-size: 19px;
+line-height: 1.3;
+}
+
+.datos td {
+padding: 0;
+vertical-align: top;
+}
+
+.datos td:first-child {
+padding-right: 6px;
+white-space: nowrap;
+}
+
+
+/* ======== Fecha de devolución ====== */
+
+.devolucion {
+display: table;
+margin-top: 28px;
+border-collapse: collapse;
+}
+
+.devolucion label {
+display: block;
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+.fecha-inputs {
+display: table-row;
+}
+
+.fecha-inputs td {
+padding: 0 8px 0 0;
+}
+
+.fecha-inputs td:last-child {
+padding-right: 0;
+}
+
+.fecha-inputs input {
+width: 75px;
+height: 40px;
+padding: 0 14px;
+border: 1px solid #d5d5d5;
+border-radius: 6px;
+font-size: 15px;
+outline: none;
+}
+
+.fecha-inputs input:focus {
+border-color: #072440;
+}
+
+.fecha-inputs input.error {
+border-color: #d33;
+}
+
+.mensaje {
+min-height: 20px;
+margin-top: 8px;
+font-size: 13px;
+}
+
+.mensaje.error { color: #d33; }
+.mensaje.ok    { color: #0b6b2a; }
+
+
+/* ==== Botón préstamo ==== */
+
+.btn-prestamo {
+width: 100%;
+height: 40px;
+margin: 12px 0 24px;
+border: 1px solid #072440;
+border-radius: 6px;
+background: #072440;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.btn-prestamo:hover {
+background: #123b60;
+}
+
+.btn-prestamo:disabled {
+background: #9aa7b4;
+border-color: #9aa7b4;
+cursor: not-allowed;
+}
+
+
+/* ========== Acordeón =========== */
+
+.acordeon {
+display: table;
+width: 100%;
+border: 1px solid #d5d5d5;
+border-radius: 8px;
+border-collapse: separate;
+border-spacing: 0;
+}
+
+.acordeon tr:first-child td {
+padding: 16px;
+}
+
+.acordeon.abierto tr:first-child td {
+padding-bottom: 8px;
+}
+
+.acordeon-cabecera {
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: none;
+background: transparent;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.acordeon-cabecera i {
+transition: transform 0.2s;
+}
+
+.acordeon-cuerpo {
+display: none;
+padding: 0 16px 16px;
+font-size: 16px;
+line-height: 1.4;
+}
+
+.acordeon.abierto .acordeon-cuerpo {
+display: table-cell;
+}
+
+.acordeon:not(.abierto) .acordeon-cabecera i {
+transform: rotate(180deg);
+}
+
+.acordeon:not(.abierto) tr:first-child td {
+padding-bottom: 16px;
+}
+
+
+/* ================= REVIEWS ================= */
+
+.reviews {
+margin-top: 120px;
+}
+
+.reviews h2 {
+font-size: 24px;
+margin-bottom: 40px;
+}
+
+.reviews-grid {
+display: table;
+table-layout: fixed;
+width: calc(100% + 96px);
+margin: 0 -48px;
+border-collapse: separate;
+border-spacing: 48px 0;
+}
+
+.review {
+width: 33.33%;
+vertical-align: top;
+border: 1px solid #d5d5d5;
+border-radius: 8px;
+padding: 24px;
+}
+
+.estrellas {
+display: flex;
+gap: 6px;
+font-size: 18px;
+margin-bottom: 20px;
+}
+
+.review h3 {
+font-size: 24px;
+margin-bottom: 8px;
+}
+
+.review > p {
+font-size: 16px;
+margin-bottom: 24px;
+}
+
+.reviewer {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.reviewer img {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+object-fit: cover;
+background: #e6e6e6;
+}
+
+.reviewer strong {
+display: block;
+font-size: 16px;
+color: #555;
+}
+
+.reviewer small {
+font-size: 16px;
+color: #aaa;
+}
+
+/* ================= RESPONSIVE DE DETALLE LIBROS================= */
 
 @media (max-width: 1000px) {
     main.detalle {
         padding: 40px 30px 60px;
     }
 
-    .libro {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    .libro,
+    .libro > tbody,
+    .libro > tbody > tr,
+    .libro > tbody > tr > td {
+    display: block;
+    width: 100%;
     }
 
-    .portada {
-        max-width: 420px;
-        margin: 0 auto;
+    .libro {
+    margin: 0;
+    }
+
+    .libro > tbody > tr > td + td {
+    margin-top: 32px;
+    }
+
+    .portada img {
+    max-width: 420px;
+    margin: 0 auto;
+    }
+
+    .reviews-grid,
+    .reviews-grid > tbody,
+    .reviews-grid > tbody > tr,
+    .review {
+    display: block;
+    width: 100%;
     }
 
     .reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+    margin: 0;
+    }
+
+    .review {
+    margin-bottom: 24px;
     }
 }
 
 /* ================= PÁGINA PRÉSTAMO ================= */
 
 .main-prestamo {
-    padding: 40px 20px;
+padding: 40px 20px;
 }
 
 .separador {
-    border: none;
-    border-top: 1px solid #e5e5e5;
-    margin: 16px 0;
+border: none;
+border-top: 1px solid #e5e5e5;
+margin: 16px 0;
 }
 
 .bloque h3 {
-    font-size: 14px;
-    margin-bottom: 4px;
+font-size: 14px;
+margin-bottom: 4px;
 }
 
 .ayuda {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 10px;
+font-size: 13px;
+color: #888;
+margin-bottom: 10px;
 }
 
 .campo small {
-    display: block;
-    font-size: 11px;
-    color: #999;
-    margin-top: 5px;
+display: block;
+font-size: 11px;
+color: #999;
+margin-top: 5px;
 }
 
 .campo input::placeholder {
-    color: #bbb;
+color: #bbb;
 }
 
 .fecha-grupo {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.3fr;
-    gap: 8px;
+display: grid;
+grid-template-columns: 1fr 1fr 1.3fr;
+gap: 8px;
 }
 
 /* ================= PANEL LATERAL ================= */
 
 .panel-pasos {
-    background: #f6f6f6;
-    border-radius: 6px;
-    padding: 18px;
-    align-self: start;
+background: #f6f6f6;
+border-radius: 6px;
+padding: 18px;
+align-self: start;
 }
 
 .paso {
-    display: flex;
-    gap: 12px;
-    position: relative;
-    padding-bottom: 22px;
+display: flex;
+gap: 12px;
+position: relative;
+padding-bottom: 22px;
 }
 
 .paso:not(:last-of-type)::after {
-    content: "";
-    position: absolute;
-    left: 16px;
-    top: 38px;
-    height: 14px;
-    border-left: 1px solid #ddd;
+content: "";
+position: absolute;
+left: 16px;
+top: 38px;
+height: 14px;
+border-left: 1px solid #ddd;
 }
 
 .paso-icono {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    background: white;
-    border: 1px solid #e3e3e3;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: #333;
+flex-shrink: 0;
+width: 32px;
+height: 32px;
+background: white;
+border: 1px solid #e3e3e3;
+border-radius: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: #333;
 }
 
 .paso h4 {
-    font-size: 13px;
-    margin-bottom: 3px;
+font-size: 13px;
+margin-bottom: 3px;
 }
 
 .paso p {
-    font-size: 11px;
-    color: #888;
-    line-height: 1.4;
+font-size: 11px;
+color: #888;
+line-height: 1.4;
 }
 
 .nota {
-    font-size: 11px;
-    color: #888;
-    line-height: 1.5;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 14px;
+font-size: 11px;
+color: #888;
+line-height: 1.5;
+border-top: 1px solid #e0e0e0;
+padding-top: 14px;
 }
 
-/* ================= BOTONES CON LÍNEA ================= */
-
 .acciones-linea {
-    border-top: 1px solid #e5e5e5;
-    margin-top: 18px;
-    padding-top: 16px;
+border-top: 1px solid #e5e5e5;
+margin-top: 18px;
+padding-top: 16px;
 }
 
 /* ================= ESTADOS Y MENSAJES ================= */
 
 .campo input.input-error,
 .campo select.input-error {
-    border-color: #d93025;
-    background: #fff8f7;
+border-color: #d93025;
+background: #fff8f7;
 }
 
 .ok-texto {
-    color: #1e7e34 !important;
+color: #1e7e34 !important;
 }
 
 .error-texto {
-    font-size: 12px;
-    color: #d93025;
-    min-height: 16px;
-    margin: 4px 0 8px;
+font-size: 12px;
+color: #d93025;
+min-height: 16px;
+margin: 4px 0 8px;
 }
 
 .mensaje-form {
-    font-size: 13px;
-    min-height: 18px;
-    margin-top: 14px;
-    text-align: right;
+font-size: 13px;
+min-height: 18px;
+margin-top: 14px;
+text-align: right;
 }
 
 .mensaje-form.error {
-    color: #d93025;
+color: #d93025;
 }
 
 .mensaje-form.exito {
-    color: #1e7e34;
+color: #1e7e34;
 }
 
 /* ================= MODAL CLIENTE ================= */
 
 .modal {
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
-    padding: 22px;
-    width: 340px;
-    max-width: 90vw;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+border: 1px solid #dcdcdc;
+border-radius: 8px;
+padding: 22px;
+width: 340px;
+max-width: 90vw;
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .modal::backdrop {
-    background: rgba(0, 0, 0, 0.35);
+background: rgba(0, 0, 0, 0.35);
 }
 
 .modal h3 {
-    font-size: 16px;
-    margin-bottom: 4px;
+font-size: 16px;
+margin-bottom: 4px;
 }
 
 .modal input[readonly] {
-    background: #f6f6f6;
+background: #f6f6f6;
 }
 
-/* ================= RESPONSIVE ================= */
+.btn-icono:disabled {
+color: #bbb;
+cursor: not-allowed;
+}
 
 @media (max-width: 700px) {
-    .form-contenido {
-        grid-template-columns: 1fr;
-    }
+.form-contenido {
+    grid-template-columns: 1fr;
+}
 
-    .fila {
-        grid-template-columns: 1fr;
-    }
+.fila {
+    grid-template-columns: 1fr;
+}
 }
 
 /* ================= CATÁLOGO ================= */
 
 .body-catalogo {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #faf7ff;
-    color: #202020;
+font-family: Arial, Helvetica, sans-serif;
+background: #faf7ff;
+color: #202020;
 }
 
 .catalogo {
-    min-height: auto;
-    padding: 48px 50px 80px;
+min-height: auto;
+padding: 48px 50px 80px;
 }
 
 .catalogo h2 {
-    font-size: 20px;
-    margin: 0 0 40px 8px;
+font-size: 20px;
+margin: 0 0 40px 8px;
 }
 
-
-/*========== CATALOGO ============= */
+/*========== CATALOGO DE LIBROS ============= */
 
 .buscador {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    height: 48px;
-    padding: 0 18px;
-    margin-bottom: 34px;
-    background: #ece8f2;
-    border-radius: 25px;
-    color: #555;
+display: table;
+width: 100%;
+height: 48px;
+margin-bottom: 34px;
+background: #ece8f2;
+border-radius: 25px;
+border-collapse: separate;
+border-spacing: 0;
+color: #555;
+}
+
+.buscador td {
+vertical-align: middle;
+white-space: nowrap;
+}
+
+.buscador td:first-child {
+width: 1%;
+padding: 0 14px 0 18px;
+}
+
+.buscador td:last-child {
+width: 1%;
+padding: 0 18px 0 14px;
 }
 
 .buscador input {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 13px;
-    color: #333;
+width: 100%;
+border: none;
+outline: none;
+background: transparent;
+font-size: 13px;
+color: #333;
 }
 
 .catalogo-layout {
-    display: grid;
-    grid-template-columns: 196px 1fr;
-    gap: 34px;
-    align-items: start;
+display: table;
+table-layout: fixed;
+width: calc(100% + 68px);
+margin: 0 -34px;
+border-collapse: separate;
+border-spacing: 34px 0;
+}
+
+.catalogo-layout > tbody > tr > td {
+vertical-align: top;
+}
+
+.catalogo-layout > tbody > tr > td:first-child {
+width: 196px;
 }
 
 .categorias {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 16px;
+background: white;
+border: 1px solid #ddd;
+border-radius: 6px;
+padding: 16px;
 }
 
 .categorias h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
+font-size: 18px;
+margin-bottom: 12px;
 }
 
 .categorias ul {
-    list-style: none;
+list-style: none;
 }
 
 .categorias li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    margin-bottom: 4px;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px;
+margin-bottom: 4px;
+border: 1px solid transparent;
+border-radius: 6px;
+font-size: 13px;
+cursor: pointer;
 }
 
 .categorias li span {
-    color: #777;
+color: #777;
 }
 
 .categorias li:hover {
-    background: #f3f0f7;
+background: #f3f0f7;
 }
 
 .categorias li.activa {
@@ -937,77 +1410,95 @@ main.detalle {
     border-color: #999;
 }
 
+
+/* ========= Lista de libros ========== */
+
 .lista-libros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 34px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 34px;
 }
 
 .libro-card {
-    display: block;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 16px;
-    text-decoration: none;
-    color: inherit;
-    transition: 0.2s;
+display: block;
+background: white;
+border: 1px solid #ddd;
+border-radius: 6px;
+padding: 16px;
+text-decoration: none;
+color: inherit;
+transition: 0.2s;
 }
 
 .libro-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .libro-imagen {
-    width: 112px;
-    height: 112px;
-    margin-bottom: 18px;
-    background: #e3e3e3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #cfcfcf;
-    font-size: 48px;
-    overflow: hidden;
+width: 112px;
+height: 112px;
+margin-bottom: 18px;
+background: #e3e3e3;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #cfcfcf;
+font-size: 48px;
+overflow: hidden;
 }
 
 .libro-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 
 .libro-card h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
+font-size: 18px;
+margin-bottom: 6px;
 }
 
 .libro-card p {
-    font-size: 13px;
-    line-height: 1.4;
-    color: #777;
+font-size: 13px;
+line-height: 1.4;
+color: #777;
 }
 
 .sin-resultados {
-    grid-column: 1 / -1;
-    color: #777;
-    font-size: 14px;
+grid-column: 1 / -1;
+color: #777;
+font-size: 14px;
 }
 
+/*=========== DETALLE DEL CATALOGO DE LIBROS ================ */
+
 @media (max-width: 1000px) {
+    .catalogo-layout,
+    .catalogo-layout > tbody,
+    .catalogo-layout > tbody > tr,
+    .catalogo-layout > tbody > tr > td,
+    .catalogo-layout > tbody > tr > td:first-child {
+    display: block;
+    width: 100%;
+    }
+
     .catalogo-layout {
-        grid-template-columns: 1fr;
+    margin: 0;
+    }
+
+    .catalogo-layout > tbody > tr > td:first-child {
+    margin-bottom: 34px;
     }
 }
 
 @media (max-width: 700px) {
     .catalogo {
-        padding: 30px 15px 60px;
+    padding: 30px 15px 60px;
     }
 
     .lista-libros {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     }
 }
 

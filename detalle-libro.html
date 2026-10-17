@@ -4,155 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookStack - Detalle de libro</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/formularios.css">
 </head>
 
 <body class="body-detalle">
 
     <header class="navbar">
-
-        <div class="logo-navbar">
-            <img src="img/logo_vectorizado.svg" alt="Logo BookStack">
-        </div>
-
-        <nav>
-            <a href="catalogo-usuario.html"><i class="fa-solid fa-book"></i> Libros</a>
-            <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
-            <a href="#"><i class="fa-regular fa-heart"></i> Donaciones</a>
-            <a href="#"><i class="fa-regular fa-envelope"></i> Contacto</a>
-            <a href="biblioteca-personal.html"><i class="fa-solid fa-bookmark"></i> Mi Biblioteca</a>
-            <a href="#"><i class="fa-solid fa-handshake"></i> Préstamos</a>
-            <a href="#"><i class="fa-regular fa-user"></i>Mi Perfil</a>
-        </nav>
-
-        <button class="btn-salir" id="btnSalir">
-            Salir
-        </button>
-
+        <table class="tabla-navbar">
+            <tr>
+                <td class="logo-navbar"><img src="img/logo_vectorizado.svg" alt="Logo BookStack"></td>
+                <td>
+                    <nav>
+                        <a href="catalogo.html"><i class="fa-solid fa-book"></i> Catálogos</a>
+                        <a href="operaciones.html"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+                        <a href="gestion-stock.html"><i class="fa-solid fa-cube"></i> Stock</a>
+                        <a href="gestion-stock.html"><i class="fa-regular fa-heart"></i> Donaciones</a>
+                        <a href="gestion-stock.html"><i class="fa-solid fa-rotate-left"></i> Devoluciones</a>
+                        <a href="registro-prestamo.html"><i class="fa-solid fa-hand-holding-heart"></i> Préstamos</a>
+                        <a href="resenas.html"><i class="fa-solid fa-user-group"></i> Reseñas</a>
+                        <a href="index.html"><i class="fa-solid fa-gear"></i> Administración</a>
+                    </nav>
+                </td>
+                <td><button class="btn-salir" id="btnSalir">Salir</button></td>
+            </tr>
+        </table>
     </header>
 
     <main class="detalle">
+        <p class="sin-resultados" id="noEncontrado" hidden>
+            No se encontró el libro. <a href="catalogo.html">Volver al catálogo</a>
+        </p>
 
-        <section class="libro">
-
-            <div class="portada">
-                <img id="portada" src="img/harry-potter.jpg" alt="Portada del libro">
-                <button class="btn-favorito" id="btnFavorito" aria-label="Agregar a favoritos">
-                    <i class="fa-regular fa-heart"></i>
-                </button>
-            </div>
-
-            <div class="info">
-
-                <h1 id="titulo">Harry Potter y la piedra filosofal</h1>
-
-                <span class="chip chip-autor" id="autor">J.K. Rowling</span>
-
-                <ul class="datos">
-                    <li>ISBN: <span id="isbn">978-...</span></li>
-                    <li>Editorial: <span id="editorial">...</span></li>
-                    <li>Categoría: <span id="categoria">Fantasía</span></li>
-                    <li>Fecha de ingreso: <span id="fechaIngreso">...</span></li>
-                </ul>
-
-                <span class="chip chip-estado" id="estado">
-                    <span id="estadoTexto">Disponible</span>
-                    <i class="fa-solid fa-xmark"></i>
-                </span>
-
-                <div class="devolucion">
-                    <label>Fecha devolución</label>
-
-                    <div class="fecha-inputs">
-                        <input type="text" id="dia"  placeholder="DD"   maxlength="2" inputmode="numeric">
-                        <input type="text" id="mes"  placeholder="MM"   maxlength="2" inputmode="numeric">
-                        <input type="text" id="anio" placeholder="YYYY" maxlength="4" inputmode="numeric">
-                    </div>
-
-                    <p class="mensaje" id="mensaje"></p>
-                </div>
-
-                <button class="btn-prestamo" id="btnPrestamo">
-                    Solicitar Préstamo
-                </button>
-
-                <div class="acordeon abierto" id="acordeon">
-                    <button class="acordeon-cabecera" id="acordeonBtn" type="button">
-                        <span>Descripción</span>
-                        <i class="fa-solid fa-chevron-up"></i>
+        <table class="libro">
+            <tr>
+                <td class="portada">
+                    <img id="portada" src="img/harry-potter.jpg" alt="Portada del libro">
+                    <button class="btn-favorito" id="btnFavorito" aria-label="Agregar a favoritos">
+                        <i class="fa-regular fa-heart"></i>
                     </button>
-                    <p class="acordeon-cuerpo" id="descripcion">
-                        Answer the frequently asked question in a simple sentence,
-                        a longish paragraph, or even in a list.
-                    </p>
-                </div>
+                </td>
 
-            </div>
-        </section>
+                <td class="info">
+                    <h1 id="titulo">Harry Potter y la piedra filosofal</h1>
+                    <span class="chip chip-autor" id="autor">J.K. Rowling</span>
+
+                    <table class="datos">
+                        <tr><td>ISBN:</td><td><span id="isbn">978-...</span></td></tr>
+                        <tr><td>Editorial:</td><td><span id="editorial">...</span></td></tr>
+                        <tr><td>Categoría:</td><td><span id="categoria">Fantasía</span></td></tr>
+                        <tr><td>Fecha de ingreso:</td><td><span id="fechaIngreso">...</span></td></tr>
+                    </table>
+
+                    <span class="chip chip-estado" id="estado">
+                        <span id="estadoTexto">Disponible</span>
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+
+                    <table class="retiro">
+                        <tr><td colspan="3"><label>Fecha retiro</label></td></tr>
+                        <tr class="fecha-inputs">
+                            <td><input type="text" id="dia"  placeholder="DD"   maxlength="2" inputmode="numeric"></td>
+                            <td><input type="text" id="mes"  placeholder="MM"   maxlength="2" inputmode="numeric"></td>
+                            <td><input type="text" id="anio" placeholder="YYYY" maxlength="4" inputmode="numeric"></td>
+                        </tr>
+                        <tr><td colspan="3"><p class="mensaje" id="mensaje"></p></td></tr>
+                    </table>
+
+                    <table class="acciones-prestamo">
+                        <tr>
+                            <td><button class="btn-prestamo" id="btnPrestamo">Registrar Préstamo</button></td>
+                            <td><button class="btn-editarPrestamo" id="btnEditarPrestamo">Editar Estado</button></td>
+                        </tr>
+                    </table>
+
+                    <table class="acordeon abierto" id="acordeon">
+                        <tr>
+                            <td>
+                                <button class="acordeon-cabecera" id="acordeonBtn" type="button">
+                                    <span>Descripción</span>
+                                    <i class="fa-solid fa-chevron-up"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="acordeon-cuerpo" id="descripcion">
+                            Answer the frequently asked question in a simple sentence, a longish paragraph, or even in a list.
+                        </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
 
         <section class="reviews">
-            <h2>Latest reviews</h2>
-            <div class="reviews-grid" id="reviewsGrid"></div>
+            <h2>Ultimas reseñas</h2>
+            <table class="reviews-grid">
+                <tr id="reviewsGrid"></tr>
+            </table>
         </section>
 
     </main>
 
     <footer class="footer-index">
-
-        <section class="footer-redes">
-            <div class="redes redes-index">
-                <a href="#" aria-label="X">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" aria-label="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
-        </section>
-
-        <section class="footer-columna">
-            <h4>Use cases</h4>
-            <p>UI design</p>
-            <p>UX design</p>
-            <p>Wireframing</p>
-            <p>Diagramming</p>
-            <p>Brainstorming</p>
-            <p>Online whiteboard</p>
-            <p>Team collaboration</p>
-        </section>
-
-        <section class="footer-columna">
-            <h4>Explore</h4>
-            <p>Design</p>
-            <p>Prototyping</p>
-            <p>Development features</p>
-            <p>Design systems</p>
-            <p>Collaboration features</p>
-            <p>Design process</p>
-            <p>FigJam</p>
-        </section>
-
-        <section class="footer-columna">
-            <h4>Resources</h4>
-            <p>Blog</p>
-            <p>Best practices</p>
-            <p>Colors</p>
-            <p>Color wheel</p>
-            <p>Support</p>
-            <p>Developers</p>
-            <p>Resource library</p>
-        </section>
-
+        <table class="tabla-footer">
+            <tr>
+                <td class="footer-redes">
+                    <div class="redes redes-index">
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </td>
+                <td class="footer-columna">
+                    <h4>Use cases</h4>
+                    <p>UI design</p>
+                    <p>UX design</p>
+                    <p>Wireframing</p>
+                    <p>Diagramming</p>
+                    <p>Brainstorming</p>
+                    <p>Online whiteboard</p>
+                    <p>Team collaboration</p>
+                </td>
+                <td class="footer-columna">
+                    <h4>Explore</h4>
+                    <p>Design</p>
+                    <p>Prototyping</p>
+                    <p>Development features</p>
+                    <p>Design systems</p>
+                    <p>Collaboration features</p>
+                    <p>Design process</p>
+                    <p>FigJam</p>
+                </td>
+                <td class="footer-columna">
+                    <h4>Resources</h4>
+                    <p>Blog</p>
+                    <p>Best practices</p>
+                    <p>Colors</p>
+                    <p>Color wheel</p>
+                    <p>Support</p>
+                    <p>Developers</p>
+                    <p>Resource library</p>
+                </td>
+            </tr>
+        </table>
     </footer>
 
     <script src="js/detalle-libro.js"></script>

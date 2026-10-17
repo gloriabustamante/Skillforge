@@ -1,134 +1,138 @@
-
-/* ================= FORMULARIO ================= */
+/* ================= FORMULARIO (contenedor) ================= */
 
 .formulario {
     max-width: 830px;
-
     margin: 0 auto;
-
     background: white;
-
     border: 1px solid #dcdcdc;
-
     border-radius: 6px;
-
     padding: 18px;
-
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .formulario h2 {
     font-size: 20px;
-
     margin-bottom: 8px;
 }
 
 .descripcion {
     font-size: 13px;
-
     color: #888;
-
     margin-bottom: 20px;
 }
 
+/* ================= LAYOUT CON TABLAS (alta de libro) ================= */
+
 .form-contenido {
-    display: grid;
-
-    grid-template-columns: 2.1fr 1fr;
-
-    gap: 18px;
+    width: calc(100% + 36px);
+    margin: 0 -18px;
+    border-collapse: separate;
+    border-spacing: 18px 0;
 }
 
-.login-formulario {
-    width: 320px;
-
-    background: white;
-
-    border: 1px solid #d5d5d5;
-
-    border-radius: 6px;
-
-    padding: 25px 23px;
-
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+.form-contenido > tbody > tr > td {
+    vertical-align: top;
 }
+
+.form-contenido > tbody > tr > td.campos {
+    width: 67%;
+}
+
+.tabla-campos {
+    width: 100%;
+}
+
+.fila {
+    width: calc(100% + 24px);
+    margin: 0 -12px;
+    border-collapse: separate;
+    border-spacing: 12px 0;
+}
+
+.fila td.campo {
+    width: 50%;
+}
+
 
 /* ================= CAMPOS ================= */
 
 .campo {
-    margin-bottom: 12px;
+    padding-bottom: 12px;
 }
 
 .campo label,
 .imagen > label {
     display: block;
-
     font-size: 13px;
-
     margin-bottom: 6px;
 }
 
 .campo input,
-.campo select {
+.campo select,
+.tabla-form input[type="text"],
+.tabla-form input[type="email"] {
     width: 100%;
-
     height: 38px;
-
-    border: 1px solid #dcdcdc;
-
-    border-radius: 6px;
-
     padding: 0 10px;
-
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
     font-size: 13px;
-
     color: #555;
-
     outline: none;
+    background: white;
+}
 
+.campo textarea,
+.tabla-form textarea {
+    width: 100%;
+    min-height: 96px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+    resize: vertical;
     background: white;
 }
 
 .campo input:focus,
-.campo select:focus {
+.campo select:focus,
+.campo textarea:focus,
+.tabla-form input:focus,
+.tabla-form textarea:focus {
     border-color: #999;
 }
 
-.fila {
-    display: grid;
+.campo input::placeholder {
+    color: #bbb;
+}
 
-    grid-template-columns: 1fr 1fr;
-
-    gap: 12px;
+.campo small {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    margin-top: 5px;
 }
 
 /* ================= IMAGEN ================= */
 
 .zona-imagen {
     height: 188px;
-
-    border: 2px dashed #dddddd;
-
+    border: 2px dashed #ddd;
     border-radius: 5px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     cursor: pointer;
-
     position: relative;
-
     overflow: hidden;
 }
 
 .zona-imagen:hover {
     background: #fafafa;
-
     border-color: #bbb;
 }
 
@@ -139,91 +143,67 @@
 .icono-imagen {
     width: 38px;
     height: 38px;
-
     margin: 0 auto 10px;
-
     border-radius: 50%;
-
     background: #faf7ff;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
 
 .icono-imagen i {
     font-size: 18px;
-
     color: #555;
 }
 
 .zona-imagen p {
     font-size: 13px;
-
     color: #555;
-
     margin-bottom: 8px;
 }
 
 .zona-imagen span {
     font-size: 12px;
-
     color: #999;
 }
 
-
-/* VISTA PREVIA */
-
+/* Vista previa */
 .preview {
     display: none;
-
     width: 100%;
     height: 100%;
-
     object-fit: contain;
 }
 
 
 /* ================= BOTONES ================= */
 
+/* Tabla de acciones alineada a la derecha */
 .acciones {
-    display: flex;
-
-    justify-content: flex-end;
-
-    align-items: center;
-
-    gap: 20px;
-
+    margin-left: auto;
     margin-top: 12px;
+}
+
+.acciones td {
+    padding-left: 20px;
+    vertical-align: middle;
 }
 
 .btn-cancelar {
     border: none;
-
     background: transparent;
-
     color: #555;
-
     font-size: 13px;
-
     cursor: pointer;
 }
 
 .btn-guardar {
     border: none;
-
     background: #292929;
-
     color: white;
-
     border-radius: 6px;
-
     padding: 9px 13px;
-
     font-size: 13px;
-
     cursor: pointer;
 }
 
@@ -231,27 +211,16 @@
     background: #111;
 }
 
-
-/* ================= BOTÓN ================= */
-
 .btn-ingresar {
     width: 100%;
-
     height: 40px;
-
     border: none;
-
     border-radius: 8px;
-
     background: #30175c;
-
     color: white;
-
     font-size: 16px;
-
     cursor: pointer;
 }
-
 
 .btn-ingresar:hover {
     background: #251247;
@@ -266,6 +235,16 @@
     margin: 16px 0;
 }
 
+.bloque {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bloque td {
+    padding: 0;
+}
+
 .bloque h3 {
     font-size: 14px;
     margin-bottom: 4px;
@@ -277,35 +256,62 @@
     margin-bottom: 10px;
 }
 
-.campo small {
-    display: block;
-    font-size: 11px;
-    color: #999;
-    margin-top: 5px;
+.main-prestamo .ayuda {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.body-prestamo section.formulario .form-contenido {
+    table-layout: fixed;
+}
+
+table.campo {
+    display: table;
+    width: 100%;
+    margin-bottom: 12px;
+    border-collapse: collapse;
+}
+
+table.campo td {
+    padding: 0;
 }
 
 .fecha-grupo {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.3fr;
-    gap: 8px;
+    display: table;
+    table-layout: fixed;
+    width: calc(100% + 8px);
+    margin: 0 -4px;
+    border-collapse: separate;
+    border-spacing: 4px 0;
 }
 
-.campo input::placeholder {
-    color: #bbb;
+.fecha-grupo td {
+    padding: 0;
 }
 
 .panel-pasos {
     background: #f6f6f6;
     border-radius: 6px;
     padding: 18px;
-    align-self: start;
+    vertical-align: top;
 }
 
 .paso {
-    display: flex;
-    gap: 12px;
+    display: table;
     position: relative;
-    padding-bottom: 22px;
+    width: 100%;
+    margin-bottom: 22px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.paso td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.paso td + td {
+    padding-left: 12px;
 }
 
 .paso:not(:last-of-type)::after {
@@ -318,15 +324,13 @@
 }
 
 .paso-icono {
-    flex-shrink: 0;
     width: 32px;
     height: 32px;
     background: white;
     border: 1px solid #e3e3e3;
     border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
     font-size: 13px;
     color: #333;
 }
@@ -351,7 +355,361 @@
 }
 
 .acciones-linea {
-    border-top: 1px solid #e5e5e5;
+    width: 100%;
     margin-top: 18px;
-    padding-top: 16px;
+    border-top: 1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+
+.acciones-linea td {
+    padding: 16px 0 0;
+}
+
+.acciones-linea td:first-child {
+    width: 100%;
+    text-align: right;
+}
+
+.acciones-linea td:last-child {
+    width: 1%;
+    padding-left: 20px;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .body-prestamo section.formulario .form-contenido,
+    .body-prestamo section.formulario .form-contenido > tbody,
+    .body-prestamo section.formulario .form-contenido > tbody > tr,
+    .body-prestamo section.formulario .form-contenido > tbody > tr > td {
+        display: block;
+        width: 100%;
+    }
+
+    .body-prestamo section.formulario .form-contenido {
+        margin: 0;
+    }
+
+    .body-prestamo section.formulario .panel-pasos {
+        margin-top: 24px;
+    }
+
+    .body-prestamo .fila,
+    .body-prestamo .fila > tbody,
+    .body-prestamo .fila > tbody > tr,
+    .body-prestamo .fila > tbody > tr > td.campo {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .body-prestamo .fila > tbody > tr > td.campo + td.campo {
+        margin-top: 16px;
+    }
+}
+
+
+/* ================= FORMULARIO RESEÑAS ================= */
+
+.tabla-form {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-form td {
+    padding: 0 0 12px;
+    vertical-align: top;
+}
+
+.tabla-form label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.tabla-form small {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #888;
+}
+
+.acciones-celda {
+    text-align: right;
+}
+
+.acciones-celda button {
+    margin-left: 16px;
+}
+
+.estrellas-input {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.estrellas-input input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.estrellas-input label {
+    display: inline;
+    margin: 0;
+    font-size: 18px;
+    color: #f5b301;
+    cursor: pointer;
+}
+
+.estrellas-input input:checked ~ label i,
+.estrellas-input label:hover i,
+.estrellas-input label:hover ~ label i {
+    font-weight: 900;
+}
+
+.estrellas-input input:focus-visible + label {
+    outline: 2px solid #999;
+    border-radius: 4px;
+}
+
+.tabla-form select {
+    width: 100%;
+    height: 38px;
+    padding: 0 34px 0 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    appearance: none;
+    -webkit-appearance: none;
+    background: white url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.5'/></svg>") no-repeat right 12px center;
+}
+
+.tabla-form select:focus {
+    border-color: #999;
+}
+
+.tabla-form select option {
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #202020;
+    background: white;
+}
+
+.tabla-form input[readonly] {
+    background: #f6f6f6;
+    cursor: not-allowed;
+}
+
+/* ================= TABLAS RESUMEN ================= */
+
+.tabla-resumen {
+    border-collapse: separate;
+    border-spacing: 12px 0;
+    margin: 20px -12px 28px;
+    width: calc(100% + 24px);
+}
+
+.resumen {
+    width: 50%;
+    padding: 12px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    vertical-align: top;
+}
+
+.tabla-resumen-3 .resumen {
+    width: 33.33%;
+}
+
+.resumen span,
+.resumen small {
+    display: block;
+    font-size: 12px;
+    color: #777;
+}
+
+.resumen strong {
+    display: block;
+    margin: 8px 0;
+    font-size: 18px;
+    color: #202020;
+}
+
+.resumen-verde   { border-color: #2bb673; }
+.resumen-rojo    { border-color: #e5484d; }
+.resumen-naranja { border-color: #e08a1e; }
+
+
+/* ================= TABLAS DE OPERACIONES / STOCK ================= */
+
+.titulo-tabla {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.tabla-operaciones {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.tabla-operaciones th {
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    font-size: 12px;
+    font-weight: normal;
+    color: #777;
+    text-align: left;
+}
+
+.tabla-operaciones th:first-child { border-radius: 6px 0 0 6px; }
+.tabla-operaciones th:last-child  { border-radius: 0 6px 6px 0; }
+
+.tabla-operaciones td {
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 13px;
+    color: #202020;
+    vertical-align: middle;
+}
+
+.tabla-operaciones td:first-child {
+    border-left: 1px solid #e3e3e3;
+    border-radius: 6px 0 0 6px;
+}
+
+.tabla-operaciones td:last-child {
+    border-right: 1px solid #e3e3e3;
+    border-radius: 0 6px 6px 0;
+}
+
+.tabla-operaciones th:nth-child(1),
+.tabla-operaciones td:nth-child(1) { width: 36%; }
+
+.tabla-operaciones th:nth-child(2),
+.tabla-operaciones td:nth-child(2) { width: 38%; }
+
+.tabla-stock td {
+    height: 48px;
+}
+
+.tabla-stock th:nth-child(1),
+.tabla-stock td:nth-child(1) { width: 20%; }
+
+.tabla-stock th:nth-child(2),
+.tabla-stock td:nth-child(2) { width: 14%; }
+
+.tabla-stock th:nth-child(3),
+.tabla-stock td:nth-child(3) { width: 20%; }
+
+.tabla-stock th:nth-child(4),
+.tabla-stock td:nth-child(4) { width: 22%; }
+
+.tabla-stock th:nth-child(5),
+.tabla-stock td:nth-child(5) { width: 8%; }
+
+.tabla-stock th:nth-child(6),
+.tabla-stock td:nth-child(6) { width: 16%; }
+
+.tabla-stock th:last-child,
+.tabla-stock td:last-child {
+    text-align: right;
+}
+
+
+/* ================= ESTADOS ================= */
+
+.estado {
+    display: inline-block;
+    width: 120px;
+    padding: 5px 0;
+    border: 1px solid;
+    border-radius: 6px;
+    background: white;
+    font-size: 12px;
+    color: #8a8a8a;
+    text-align: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.estado-pendiente,
+.estado-ultimo     { border-color: #e08a1e; }
+.estado-devuelto   { border-color: #2bb673; }
+.estado-disponible { border-color: #1f7a5a; }
+.estado-inactivo   { border-color: #d33; }
+
+
+/* ================= BOTONES DE ICONO ================= */
+
+.celda-acciones {
+    white-space: nowrap;
+}
+
+.btn-icono {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: #202020;
+    cursor: pointer;
+}
+
+.btn-icono + .btn-icono {
+    margin-left: 6px;
+}
+
+.btn-icono:hover {
+    color: #666;
+}
+
+.estado-prestamo { border-color: #e08a1e; }
+
+.modal-ancho {
+width: 760px;
+}
+
+.tabla-ejemplares-contenedor {
+max-height: 60vh;
+overflow: auto;
+}
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(1),
+.tabla-operaciones.tabla-ejemplares td:nth-child(1) { width: 12%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(2),
+.tabla-operaciones.tabla-ejemplares td:nth-child(2) { width: 22%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(3),
+.tabla-operaciones.tabla-ejemplares td:nth-child(3) { width: 22%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(4),
+.tabla-operaciones.tabla-ejemplares td:nth-child(4) { width: 32%; }
+
+.tabla-operaciones.tabla-ejemplares th:nth-child(5),
+.tabla-operaciones.tabla-ejemplares td:nth-child(5) {
+    width: 12%;
+    text-align: right;
+}
+
+.tabla-ejemplares .estado-pendiente { border-color: #c0392b; }
+
+.btn-icono:disabled {
+color: #bbb;
+cursor: not-allowed;
 }

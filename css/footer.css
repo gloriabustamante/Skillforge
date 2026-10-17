@@ -1,16 +1,12 @@
 /* ================= FOOTER ================= */
 
 footer {
+    width: 100%;
     min-height: 390px;
-
     background: white;
     border-top: 1px solid #ddd;
-
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 30px;
+    box-sizing: border-box;
 }
-
 
 .footer-alta {
     padding: 25px;
@@ -20,6 +16,26 @@ footer {
     padding: 30px 25px;
 }
 
+.tabla-footer {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tabla-footer td {
+    vertical-align: top;
+    padding: 0 15px;
+}
+
+.footer-redes {
+    width: 35%;
+}
+
+.footer-columna {
+    width: 21.66%;
+}
+
+/* ================= REDES SOCIALES ================= */
 
 .redes {
     display: flex;
@@ -47,7 +63,6 @@ footer {
     opacity: 0.6;
 }
 
-
 .redes-index {
     gap: 14px;
     margin-top: 15px;
@@ -62,6 +77,7 @@ footer {
     opacity: 1;
 }
 
+/* ================= COLUMNAS ================= */
 
 .footer-columna h4 {
     font-size: 13px;
@@ -77,15 +93,28 @@ footer {
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1000px) {
-
-    footer {
-        grid-template-columns: repeat(2, 1fr);
+    .tabla-footer td {
+        padding: 0 10px;
     }
 }
 
 @media (max-width: 700px) {
+    .tabla-footer,
+    .tabla-footer tbody,
+    .tabla-footer tr,
+    .tabla-footer td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-    footer {
-        grid-template-columns: 1fr;
+    .tabla-footer td {
+        margin-bottom: 25px;
+        padding: 0;
+    }
+
+    .footer-redes,
+    .footer-columna {
+        width: 100%;
     }
 }

@@ -1,23 +1,5 @@
-/* ============ DATOS (acá iría nuestra API en caso de que la llegaramos a hacer) ============ */
-
-const libro = {
-    titulo: "Harry Potter y la piedra filosofal",
-    autor: "J.K. Rowling",
-    isbn: "978-84-9838-037-9",
-    editorial: "Salamandra",
-    categoria: "Fantasía",
-    fechaIngreso: "12/03/2024",
-    disponible: true,
-    portada: "img/harry-potter.jpg",
-    descripcion: "Harry descubre en su cumpleaños número once que es un mago y viaja a Hogwarts."
-};
-
-const reviews = [
-    { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 },
-    { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 },
-    { titulo: "Review title", texto: "Review body", nombre: "Reviewer name", fecha: "Date", estrellas: 0 }
-];
-
+const isbnSeleccionado = new URLSearchParams(window.location.search).get("isbn");
+const libro = isbnSeleccionado ? buscarLibro(isbnSeleccionado) : null;
 
 // ELEMENTOS
 
@@ -25,28 +7,49 @@ const $ = (id) => document.getElementById(id);
 
 const btnFavorito = $("btnFavorito");
 const btnPrestamo = $("btnPrestamo");
+const btnEditarPrestamo = $("btnEditarPrestamo");
 const mensaje     = $("mensaje");
 const inputs      = [$("dia"), $("mes"), $("anio")];
 
+// TRAE LOS DATOS DE LOS FORMULARIOS QUE SE CARGUEN
+
+const reviews = JSON.parse(localStorage.getItem("reviews") || "[]")
+    .filter((r) => libro && r.isbn === libro.isbn)
+    .reverse()
+    .slice(0, 3);
 
 // RENDER DEL LIBRO
 
 function mostrarLibro() {
+
+    // Si no existe, oculta todo y muestra el aviso
+    if (!libro) {
+        document.querySelector(".libro").hidden = true;
+        document.querySelector(".reviews").hidden = true;
+        $("noEncontrado").hidden = false;
+        return;
+    }
+
     $("titulo").textContent       = libro.titulo;
     $("autor").textContent        = libro.autor;
     $("isbn").textContent         = libro.isbn;
     $("editorial").textContent    = libro.editorial;
     $("categoria").textContent    = libro.categoria;
     $("fechaIngreso").textContent = libro.fechaIngreso;
-    $("descripcion").textContent  = libro.descripcion;
-    $("portada").src              = libro.portada;
+    $("descripcion").textContent  = libro.descripcion || "Este libro todavía no tiene descripción.";
+
+    if (libro.portada) {
+        $("portada").src = libro.portada;
+    } else {
+        $("portada").style.background = "#e3e3e3";
+    }
 
     $("estadoTexto").textContent = libro.disponible ? "Disponible" : "No disponible";
     $("estado").classList.toggle("no-disponible", !libro.disponible);
     btnPrestamo.disabled = !libro.disponible;
 }
 
-// RENDER DE RESEÑAs
+// Render de reseñas
 
 function mostrarReviews() {
     $("reviewsGrid").innerHTML = reviews.map((r) => {
@@ -55,9 +58,10 @@ function mostrarReviews() {
         ).join("");
 
         return `
-            <article class="review">
+            <td class="review">
                 <div class="estrellas">${estrellas}</div>
-                <h3>${r.titulo}</h3>
+                <h3>${r.estrellas} de 5 estrellas</h3>
+                <p>${limpiar(r.texto)}</p>
                 <p>${r.texto}</p>
                 <div class="reviewer">
                     <img src="img/avatar.jpg" alt="" onerror="this.style.visibility='hidden'">
@@ -66,7 +70,7 @@ function mostrarReviews() {
                         <small>${r.fecha}</small>
                     </div>
                 </div>
-            </article>`;
+            </td>`;
     }).join("");
 }
 
@@ -82,7 +86,7 @@ $("acordeonBtn").addEventListener("click", () => {
     $("acordeon").classList.toggle("abierto");
 });
 
-// FECHA DE DEVOLUCIÓN
+// Fecha de retiro 
 
 inputs.forEach((input, i) => {
     input.addEventListener("input", () => {
@@ -125,11 +129,12 @@ function validarFecha() {
     hoy.setHours(0, 0, 0, 0);
 
     if (fecha <= hoy) {
-        return { error: "La fecha de devolución debe ser posterior a hoy." };
+        return { error: "La fecha de retiro debe ser posterior a hoy." };
     }
-
     return { fecha };
 }
+
+//FUNCIÓN DEL BOTÓN DE REGISTRAR PRÉSTAMO
 
 btnPrestamo.addEventListener("click", () => {
     const resultado = validarFecha();
@@ -140,14 +145,22 @@ btnPrestamo.addEventListener("click", () => {
         return;
     }
 
-    mostrarMensaje(
-        "Préstamo solicitado. Devolución: " +
-        resultado.fecha.toLocaleDateString("es-UY"),
-        "ok"
-    );
+    const params = new URLSearchParams({
+        isbn: libro.isbn,
+        fecha: resultado.fecha.toISOString().slice(0, 10)
+    });
+
+    setTimeout(() => {
+        window.location.href = "alta-libro.html?" + params.toString();
+    }, 800);
 });
 
-//Función de cierre de sesión
+//FUNCIÓN DEL BOTÓN DE EDITAR PRÉSTAMO
+btnEditarPrestamo.addEventListener("click", () => {
+    window.location.href = "gestion-stock.html?isbn=" + encodeURIComponent(libro.isbn);
+});
+
+//FUNCIÓN DE CIERRE DE SESIÓN
 const btnSalir = document.getElementById("btnSalir");
 
 btnSalir.addEventListener("click", function () {
@@ -155,4 +168,4 @@ btnSalir.addEventListener("click", function () {
 });
 
 mostrarLibro();
-mostrarReviews();
+if (libro) mostrarReviews();
