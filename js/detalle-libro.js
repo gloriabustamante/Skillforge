@@ -157,7 +157,7 @@ btnPrestamo.addEventListener("click", () => {
 
 //FUNCIÓN DEL BOTÓN DE EDITAR PRÉSTAMO
 btnEditarPrestamo.addEventListener("click", () => {
-    window.location.href = "stock.html?isbn=" + encodeURIComponent(libro.isbn);
+    window.location.href = "gestion-stock.html?isbn=" + encodeURIComponent(libro.isbn);
 });
 
 //FUNCIÓN DE CIERRE DE SESIÓN
