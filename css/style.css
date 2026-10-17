@@ -38,6 +38,7 @@ color: #202020;
 margin-top: 10px;
 }
 
+/* Solo el index conserva la imagen de fondo */
 .body-index .hero {
 background-image: url("../img/fondo.jpg");
 background-size: cover;
@@ -127,15 +128,6 @@ font-size: 17px;
 margin-right: 14px;
 }
 
-.search-box input {
-flex: 1;
-border: none;
-outline: none;
-background: transparent;
-font-size: 13px;
-color: #333;
-}
-
 .search-icon {
 color: #555;
 font-size: 25px;
@@ -163,13 +155,13 @@ border: 1px solid #ddd;
 border-radius: 6px;
 min-height: 200px;
 padding: 18px;
-box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 transition: 0.2s;
 }
 
 .card:hover {
 transform: translateY(-3px);
-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .card-image {
@@ -220,29 +212,30 @@ min-height: 100vh;
 display: flex;
 flex-direction: column;
 align-items: center;
-padding-top: 48px;
+padding: 48px 20px;
 }
 
 .login-header {
 text-align: center;
 }
 
-
 .login-header h1 {
+font-family: Arial, Helvetica, sans-serif;
 font-size: 54px;
 color: #0b2945;
 margin-bottom: 15px;
 }
 
 .login-header p {
-font-size: 30px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
 color: #0b2945;
 margin-bottom: 18px;
 }
 
 .login-logo {
-width: 120px;
-height: 120px;
+width: 105px;
+height: 105px;
 margin: 0 auto 15px;
 display: flex;
 align-items: center;
@@ -253,6 +246,16 @@ justify-content: center;
 width: 100%;
 height: 100%;
 object-fit: contain;
+}
+
+.login-formulario {
+width: 320px;
+max-width: 100%;
+padding: 25px 23px;
+background: white;
+border: 1px solid #dcdcdc;
+border-radius: 8px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .tabla-login {
@@ -268,29 +271,7 @@ padding-bottom: 20px;
 padding-bottom: 0;
 }
 
-.campo-login input {
-border: 1px solid #dcdcdc;
-border-radius: 6px;
-font-size: 14px;
-color: #555;
-background: white;
-outline: none;
-}
-
-.tabla-login .mostrar-password {
-padding-top: 0;
-padding-bottom: 25px;
-}
-
-.login-main {
-padding-bottom: 48px;
-}
-
-/* ================= CAMPOS ================= */
-
-.campo-login {
-margin-bottom: 0;
-}
+/* ============ Campos ========== */
 
 .campo-login label {
 display: block;
@@ -303,7 +284,12 @@ display: block;
 width: 100%;
 height: 42px;
 padding: 0 12px;
-box-sizing: border-box;
+border: 1px solid #dcdcdc;
+border-radius: 6px;
+font-size: 14px;
+color: #555;
+background: white;
+outline: none;
 }
 
 .campo-login input::placeholder {
@@ -331,11 +317,11 @@ resize: vertical;
 border-color: #999;
 }
 
-/* ================= MOSTRAR CONTRASEÑA ================= */
+/* ----- Mostrar contraseña ----- */
 
-.mostrar-password {
-margin-top: -7px;
-margin-bottom: 25px;
+.tabla-login .mostrar-password {
+padding-top: 0;
+padding-bottom: 25px;
 }
 
 .mostrar-password label {
@@ -360,41 +346,7 @@ font-size: 15px;
 color: #888;
 }
 
-/* ================= LOGIN ================= */
-
-.login-main {
-padding-left: 20px;
-padding-right: 20px;
-}
-
-.login-header h1 {
-font-family: Arial, Helvetica, sans-serif;
-font-size: 54px;
-color: #0b2945;
-margin-bottom: 15px;    
-}
-
-.login-header p {
-font-family: Arial, Helvetica, sans-serif;
-font-size: 25px;
-}
-
-.login-logo {
-width: 105px;
-height: 105px;
-}
-
-.login-formulario {
-width: 320px;
-max-width: 100%;
-padding: 25px 23px;
-background: white;
-border: 1px solid #dcdcdc;
-border-radius: 8px;
-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-}
-
-/*================BOTONES====== */
+/* ================= BOTONES ================= */
 
 .btn-ingresar {
 display: block;
@@ -535,216 +487,6 @@ font-size: 16px;
 margin-bottom: 10px;
 }
 
-/* ================= LIBRO ================= */
-
-.libro {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 64px;
-align-items: start;
-}
-
-.portada {
-position: relative;
-max-width: 504px;
-}
-
-.portada img {
-width: 100%;
-display: block;
-aspect-ratio: 504 / 812;
-object-fit: cover;
-}
-
-/* ======== Info ============ */
-
-.info h1 {
-font-size: 24px;
-margin-bottom: 16px;
-}
-
-.chip {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 6px 10px;
-border-radius: 6px;
-font-size: 15px;
-}
-
-.chip-autor {
-background: #e6e6e6;
-color: #444;
-}
-
-.chip-estado {
-background: #c9f5d2;
-color: #0b6b2a;
-}
-
-.chip-estado.no-disponible {
-background: #fbd5d5;
-color: #9b1c1c;
-}
-
-.datos {
-list-style: none;
-margin: 24px 0 32px;
-font-size: 19px;
-line-height: 1.3;
-}
-
-
-/* ========= Fecha de devolución ========= */
-
-.devolucion {
-margin-top: 28px;
-}
-
-.devolucion label {
-display: block;
-font-size: 16px;
-margin-bottom: 10px;
-}
-
-.fecha-inputs {
-display: flex;
-gap: 8px;
-}
-
-.fecha-inputs input {
-width: 75px;
-height: 40px;
-padding: 0 14px;
-border: 1px solid #d5d5d5;
-border-radius: 6px;
-font-size: 15px;
-outline: none;
-}
-
-.fecha-inputs input:focus {
-border-color: #072440;
-}
-
-.fecha-inputs input.error {
-border-color: #d33;
-}
-
-.mensaje {
-min-height: 20px;
-margin-top: 8px;
-font-size: 13px;
-}
-
-.mensaje.error { color: #d33; }
-.mensaje.ok    { color: #0b6b2a; }
-
-/* ========== Acordeón ========== */
-
-.acordeon {
-border: 1px solid #d5d5d5;
-border-radius: 8px;
-padding: 16px;
-}
-
-.acordeon-cabecera {
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border: none;
-background: transparent;
-font-size: 16px;
-font-weight: bold;
-cursor: pointer;
-}
-
-.acordeon-cabecera i {
-transition: transform 0.2s;
-}
-
-.acordeon-cuerpo {
-display: none;
-margin-top: 8px;
-font-size: 16px;
-line-height: 1.4;
-}
-
-.acordeon.abierto .acordeon-cuerpo {
-display: block;
-}
-
-.acordeon:not(.abierto) .acordeon-cabecera i {
-transform: rotate(180deg);
-}
-
-
-/* ================= REVIEWS ================= */
-
-.reviews {
-margin-top: 120px;
-}
-
-.reviews h2 {
-font-size: 24px;
-margin-bottom: 40px;
-}
-
-.reviews-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 48px;
-}
-
-.review {
-border: 1px solid #d5d5d5;
-border-radius: 8px;
-padding: 24px;
-}
-
-.estrellas {
-display: flex;
-gap: 6px;
-font-size: 18px;
-margin-bottom: 20px;
-}
-
-.review h3 {
-font-size: 24px;
-margin-bottom: 8px;
-}
-
-.review > p {
-font-size: 16px;
-margin-bottom: 24px;
-}
-
-.reviewer {
-display: flex;
-align-items: center;
-gap: 12px;
-}
-
-.reviewer img {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-object-fit: cover;
-background: #e6e6e6;
-}
-
-.reviewer strong {
-display: block;
-font-size: 16px;
-color: #555;
-}
-
-.reviewer small {
-font-size: 16px;
-color: #aaa;
-}
-
-
 /* ================= FOOTER (extra) ================= */
 
 .footer-logo {
@@ -752,16 +494,7 @@ font-size: 36px;
 margin-bottom: 16px;
 }
 
-/* ================= DETALLE DE LIBRO (versión con tablas) ================= */
-
-main.detalle {
-min-height: auto;
-padding: 64px 64px 80px;
-background: white;
-}
-
-
-/* ================= LIBRO: tabla portada | info ================= */
+/* ================= DETALLE DE LIBRO ================= */
 
 .libro {
 display: table;
@@ -773,12 +506,11 @@ border-spacing: 64px 0;
 }
 
 .libro > tbody > tr > td {
-    width: 50%;
-    vertical-align: top;
+width: 50%;
+vertical-align: top;
 }
 
-
-/* ======= Portada ======= */
+/* ============== Portada ============== */
 
 .portada {
 position: relative;
@@ -786,41 +518,13 @@ position: relative;
 
 .portada img {
 display: block;
-width: 100%;
+width: 90%;
 max-width: 504px;
 aspect-ratio: 504 / 812;
 object-fit: cover;
 }
 
-.btn-favorito {
-position: absolute;
-top: 10px;
-left: 10px;
-width: 44px;
-height: 44px;
-border: none;
-border-radius: 50%;
-background: #072440;
-color: white;
-font-size: 18px;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: transform 0.2s;
-}
-
-.btn-favorito:hover {
-transform: scale(1.08);
-}
-
-.btn-favorito.habilitado i {
-font-weight: 900;
-color: #ff6b81;
-}
-
-
-/* ======= Info ======== */
+/* ================ Info ============= */
 
 .info h1 {
 font-size: 24px;
@@ -869,8 +573,7 @@ padding-right: 6px;
 white-space: nowrap;
 }
 
-
-/* ======== Fecha de devolución ====== */
+/* ============== Fecha de devolución ============== */
 
 .devolucion {
 display: table;
@@ -923,33 +626,15 @@ font-size: 13px;
 .mensaje.error { color: #d33; }
 .mensaje.ok    { color: #0b6b2a; }
 
-
-/* ==== Botón préstamo ==== */
+/* ====== Botón préstamo ========= */
 
 .btn-prestamo {
 width: 100%;
 height: 40px;
 margin: 12px 0 24px;
-border: 1px solid #072440;
-border-radius: 6px;
-background: #072440;
-color: white;
-font-size: 16px;
-cursor: pointer;
 }
 
-.btn-prestamo:hover {
-background: #123b60;
-}
-
-.btn-prestamo:disabled {
-background: #9aa7b4;
-border-color: #9aa7b4;
-cursor: not-allowed;
-}
-
-
-/* ========== Acordeón =========== */
+/* ===== Acordeón ======= */
 
 .acordeon {
 display: table;
@@ -1002,7 +687,6 @@ transform: rotate(180deg);
 .acordeon:not(.abierto) tr:first-child td {
 padding-bottom: 16px;
 }
-
 
 /* ================= REVIEWS ================= */
 
@@ -1074,49 +758,49 @@ font-size: 16px;
 color: #aaa;
 }
 
-/* ================= RESPONSIVE DE DETALLE LIBROS================= */
+/* ========= Responsive detalle de libros =========== */
 
 @media (max-width: 1000px) {
-    main.detalle {
-        padding: 40px 30px 60px;
-    }
+main.detalle {
+    padding: 40px 30px 60px;
+}
 
-    .libro,
-    .libro > tbody,
-    .libro > tbody > tr,
-    .libro > tbody > tr > td {
+.libro,
+.libro > tbody,
+.libro > tbody > tr,
+.libro > tbody > tr > td {
     display: block;
     width: 100%;
-    }
+}
 
-    .libro {
+.libro {
     margin: 0;
-    }
+}
 
-    .libro > tbody > tr > td + td {
+.libro > tbody > tr > td + td {
     margin-top: 32px;
-    }
+}
 
-    .portada img {
+.portada img {
     max-width: 420px;
     margin: 0 auto;
-    }
+}
 
-    .reviews-grid,
-    .reviews-grid > tbody,
-    .reviews-grid > tbody > tr,
-    .review {
+.reviews-grid,
+.reviews-grid > tbody,
+.reviews-grid > tbody > tr,
+.review {
     display: block;
     width: 100%;
-    }
+}
 
-    .reviews-grid {
+.reviews-grid {
     margin: 0;
-    }
+}
 
-    .review {
+.review {
     margin-bottom: 24px;
-    }
+}
 }
 
 /* ================= PÁGINA PRÉSTAMO ================= */
@@ -1159,7 +843,7 @@ grid-template-columns: 1fr 1fr 1.3fr;
 gap: 8px;
 }
 
-/* ================= PANEL LATERAL ================= */
+/* ========= Panel lateral ========= */
 
 .panel-pasos {
 background: #f6f6f6;
@@ -1257,7 +941,7 @@ color: #d93025;
 color: #1e7e34;
 }
 
-/* ================= MODAL CLIENTE ================= */
+/* ================= MODAL ================= */
 
 .modal {
 border: 1px solid #dcdcdc;
@@ -1286,16 +970,6 @@ color: #bbb;
 cursor: not-allowed;
 }
 
-@media (max-width: 700px) {
-.form-contenido {
-    grid-template-columns: 1fr;
-}
-
-.fila {
-    grid-template-columns: 1fr;
-}
-}
-
 /* ================= CATÁLOGO ================= */
 
 .body-catalogo {
@@ -1313,8 +987,6 @@ padding: 48px 50px 80px;
 font-size: 20px;
 margin: 0 0 40px 8px;
 }
-
-/*========== CATALOGO DE LIBROS ============= */
 
 .buscador {
 display: table;
@@ -1406,12 +1078,9 @@ background: #f3f0f7;
 }
 
 .categorias li.activa {
-    background: #e3e3e3;
-    border-color: #999;
+background: #e3e3e3;
+border-color: #999;
 }
-
-
-/* ========= Lista de libros ========== */
 
 .lista-libros {
 display: grid;
@@ -1471,35 +1140,254 @@ color: #777;
 font-size: 14px;
 }
 
-/*=========== DETALLE DEL CATALOGO DE LIBROS ================ */
-
 @media (max-width: 1000px) {
-    .catalogo-layout,
-    .catalogo-layout > tbody,
-    .catalogo-layout > tbody > tr,
-    .catalogo-layout > tbody > tr > td,
-    .catalogo-layout > tbody > tr > td:first-child {
+.catalogo-layout,
+.catalogo-layout > tbody,
+.catalogo-layout > tbody > tr,
+.catalogo-layout > tbody > tr > td,
+.catalogo-layout > tbody > tr > td:first-child {
     display: block;
     width: 100%;
-    }
+}
 
-    .catalogo-layout {
+.catalogo-layout {
     margin: 0;
-    }
+}
 
-    .catalogo-layout > tbody > tr > td:first-child {
+.catalogo-layout > tbody > tr > td:first-child {
     margin-bottom: 34px;
-    }
+}
 }
 
 @media (max-width: 700px) {
-    .catalogo {
+.catalogo {
     padding: 30px 15px 60px;
-    }
+}
 
-    .lista-libros {
+.lista-libros {
     grid-template-columns: 1fr;
-    }
+}
+}
+
+/* ================= OPERACIONES ================= */
+
+.body-operaciones {
+font-family: Arial, Helvetica, sans-serif;
+background: #faf8fc;
+color: #222;
+}
+
+.body-operaciones .navbar {
+height: 78px;
+gap: 8px;
+padding: 0 15px;
+border-bottom: 3px solid #138bd0;
+}
+
+.body-operaciones .logo-navbar {
+width: 48px;
+height: 48px;
+flex: 0 0 48px;
+}
+
+.body-operaciones .navbar nav {
+height: 100%;
+min-width: 0;
+justify-content: space-between;
+gap: 2px;
+overflow-x: auto;
+}
+
+.body-operaciones .navbar nav a {
+flex: 0 0 auto;
+gap: 4px;
+padding: 6px 2px;
+font-size: 9px;
+}
+
+.body-operaciones .navbar nav a i {
+font-size: 9px;
+}
+
+.body-operaciones .btn-salir {
+flex: 0 0 auto;
+padding: 5px 8px;
+border: 1px solid #aaa;
+border-radius: 4px;
+background: #eee;
+color: #333;
+cursor: pointer;
+font-family: inherit;
+font-size: 9px;
+}
+
+.body-operaciones .hero {
+height: 235px;
+}
+
+.body-operaciones .hero-contenido {
+margin-top: 0;
+}
+
+.body-operaciones .hero h1 {
+margin-bottom: 5px;
+font-size: 40px;
+}
+
+.body-operaciones .hero p {
+font-size: 16px;
+}
+
+.operaciones-main {
+width: min(100%, 1440px);
+min-height: 466px;
+margin: 0 auto;
+padding: 34px 32px 100px;
+}
+
+.operaciones-encabezado {
+margin-bottom: 14px;
+padding-bottom: 12px;
+border-bottom: 1px solid #e6e3e8;
+}
+
+.operaciones-encabezado h2 {
+margin-bottom: 4px;
+color: #202020;
+font-size: 13px;
+}
+
+.operaciones-descripcion {
+color: #888;
+font-size: 9px;
+line-height: 1.4;
+}
+
+.panel-operaciones {
+overflow: hidden;
+background: #fff;
+border: 1px solid #e5e2e6;
+border-radius: 6px;
+padding-bottom: 9px;
+}
+
+.panel-operaciones > .operaciones-encabezado,
+.resumen-operaciones,
+.ultimas-operaciones {
+margin-right: 12px;
+margin-left: 12px;
+}
+
+.panel-operaciones > .operaciones-encabezado {
+margin-top: 12px;
+}
+
+.resumen-operaciones {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 8px;
+}
+
+.tarjeta-resumen {
+min-height: 65px;
+padding: 9px 8px 7px;
+border: 1px solid;
+border-radius: 5px;
+background: #fafafa;
+}
+
+.tarjeta-resumen p,
+.tarjeta-resumen span {
+display: block;
+color: #888;
+font-size: 9px;
+line-height: 1.35;
+}
+
+.tarjeta-resumen strong {
+display: block;
+margin: 2px 0 3px;
+color: #222;
+font-size: 14px;
+line-height: 1;
+}
+
+.tarjeta-prestados  { border-color: #58d88d; }
+.tarjeta-pendientes { border-color: #eb6868; }
+.tarjeta-devueltos  { border-color: #f49a48; }
+
+.ultimas-operaciones {
+margin-top: 12px;
+}
+
+.ultimas-operaciones h3 {
+margin-bottom: 5px;
+color: #222;
+font-size: 10px;
+}
+
+.ultimas-operaciones > .operaciones-descripcion {
+margin-bottom: 5px;
+}
+
+.tabla-contenedor {
+width: 100%;
+overflow-x: auto;
+border: 1px solid #e2e2e2;
+border-radius: 5px;
+}
+
+.btn-editar-operacion {
+display: block;
+padding: 0;
+border: 0;
+background: transparent;
+color: #222;
+cursor: pointer;
+font-size: 16px;
+}
+
+.visually-hidden {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border: 0;
+}
+
+.footer-operaciones {
+padding: 30px 25px;
+}
+
+@media (max-width: 560px) {
+.body-operaciones .navbar {
+    padding: 0 10px;
+}
+
+.body-operaciones .navbar nav a {
+    font-size: 8px;
+}
+
+.operaciones-main {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.panel-operaciones > .operaciones-encabezado,
+.resumen-operaciones,
+.ultimas-operaciones {
+    margin-right: 9px;
+    margin-left: 9px;
+}
+}
+
+@media (max-width: 380px) {
+.resumen-operaciones {
+    grid-template-columns: 1fr;
+}
 }
 
 /* ================= OPERACIONES ================= */
@@ -1653,8 +1541,24 @@ font-size: 14px;
     border-color: #eb6868;
 }
 
-.tarjeta-devueltos {
-    border-color: #f49a48;
+@media (max-width: 700px) {
+.gestion-usuarios {
+    padding: 30px 15px 45px;
+}
+
+.barra-usuarios {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.barra-usuarios select,
+.btn-nuevo-usuario {
+    width: 100%;
+}
+
+.paginacion-usuarios {
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .ultimas-operaciones {
@@ -1676,127 +1580,4 @@ font-size: 14px;
     overflow-x: auto;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
-}
-
-.tabla-operaciones {
-    width: 100%;
-    border-collapse: collapse;
-    color: #444;
-    font-size: 9px;
-    text-align: left;
-}
-
-.tabla-operaciones th {
-    padding: 5px 8px;
-    background: #f6f6f6;
-    color: #555;
-    font-size: 9px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.tabla-operaciones td {
-    padding: 9px 8px;
-    border-top: 1px solid #e8e8e8;
-    vertical-align: middle;
-}
-
-.tabla-operaciones th:nth-child(1),
-.tabla-operaciones td:nth-child(1) {
-    width: 26%;
-    white-space: nowrap;
-}
-
-.tabla-operaciones th:nth-child(2),
-.tabla-operaciones td:nth-child(2) {
-    width: 26%;
-}
-
-.tabla-operaciones th:nth-child(3),
-.tabla-operaciones td:nth-child(3) {
-    width: 20%;
-    text-align: center;
-}
-
-.tabla-operaciones th:nth-child(5),
-.tabla-operaciones td:nth-child(5) {
-    width: 28px;
-    padding-right: 6px;
-    padding-left: 4px;
-}
-
-.estado-operacion {
-    display: inline-block;
-    width: 72px;
-    padding: 4px 5px;
-    border: 1px solid;
-    border-radius: 5px;
-    color: #888;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.estado-pendiente {
-    border-color: #f49a48;
-}
-
-.estado-devuelto {
-    border-color: #58d88d;
-}
-
-.btn-editar-operacion {
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: #222;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.footer-operaciones {
-    padding: 30px 25px;
-}
-
-@media (max-width: 560px) {
-    .body-operaciones .navbar {
-        padding: 0 10px;
-    }
-
-    .body-operaciones .navbar nav a {
-        font-size: 8px;
-    }
-
-    .operaciones-main {
-        padding-right: 16px;
-        padding-left: 16px;
-    }
-
-    .panel-operaciones > .operaciones-encabezado,
-    .resumen-operaciones,
-    .ultimas-operaciones {
-        margin-right: 9px;
-        margin-left: 9px;
-    }
-
-    .tabla-operaciones {
-        min-width: 520px;
-    }
-}
-
-@media (max-width: 380px) {
-    .resumen-operaciones {
-        grid-template-columns: 1fr;
-    }
 }

@@ -87,12 +87,19 @@
                         <input type="text" id="autor" name="autor" readonly placeholder="Se completa al elegir el libro">
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <label for="fecha">Fecha de retiro (Obligatorio)</label>
-                        <input type="text" id="fecha" name="fecha" placeholder="DD / MM / AAAA" inputmode="numeric" pattern="\d{2}\s?/\s?\d{2}\s?/\s?\d{4}" maxlength="14" required>
+                    <td class="campo"><label>Fecha de retiro</label>
+                        <table class="fecha-grupo" id="grupoRetiro">
+                            <tr>
+                                <td>
+                                    <input type="text" id="retiroDia" placeholder="DD" maxlength="2" inputmode="numeric">                                                        </td>
+                                <td>
+                                    <input type="text" id="retiroMes" placeholder="MM" maxlength="2" inputmode="numeric">                                                        </td>
+                                <td>
+                                    <input type="text" id="retiroAnio" placeholder="AAAA" maxlength="4" inputmode="numeric">
+                                </td>
+                            </tr>
+                        </table>
                     </td>
-                </tr>
                 <tr>
                     <td>
                         <label for="resena">Reseña</label>
