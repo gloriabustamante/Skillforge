@@ -1390,171 +1390,155 @@ padding: 30px 25px;
 }
 }
 
-/* ================= GESTIÓN DE USUARIOS ================= */
+/* ================= OPERACIONES ================= */
 
-.gestion-usuarios {
-min-height: 600px;
-padding: 48px 50px 60px;
+.body-operaciones {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf8fc;
+    color: #222;
 }
 
-.encabezado-usuarios h2 {
-font-size: 24px;
-margin-bottom: 8px;
+.body-operaciones .navbar {
+    height: 78px;
+    gap: 8px;
+    padding: 0 15px;
+    border-bottom: 3px solid #138bd0;
 }
 
-.encabezado-usuarios p {
-color: #777;
-font-size: 14px;
-margin-bottom: 30px;
+.body-operaciones .logo-navbar {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
 }
 
-.barra-usuarios {
-display: flex;
-align-items: center;
-gap: 14px;
-margin-bottom: 28px;
-flex-wrap: wrap;
+.body-operaciones .navbar nav {
+    height: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    gap: 2px;
+    overflow-x: auto;
 }
 
-.busqueda-usuarios {
-display: flex;
-align-items: center;
-gap: 10px;
-flex: 1;
-min-width: 200px;
-height: 44px;
-padding: 0 14px;
-background: #ece8f2;
-border-radius: 6px;
+.body-operaciones .navbar nav a {
+    flex: 0 0 auto;
+    gap: 4px;
+    padding: 6px 2px;
+    font-size: 9px;
 }
 
-.busqueda-usuarios input {
-width: 100%;
-border: none;
-outline: none;
-background: transparent;
-font-size: 13px;
+.body-operaciones .navbar nav a i {
+    font-size: 9px;
 }
 
-.barra-usuarios select {
-height: 44px;
-padding: 0 12px;
-border: 1px solid #ddd;
-border-radius: 6px;
-background: white;
-color: #333;
+.body-operaciones .btn-salir {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #eee;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 9px;
 }
 
-.tabla-usuarios-contenedor {
-width: 100%;
-overflow-x: auto;
+.body-operaciones .hero {
+    height: 235px;
 }
 
-.tabla-usuarios {
-width: 100%;
-border-collapse: separate;
-border-spacing: 0 8px;
-text-align: left;
+.body-operaciones .hero-contenido {
+    margin-top: 0;
 }
 
-.tabla-usuarios th {
-padding: 14px 12px;
-background: #f5f5f5;
-border-top: 1px solid #e3e3e3;
-border-bottom: 1px solid #e3e3e3;
-font-size: 12px;
-color: #777;
-font-weight: normal;
+.body-operaciones .hero h1 {
+    margin-bottom: 5px;
+    font-size: 40px;
 }
 
-.tabla-usuarios td {
-padding: 16px 12px;
-background: white;
-border-top: 1px solid #e3e3e3;
-border-bottom: 1px solid #e3e3e3;
-font-size: 13px;
-vertical-align: middle;
+.body-operaciones .hero p {
+    font-size: 16px;
 }
 
-.tabla-usuarios th:first-child,
-.tabla-usuarios td:first-child {
-border-left: 1px solid #e3e3e3;
-border-radius: 6px 0 0 6px;
+.operaciones-main {
+    width: min(100%, 1440px);
+    min-height: 466px;
+    margin: 0 auto;
+    padding: 34px 32px 100px;
 }
 
-.tabla-usuarios th:last-child,
-.tabla-usuarios td:last-child {
-border-right: 1px solid #e3e3e3;
-border-radius: 0 6px 6px 0;
+.operaciones-encabezado {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e6e3e8;
 }
 
-.tabla-usuarios td:first-child strong,
-.tabla-usuarios td:first-child span {
-display: block;
+.operaciones-encabezado h2 {
+    margin-bottom: 4px;
+    color: #202020;
+    font-size: 13px;
 }
 
-.tabla-usuarios td:first-child span {
-margin-top: 5px;
-color: #888;
-font-size: 12px;
+.operaciones-descripcion {
+    color: #888;
+    font-size: 9px;
+    line-height: 1.4;
 }
 
-.estado-usuario {
-display: inline-block;
-padding: 5px 10px;
-border-radius: 5px;
-font-size: 12px;
+.panel-operaciones {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e2e6;
+    border-radius: 6px;
+    padding-bottom: 9px;
 }
 
-.estado-usuario.habilitado {
-background: #e0f5e7;
-color: #18743b;
+.panel-operaciones > .operaciones-encabezado,
+.resumen-operaciones,
+.ultimas-operaciones {
+    margin-right: 12px;
+    margin-left: 12px;
 }
 
-.estado-usuario.pendiente {
-background: #fff0d7;
-color: #946200;
+.panel-operaciones > .operaciones-encabezado {
+    margin-top: 12px;
 }
 
-.estado-usuario.inhabilitado {
-background: #eeeeee;
-color: #777;
+.resumen-operaciones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
 }
 
-.acciones-usuario {
-white-space: nowrap;
+.tarjeta-resumen {
+    min-height: 65px;
+    padding: 9px 8px 7px;
+    border: 1px solid;
+    border-radius: 5px;
+    background: #fafafa;
 }
 
-.acciones-usuario button {
-border: none;
-background: transparent;
-cursor: pointer;
-font-size: 12px;
-margin-right: 10px;
+.tarjeta-resumen p,
+.tarjeta-resumen span {
+    display: block;
+    color: #888;
+    font-size: 9px;
+    line-height: 1.35;
 }
 
-.paginacion-usuarios {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 16px;
-margin-top: 24px;
-font-size: 13px;
-color: #777;
+.tarjeta-resumen strong {
+    display: block;
+    margin: 2px 0 3px;
+    color: #222;
+    font-size: 14px;
+    line-height: 1;
 }
 
-.paginacion-usuarios button {
-padding: 8px 12px;
-border: 1px solid #ddd;
-background: white;
-border-radius: 5px;
-cursor: pointer;
-margin-left: 6px;
+.tarjeta-prestados {
+    border-color: #58d88d;
 }
 
-.paginacion-usuarios button:disabled {
-color: #aaa;
-cursor: not-allowed;
+.tarjeta-pendientes {
+    border-color: #eb6868;
 }
 
 @media (max-width: 700px) {
@@ -1576,4 +1560,24 @@ cursor: not-allowed;
     align-items: flex-start;
     flex-direction: column;
 }
+
+.ultimas-operaciones {
+    margin-top: 12px;
+}
+
+.ultimas-operaciones h3 {
+    margin-bottom: 5px;
+    color: #222;
+    font-size: 10px;
+}
+
+.ultimas-operaciones > .operaciones-descripcion {
+    margin-bottom: 5px;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
 }
