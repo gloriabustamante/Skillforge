@@ -1,7 +1,7 @@
 const isbnSeleccionado = new URLSearchParams(window.location.search).get("isbn");
 const libro = isbnSeleccionado ? buscarLibro(isbnSeleccionado) : null;
 
-// ELEMENTOS 
+// ELEMENTOS
 
 const $ = (id) => document.getElementById(id);
 
@@ -80,7 +80,7 @@ btnFavorito.addEventListener("click", () => {
     btnFavorito.classList.toggle("activo");
 });
 
-// ACORDEÓN 
+// ACORDEÓN
 
 $("acordeonBtn").addEventListener("click", () => {
     $("acordeon").classList.toggle("abierto");
