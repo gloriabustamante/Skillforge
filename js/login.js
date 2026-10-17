@@ -1,4 +1,4 @@
-// MOSTRAR CONTRASEÑA 
+// MOSTRAR CONTRASEÑA
 
 const mostrarPassword = document.getElementById("mostrarPassword");
 const password = document.getElementById("password");
@@ -12,7 +12,7 @@ mostrarPassword.addEventListener("change", function () {
     }
 });
 
-// LOGIN 
+// LOGIN
 
 const loginForm = document.getElementById("loginForm");
 

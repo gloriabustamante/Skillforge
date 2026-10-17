@@ -39,12 +39,53 @@
             No se encontró el libro. <a href="catalogo.html">Volver al catálogo</a>
         </p>
 
-        <table class="libro">
-            <tr>
-                <td class="portada">
-                    <img id="portada" src="img/harry-potter.jpg" alt="Portada del libro">
-                    <button class="btn-favorito" id="btnFavorito" aria-label="Agregar a favoritos">
-                        <i class="fa-regular fa-heart"></i>
+        <section class="libro">
+
+            <div class="portada">
+                <img id="portada" src="img/harry-potter.jpg" alt="Portada del libro">
+                <button class="btn-favorito" id="btnFavorito" aria-label="Agregar a favoritos">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+
+            <div class="info">
+
+                <h1 id="titulo">Harry Potter y la piedra filosofal</h1>
+
+                <span class="chip chip-autor" id="autor">J.K. Rowling</span>
+
+                <ul class="datos">
+                    <li>ISBN: <span id="isbn">978-...</span></li>
+                    <li>Editorial: <span id="editorial">...</span></li>
+                    <li>Categoría: <span id="categoria">Fantasía</span></li>
+                    <li>Fecha de ingreso: <span id="fechaIngreso">...</span></li>
+                </ul>
+
+                <span class="chip chip-estado" id="estado">
+                    <span id="estadoTexto">Disponible</span>
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+
+                <div class="devolucion">
+                    <label>Fecha devolución</label>
+
+                    <div class="fecha-inputs">
+                        <input type="text" id="dia"  placeholder="DD"   maxlength="2" inputmode="numeric">
+                        <input type="text" id="mes"  placeholder="MM"   maxlength="2" inputmode="numeric">
+                        <input type="text" id="anio" placeholder="YYYY" maxlength="4" inputmode="numeric">
+                    </div>
+
+                    <p class="mensaje" id="mensaje"></p>
+                </div>
+
+                <button class="btn-prestamo" id="btnPrestamo">
+                    Solicitar Préstamo
+                </button>
+
+                <div class="acordeon abierto" id="acordeon">
+                    <button class="acordeon-cabecera" id="acordeonBtn" type="button">
+                        <span>Descripción</span>
+                        <i class="fa-solid fa-chevron-up"></i>
                     </button>
                 </td>
 

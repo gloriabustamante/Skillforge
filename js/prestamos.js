@@ -142,7 +142,7 @@ function isbnValido(valor) {
 
 titulo.addEventListener("input", () => marcarError(titulo, false));
 
-// Validación y guardado 
+// Validación y guardado
 
 function validar() {
     let ok = true;
