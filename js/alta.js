@@ -75,7 +75,6 @@ function fechaHoy() {
     return new Date().toLocaleDateString("es-UY");
 }
 
-
 // Botón de Guardar
 
 const btnGuardar = document.getElementById("btnGuardar");

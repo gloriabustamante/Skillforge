@@ -22,7 +22,7 @@ const reviews = JSON.parse(localStorage.getItem("reviews") || "[]")
 
 function mostrarLibro() {
 
-    // Si no existe, oculta todo y mostrar el aviso
+    // Si no existe, oculta todo y muestra el aviso
     if (!libro) {
         document.querySelector(".libro").hidden = true;
         document.querySelector(".reviews").hidden = true;
@@ -131,7 +131,6 @@ function validarFecha() {
     if (fecha <= hoy) {
         return { error: "La fecha de retiro debe ser posterior a hoy." };
     }
-
     return { fecha };
 }
 

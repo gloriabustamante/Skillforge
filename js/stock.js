@@ -8,11 +8,9 @@ const libIsbn         = document.getElementById("libIsbn");
 const libTitulo       = document.getElementById("libTitulo");
 const libUbicacion    = document.getElementById("libUbicacion");
 const errorLibro      = document.getElementById("errorLibro");
-
 const modalEjemplares = document.getElementById("modalEjemplares");
 const tituloEjemplares = document.getElementById("tituloEjemplares");
 const cuerpoEjemplares = document.getElementById("cuerpoEjemplares");
-
 const modalEditarEjemplar  = document.getElementById("modalEditarEjemplar");
 const formEjemplar         = document.getElementById("formEjemplar");
 const tituloEditarEjemplar = document.getElementById("tituloEditarEjemplar");
@@ -30,8 +28,6 @@ const normalizar = (t) => String(t ?? "")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-
-// Evita que un texto inyecte HTML
 
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -98,6 +94,8 @@ function abrirEdicionLibro(fila) {
 
     modalLibro.showModal();
 }
+
+// GUARDAR EL LIBRO
 
 function guardarLibro() {
     const isbn      = libIsbn.value.trim();

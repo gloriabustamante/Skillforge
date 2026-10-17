@@ -3,7 +3,7 @@ const mensajeForm = document.getElementById("mensajeForm");
 const selectLibro = document.getElementById("libro");
 const inputAutor  = document.getElementById("autor");
 
-// Llena el select con el catálogo (ordenado alfabéticamente)
+// Llena el select con el catálogo
 [...libros]
     .sort((a, b) => a.titulo.localeCompare(b.titulo, "es"))
     .forEach((l) => {
